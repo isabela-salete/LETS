@@ -1,17 +1,20 @@
 #importação de bibliotecas
-
 import streamlit as st
 import pandas as pd
 from datetime import *
 import numpy as np
+import matplotlib.pyplot as plt
 import plotly.express as px
 import json
+import plotly.graph_objects as go
+import math
 
+#criar funções de carregamento de dados
 df2 = pd.read_csv('dataset_limpo2.csv')
 df2.drop(['Unnamed: 0'], axis=1, inplace= True)
 df2['CNAE2.0 Empregador.1'].replace('Comércio varejista de mercadorias em geral, com predominância de produtos alimentícios - hipermercados e supermercados', 'Comércio varejista de mercadorias (produtos alimentícios)', inplace = True)
-#criar funções de carregamento de dados
 
+#configurações iniciais da página
 st.set_page_config(layout='wide')
 
 st.image('logo-fat.png', width= 500 )
@@ -20,7 +23,7 @@ st.title('Observatório de Engenharia do Trabalho e Sustentabilidade')
 st.subheader('Análise exploratória de dados relacionados a segurança do trabalho na Região das Agulhas Negras')
 st.text('texto breve')
 
-
+#amostra da base de dados
 st.subheader('Base de dados:')
 st.dataframe(df2)
 
@@ -33,7 +36,7 @@ df_semacento['Município Empregador'].replace('Barra do Piraí', 'Barra do Pirai
 df_semacento['Município Empregador'].replace('Valença', 'Valenca', inplace=True)
 
 
-fig = px.choropleth_mapbox(data_frame = df_semacento,
+mapa = px.choropleth_mapbox(data_frame = df_semacento,
                         geojson=dfci,
                         color = "count",
                         color_continuous_scale="greens",
@@ -44,92 +47,98 @@ fig = px.choropleth_mapbox(data_frame = df_semacento,
                         zoom=8.2,
                         opacity=1,
                         hover_name = 'Município Empregador')
-fig.update_geos(fitbounds="locations", visible=False)
+mapa.update_geos(fitbounds="locations", visible=False)
 
-fig.update_layout(title="Coloração do Mapa da Região do Médio Paraíba Conforme o Nº de Acidentes",
+mapa.update_layout(title="Coloração do Mapa da Região do Médio Paraíba Conforme o Nº de Acidentes",
                   width = 850,
                   height = 530)
 
-st.plotly_chart(fig)
-
-#gráfico de barras por município
-df_munic = df2["Município Empregador"].value_counts().reset_index()
-st.subheader('Distribuição de Acidentes por Município: ')
-select = st.selectbox(label = 'Escolha o tipo de gráfico',
-                      options=["Gráfico de Barras", "Gráfico de Pizza"])
+st.plotly_chart(mapa)
 
 #colunas
+st.subheader('Quantidade de Acidentes por Município')
 col1, col2 =  st.columns([2, 7])
 
 col1.write("A distribuição do número de acidentes na Região do Médio Vale Paraíba mostra como os incidentes se concentram nas cidades de Volta Redonda, Barra Mansa e Resende.")
 
-def grafic(select):
-    fig1 = px.bar(df_munic, 
-             y='count', 
-             x='Município Empregador',
-             color= 'Município Empregador',)
-    fig1.update_layout(title="Distribuição do Nº de Acidentes na Região")
+municipio_counts = df2['Município Empregador'].value_counts().reset_index()
+municipio_counts.columns = ['Município Empregador', 'count']
 
+#treemap de municipio
+fig2222 = px.treemap(municipio_counts, path=['Município Empregador'], values='count',
+                title=' ')
 
-    ############----
+fig2222.data[0].textinfo = 'label+value'
 
-    fig2 = px.pie(df_munic, 
-             values='count', 
-             names='Município Empregador',
-             color= 'Município Empregador',)
-    fig2.update_layout(title="Distribuição do Nº de Acidentes na Região")
+fig2222.update_layout(
+    margin=dict(t=50, l=25, r=25, b=25),
+    title_font_size=28,
+    uniformtext=dict(minsize=14, mode='show'))
 
-    if select == 'Gráfico de Barras':
-        return fig1
-    else:
-        return fig2
+col2.plotly_chart(fig2222)
 
+#acidentes por genero e faixa de idade
+st.subheader('Distribuição dos Acidentes por Idade')
 
-col2.plotly_chart(grafic(select))
+df2['Data Nascimento'] = pd.to_datetime(df2['Data Nascimento'])
+df2['Data Acidente'] = pd.to_datetime(df2['Data Acidente'])
+df2['Idade'] = df2['Data Acidente'] - df2['Data Nascimento']
+df2['Idade2'] =  df2['Data Nascimento'] - df2['Data Acidente']
+df2['Idade'] = df2['Idade'].dt.days
+df2['Idade'] = df2['Idade'] / 365.25
+df2['Idade'] = df2['Idade'].fillna(0)
+df2['Idade'] = df2['Idade'].astype(int)
 
-st.subheader('Distribuição de Colunas com Poucas Variáveis: ')
-att = st.selectbox(label = 'Escolha o gráfico',
-                   options=["Gráfico por Gênero", "Gráfico por Óbito", "Gráfico por Tipo de Acidente"])
+df_acidentes_limpo = df2[
+    (df2['Idade'] != 0) &
+    (df2['Sexo'] != 'Não Informado')].copy()
 
-def attpizza(att):
-    #gráfico de pizza por gênero
-    
-    df_genero = df2["Sexo"].value_counts().reset_index()
-    fig1 = px.pie(df_genero, 
-                values='count', 
-                names='Sexo',
-                color= 'Sexo',
-                color_discrete_map={"Masculino":"red",
-                                    "Feminino":"blue", 
-                                    "Não Informado": "green"})
-    
-    #gráfico de pizza por tipo de acidente
-    df_tipoacidente = df2["Tipo do Acidente"].value_counts().reset_index()
-    fig2 = px.pie(df_tipoacidente, 
-                values='count', 
-                names='Tipo do Acidente',
-                color= 'Tipo do Acidente')
-    
+bins = [0, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, np.inf]
+labels = [
+    '0-14 anos', '15-19 anos', '20-24 anos', '25-29 anos', '30-34 anos',
+    '35-39 anos', '40-44 anos', '45-49 anos', '50-54 anos', '55-59 anos',
+    '60-64 anos', '65-69 anos', '70-74 anos', '75-79 anos', '80+ anos']
 
-    #gráfico de pizza por indica óbito
-    df_indica = df2['Indica Óbito Acidente'].value_counts().reset_index()
-    fig3 = px.pie(df_indica, 
-                values='count', 
-                names='Indica Óbito Acidente',
-                color= 'Indica Óbito Acidente')
-    
-    if att == 'Gráfico por Gênero':
-        return fig1
-    elif att == 'Gráfico por Tipo de Acidente':
-        return fig2
-    else:
-        return fig3
+df_acidentes_limpo['Faixa Etária'] = pd.cut(
+    df_acidentes_limpo['Idade'],
+    bins=bins,
+    labels=labels,
+    right=False)
 
-st.plotly_chart(attpizza(att))
+contagem_acidentes_df = df_acidentes_limpo.groupby(['Faixa Etária', 'Sexo']).size().reset_index(name='Quantidade de Acidentes')
+
+fig33 = px.bar(
+    contagem_acidentes_df,
+    y='Faixa Etária',              
+    x='Quantidade de Acidentes',   
+    color='Sexo',                  
+    orientation='h',               
+    title='Quantidade de Acidentes por Faixa Etária e Sexo',
+    labels={
+        'Faixa Etária': 'Faixa Etária (anos)',
+        'Quantidade de Acidentes': 'Número de Acidentes'
+    },
+    barmode='group',               
+    category_orders={"Faixa Etária": labels},
+    color_discrete_map={
+    'Masculino': 'blue',
+    'Feminino': 'purple'
+} 
+)
+
+fig33.update_layout(
+    xaxis_title='Número de Acidentes',
+    yaxis_title='Faixa Etária',
+    legend_title='Sexo',
+    height = 700
+)
+
+fig33.update_traces(texttemplate='%{x}', textposition='inside')
+
+st.plotly_chart(fig33)
 
 #gráfico de barras por município
-
-st.subheader('Distribuição de Acidentes por Município: ')
+st.subheader('Funções mais atingidas')
 
 def grafico_atualizado(n):
     df_cbo = df2["CBO - Função"].value_counts().reset_index().head(n)
@@ -148,9 +157,8 @@ escolha = st.slider(label = 'Selecione a quantidade de informações',
 
 st.plotly_chart(grafico_atualizado(escolha))
 
-
 #gráfico cnae
-st.subheader('Distribuição de CNAE: ')
+st.subheader('Distribuição de CNAE')
 def grafico_atualizado2(n):
     df_cnae = df2['CNAE2.0 Empregador.1'].value_counts().reset_index().head(n)
     fig = px.bar(df_cnae, 
@@ -170,7 +178,7 @@ st.plotly_chart(grafico_atualizado2(escolha2))
 
 
 #gráfico cid
-st.subheader('Distribuição de Ferimentos: ')
+st.subheader('Tipos de Ferimentos')
 
 def grafico_atualizado3(n):
     df_cid = df2['CID - Ferimento'].value_counts().reset_index().head(n)
@@ -187,4 +195,31 @@ escolha3 = st.slider(label = 'Selecione a quantidade de informações',
 st.plotly_chart(grafico_atualizado3(escolha3))
 
 
-##correlação
+#distribuição por ano
+st.subheader('Distribuição de Acidentes no Tempo')
+##dados
+df2['data'] = pd.to_datetime(df2['Data Acidente'])
+df2['mes'] = df2['data'].dt.month
+df2['ano'] = df2['data'].dt.year
+
+df_contagem = df2['ano'].value_counts().reset_index()
+df_contagem.columns = ['Ano', 'Contagem']
+
+##caixa de seleçao
+anos = sorted(df2['ano'].unique())
+opcoes = ['Geral'] + [str(ano) for ano in anos]
+escolha = st.selectbox("Selecione o ano", opcoes)
+
+if escolha == 'Geral':
+    dados_ano = df2['ano'].value_counts().sort_index()
+    fig = px.bar(x=dados_ano.index, y=dados_ano.values, labels={'x': 'Ano', 'y': 'Contagem'}, title='Distribuição por Ano')
+else:
+    ano_escolhido = int(escolha)
+    df_filtrado = df2[df2['ano'] == ano_escolhido]
+    dados_mes = df_filtrado['mes'].value_counts().sort_index()
+    fig = px.bar(x=dados_mes.index, y=dados_mes.values, labels={'x': 'Mês', 'y': 'Contagem'}, title=f'Distribuição por Mês em {ano_escolhido}')
+    fig.update_layout(xaxis=dict(tickmode='array', tickvals=list(range(1, 13)), ticktext=['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']))
+
+fig.update_traces(texttemplate='%{y}', textposition='inside')
+
+st.plotly_chart(fig)
