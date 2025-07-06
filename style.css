@@ -1,0 +1,73 @@
+/* style.css */
+
+/* --- Estilo Geral dos Botões da Aba (Aplicação Padrão) --- */
+/* Este estilo se aplica a TODAS as abas EXTERNAS por padrão. */
+/* Não inclui o ícone ou o padding extra para ele. */
+.stTabs [data-baseweb="tab-list"] button {
+    background-color: #f0f2f6; /* Cor de fundo padrão */
+    color: #495057;           /* Cor do texto padrão */
+    border-radius: 5px 5px 0 0; /* Bordas arredondadas no topo */
+    margin-right: 5px;        /* Espaçamento entre as abas */
+    padding: 10px 20px;       /* Padding padrão, sem espaço para ícone */
+    font-weight: bold;        /* Negrito para o texto */
+    font-size: 16px;          /* Tamanho da fonte */
+    transition: all 0.3s ease-in-out; /* Transição suave para efeitos de hover/ativo */
+}
+
+/* --- Estilo para Abas ANINHADAS (Internas) com Ícones --- */
+/* Este é o seletor CRUCIAL: */
+/* Ele mira nos botões de aba que estão dentro de um painel de aba. */
+.stTabs [data-baseweb="tab-panel"] .stTabs [data-baseweb="tab-list"] button {
+    /* Estilo base para as abas internas - agora com espaço para o ícone */
+    padding: 10px 20px 10px 45px; /* Ajusta o padding para dar espaço ao ícone */
+    background-size: 25px;    /* Tamanho do ícone */
+    background-repeat: no-repeat; /* Garante que o ícone não se repita */
+    background-position: 10px center; /* Posição do ícone (10px da esquerda, centralizado verticalmente) */
+}
+
+/* Ícones para as Abas de GRÁFICOS (internas) */
+/* Usa :nth-of-type() dentro do seletor específico para abas aninhadas */
+
+/* Ícone para a aba "Gráfico 1" */
+.stTabs [data-baseweb="tab-panel"] .stTabs [data-baseweb="tab-list"] button:nth-of-type(1) {
+    background-image: url("https://img.icons8.com/ios-filled/50/000000/line-chart.png"); /* Exemplo de ícone de linha */
+}
+
+/* Ícone para a aba "Gráfico 2" */
+.stTabs [data-baseweb="tab-panel"] .stTabs [data-baseweb="tab-list"] button:nth-of-type(2) {
+    background-image: url("https://img.icons8.com/ios-filled/50/000000/pie-chart.png"); /* Exemplo de ícone de pizza */
+}
+
+/* Ícone para a aba "Gráfico 3" (se houver) */
+.stTabs [data-baseweb="tab-panel"] .stTabs [data-baseweb="tab-list"] button:nth-of-type(3) {
+    background-image: url("https://img.icons8.com/ios-filled/50/000000/bar-chart.png"); /* Exemplo de ícone de barra */
+}
+
+/* Ícone para a aba "Gráfico 4" (se houver) */
+.stTabs [data-baseweb="tab-panel"] .stTabs [data-baseweb="tab-list"] button:nth-of-type(4) {
+    background-image: url("https://img.icons8.com/ios-filled/50/000000/bar-chart.png"); /* Exemplo de ícone de barra */
+}
+
+
+/* --- Estilo da Aba Ativa (Geral para ambas as camadas) --- */
+.stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
+    background-color: #007bff;     /* Cor de fundo da aba ativa */
+    color: white;                  /* Cor do texto da aba ativa */
+    border-bottom: 3px solid #0056b3; /* Borda inferior destacada */
+}
+
+/* --- Efeito Hover nas Abas Inativas (Geral para ambas as camadas) --- */
+.stTabs [data-baseweb="tab-list"] button:hover {
+    background-color: #e2e6ea; /* Cor de fundo mais clara ao passar o mouse */
+    color: #212529;            /* Cor do texto mais escura ao passar o mouse */
+}
+
+/* --- Estilo do Conteúdo das Abas (Geral para ambas as camadas) --- */
+.stTabs [data-baseweb="tab-panel"] {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    background-color: #ffffff;
+}
+
