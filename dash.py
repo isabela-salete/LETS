@@ -17,6 +17,19 @@ def slugify(text):
     import re
     return re.sub(r'\W+', '_', text.lower())
 
+def load_css(file_name):
+    try:
+        with open(file_name, encoding='utf-8') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    except FileNotFoundError:
+        st.error(f"Erro: O arquivo CSS '{file_name}' não foi encontrado. Verifique o caminho.")
+    except UnicodeDecodeError as e:
+        st.error(f"Erro de decodificação no arquivo CSS '{file_name}': {e}. Tente salvar o arquivo CSS como UTF-8.")
+    except Exception as e:
+        st.error(f"Um erro inesperado ocorreu ao carregar o CSS: {e}")
+
+load_css("style.css")
+
 # Dataset de exemplo (substitua com seu real)
 df = pd.DataFrame({
     "Município": ["Rio de Janeiro", "Rio de Janeiro", "São Paulo", "São Paulo"],
@@ -211,6 +224,7 @@ for i, municipio in enumerate(municipios):
                         st.plotly_chart(fig, use_container_width=True, key=f"{nome_grafico}_{municipio}")
                     elif nome_grafico == "CNAE":
                         # Exemplo de gráfico CNAE (usando a coluna 'CNAE2.0 Empregador.1')
+                        st.subheader("Distribuição de CNAE")
                         df_cnae = df_municipio2['CNAE2.0 Empregador.1'].value_counts().reset_index()
                         df_cnae.columns = ['CNAE2.0 Empregador.1', 'count']  # Renomeando para facilitar no gráfico
 
@@ -219,8 +233,7 @@ for i, municipio in enumerate(municipios):
                                          x='CNAE2.0 Empregador.1', 
                                          y='count', 
                                          color='CNAE2.0 Empregador.1', 
-                                         log_y=True, 
-                                         title=f"Distribuição de CNAE - {municipio}")
+                                         log_y=True)
                             return fig
 
                         # Usando o slider para escolher quantas categorias exibir
