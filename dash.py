@@ -30,6 +30,13 @@ def load_css(file_name):
 
 load_css("style.css")
 
+df = pd.DataFrame({
+    "Município": ["Rio de Janeiro", "Rio de Janeiro", "São Paulo", "São Paulo"],
+    "Ano": [2020, 2021, 2020, 2021],
+    "Valor": [100, 120, 200, 210],
+    "Nota IDEB": [5.1, 5.4, 6.0, 6.2]
+})
+
 # Carregar o segundo dataset
 df2 = pd.read_csv('dataset_limpo2.csv')
 df2.drop(['Unnamed: 0'], axis=1, inplace=True)
@@ -319,3 +326,4 @@ for i, municipio in enumerate(municipios):
                         st.plotly_chart(fig33, use_container_width=True, key=f"{nome_grafico}_{municipio}")
                 else:
                     st.write("Sem dados para exibir.")
+
