@@ -11,7 +11,8 @@ st.set_page_config(layout='wide')
 st.image('logo-fat.png', width= 500 )
 
 st.title('Observatório de Engenharia do Trabalho e Sustentabilidade')
-st.subheader('Análise exploratória de dados relacionados a segurança do trabalho na Região das Agulhas Negras')
+st.subheader('Análise exploratória de dados relacionados a segurança do trabalho na Região do Médio Vale Paraíba')
+
 
 def slugify(text):
     import re
@@ -29,13 +30,6 @@ def load_css(file_name):
         st.error(f"Um erro inesperado ocorreu ao carregar o CSS: {e}")
 
 load_css("style.css")
-
-df = pd.DataFrame({
-    "Município": ["Rio de Janeiro", "Rio de Janeiro", "São Paulo", "São Paulo"],
-    "Ano": [2020, 2021, 2020, 2021],
-    "Valor": [100, 120, 200, 210],
-    "Nota IDEB": [5.1, 5.4, 6.0, 6.2]
-})
 
 # Carregar o segundo dataset
 df2 = pd.read_csv('dataset_limpo2.csv')
@@ -90,7 +84,6 @@ for i, municipio in enumerate(municipios):
         
 
         if municipio == "Geral":
-            df_municipio = df.copy()
             df_municipio2 = df2.copy()
             df_municipio_mapa = df_semacento.copy()
             st.write('A Região do Vale do Paraíba é uma importante faixa territorial localizada entre os estados do Rio de Janeiro, São Paulo e Minas Gerais, tendo o rio Paraíba do Sul como elemento central que conecta seus diversos municípios. Historicamente marcada pelo ciclo do café no século XIX, a região preserva traços coloniais e um rico patrimônio cultural, além de desenvolver-se fortemente ao longo das principais rotas de circulação do Sudeste brasileiro, como a Via Dutra (BR-116).No aspecto econômico, o Vale do Paraíba se destaca por sua diversidade produtiva, que vai desde a agricultura familiar e o turismo rural até polos industriais de grande porte, com forte presença da indústria automobilística, siderúrgica e de tecnologia. Cidades como Volta Redonda, Resende, São José dos Campos e Taubaté são exemplos de centros urbanos com infraestrutura consolidada e papel estratégico no desenvolvimento regional. A região também é conhecida pela sua paisagem montanhosa, áreas de proteção ambiental e por abrigar unidades de conservação como o Parque Nacional de Itatiaia. O turismo ecológico, religioso e histórico tem crescido como atividade complementar à economia.Socialmente, o Vale do Paraíba apresenta bons índices de escolarização e acesso a serviços urbanos, mas ainda enfrenta desafios relacionados à mobilidade, desigualdade social e crescimento urbano desordenado em algumas áreas. Iniciativas intermunicipais e consórcios regionais vêm sendo desenvolvidos para integrar políticas públicas e impulsionar o desenvolvimento sustentável e equilibrado da região.')
@@ -137,7 +130,6 @@ for i, municipio in enumerate(municipios):
             col2.plotly_chart(fig2222)
 
         else:
-            df_municipio = df[df["Município"] == municipio]
             nome_sem_acento = municipios_sem_acento[municipio]
             df_municipio2 = df2[df2["Município Empregador"] == nome_sem_acento]
             df_municipio_mapa = df_semacento[df_semacento["Município Empregador"] == nome_sem_acento]
@@ -184,7 +176,6 @@ for i, municipio in enumerate(municipios):
             pass
         
         # Filtra o DataFrame para o município selecionado
-        df_municipio = df[df["Município"] == municipio]
         df_municipio2 = df2[df2["Município Empregador"] == municipio]
         
         # Abas internas para os gráficos
@@ -326,4 +317,3 @@ for i, municipio in enumerate(municipios):
                         st.plotly_chart(fig33, use_container_width=True, key=f"{nome_grafico}_{municipio}")
                 else:
                     st.write("Sem dados para exibir.")
-
