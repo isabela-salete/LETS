@@ -171,6 +171,7 @@ for i, municipio in enumerate(municipios):
             fig.update_layout(width=430, height=500, title='Mapa da Região')
             col8.plotly_chart(fig, use_container_width=True, key=f"mapa_{municipio}")
             col7.write(descricoes_municipios.get(municipio, "Descrição não disponível."))
+            st.write('Fonte: IBGE')
 
         else:
             pass
@@ -317,3 +318,4 @@ for i, municipio in enumerate(municipios):
                         st.plotly_chart(fig33, use_container_width=True, key=f"{nome_grafico}_{municipio}")
                 else:
                     st.write("Sem dados para exibir.")
+
