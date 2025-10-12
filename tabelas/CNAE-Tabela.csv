@@ -1,0 +1,674 @@
+CNAE,DESCRIÇÃO,SEÇÃO,DIVISÃO,GRUPO
+111,Cultivo de cereais,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras temporárias
+112,Cultivo de algodão herbáceo e de outras fibras de lavoura temporária,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras temporárias
+113,Cultivo de cana-de-açúcar,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras temporárias
+114,Cultivo de fumo,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras temporárias
+115,Cultivo de soja,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras temporárias
+116,"Cultivo de oleaginosas de lavoura temporária, exceto soja","AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras temporárias
+119,Cultivo de plantas de lavoura temporária não especificadas anteriormente,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras temporárias
+121,Horticultura,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Horticultura e floricultura
+122,Cultivo de flores e plantas ornamentais,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Horticultura e floricultura
+131,Cultivo de laranja,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras permanentes
+132,Cultivo de uva,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras permanentes
+133,"Cultivo de frutas de lavoura permanente, exceto laranja e uva","AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras permanentes
+134,Cultivo de café,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras permanentes
+135,Cultivo de cacau,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras permanentes
+139,Cultivo de plantas de lavoura permanente não especificadas anteriormente,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de lavouras permanentes
+141,Produção de sementes certificadas,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de sementes e mudas certificadas
+142,"Produção de mudas e outras formas de propagação vegetal, certificadas","AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Produção de sementes e mudas certificadas
+151,Criação de bovinos,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Pecuária
+152,Criação de outros animais de grande porte,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Pecuária
+153,Criação de caprinos e ovinos,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Pecuária
+154,Criação de suínos,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Pecuária
+155,Criação de aves,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Pecuária
+159,Criação de animais não especificados anteriormente,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Pecuária
+161,Atividades de apoio à agricultura,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Atividades de apoio à agricultura e à pecuária; atividades de pós-colheita
+162,Atividades de apoio à pecuária,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Atividades de apoio à agricultura e à pecuária; atividades de pós-colheita
+163,Atividades de pós-colheita,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Atividades de apoio à agricultura e à pecuária; atividades de pós-colheita
+170,Caça e serviços relacionados,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA","AGRICULTURA, PECUÁRIA E SERVIÇOS RELACIONADOS",Caça e serviços relacionados
+210,Produção florestal - florestas plantadas,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA",PRODUÇÃO FLORESTAL,Produção florestal - florestas plantadas
+220,Produção florestal - florestas nativas,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA",PRODUÇÃO FLORESTAL,Produção florestal - florestas nativas
+230,Atividades de apoio à produção florestal,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA",PRODUÇÃO FLORESTAL,Atividades de apoio à produção florestal
+311,Pesca em água salgada,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA",PESCA E AQÜICULTURA,Pesca
+312,Pesca em água doce,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA",PESCA E AQÜICULTURA,Pesca
+321,Aqüicultura em água salgada e salobra,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA",PESCA E AQÜICULTURA,Aqüicultura
+322,Aqüicultura em água doce,"AGRICULTURA, PECUÁRIA, PRODUÇÃO FLORESTAL, PESCA E AQÜICULTURA",PESCA E AQÜICULTURA,Aqüicultura
+500,Extração de carvão mineral,INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE CARVÃO MINERAL,Extração de carvão mineral
+600,Extração de petróleo e gás natural,INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE PETRÓLEO E GÁS NATURAL,Extração de petróleo e gás natural
+710,Extração de minério de ferro,INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE MINERAIS METÁLICOS,Extração de minério de ferro
+721,Extração de minério de alumínio,INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE MINERAIS METÁLICOS,Extração de minerais metálicos não-ferrosos
+722,Extração de minério de estanho,INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE MINERAIS METÁLICOS,Extração de minerais metálicos não-ferrosos
+723,Extração de minério de manganês,INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE MINERAIS METÁLICOS,Extração de minerais metálicos não-ferrosos
+724,Extração de minério de metais preciosos,INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE MINERAIS METÁLICOS,Extração de minerais metálicos não-ferrosos
+725,Extração de minerais radioativos,INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE MINERAIS METÁLICOS,Extração de minerais metálicos não-ferrosos
+729,Extração de minerais metálicos não-ferrosos não especificados anteriormente,INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE MINERAIS METÁLICOS,Extração de minerais metálicos não-ferrosos
+810,"Extração de pedra, areia e argila",INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE MINERAIS NÃO-METÁLICOS,"Extração de pedra, areia e argila"
+891,"Extração de minerais para fabricação de adubos, fertilizantes e outros produtos químicos",INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE MINERAIS NÃO-METÁLICOS,Extração de outros minerais não-metálicos
+892,Extração e refino de sal marinho e sal-gema,INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE MINERAIS NÃO-METÁLICOS,Extração de outros minerais não-metálicos
+893,Extração de gemas (pedras preciosas e semipreciosas),INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE MINERAIS NÃO-METÁLICOS,Extração de outros minerais não-metálicos
+899,Extração de minerais não-metálicos não especificados anteriormente,INDÚSTRIAS EXTRATIVAS,EXTRAÇÃO DE MINERAIS NÃO-METÁLICOS,Extração de outros minerais não-metálicos
+910,Atividades de apoio à extração de petróleo e gás natural,INDÚSTRIAS EXTRATIVAS,ATIVIDADES DE APOIO À EXTRAÇÃO DE MINERAIS,Atividades de apoio à extração de petróleo e gás natural
+990,"Atividades de apoio à extração de minerais, exceto petróleo e gás natural",INDÚSTRIAS EXTRATIVAS,ATIVIDADES DE APOIO À EXTRAÇÃO DE MINERAIS,"Atividades de apoio à extração de minerais, exceto petróleo e gás natural"
+1011,"Abate de reses, exceto suínos",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Abate e fabricação de produtos de carne
+1012,"Abate de suínos, aves e outros pequenos animais",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Abate e fabricação de produtos de carne
+1013,Fabricação de produtos de carne,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Abate e fabricação de produtos de carne
+1020,Preservação do pescado e fabricação de produtos do pescado,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Preservação do pescado e fabricação de produtos do pescado
+1031,Fabricação de conservas de frutas,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,"Fabricação de conservas de frutas, legumes e outros vegetais"
+1032,Fabricação de conservas de legumes e outros vegetais,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,"Fabricação de conservas de frutas, legumes e outros vegetais"
+1033,"Fabricação de sucos de frutas, hortaliças e legumes",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,"Fabricação de conservas de frutas, legumes e outros vegetais"
+1041,"Fabricação de óleos vegetais em bruto, exceto óleo de milho",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Fabricação de óleos e gorduras vegetais e animais
+1042,"Fabricação de óleos vegetais refinados, exceto óleo de milho",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Fabricação de óleos e gorduras vegetais e animais
+1043,Fabricação de margarina e outras gorduras vegetais e de óleos não-comestíveis de animais,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Fabricação de óleos e gorduras vegetais e animais
+1051,Preparação do leite,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Laticínios
+1052,Fabricação de laticínios,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Laticínios
+1053,Fabricação de sorvetes e outros gelados comestíveis,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Laticínios
+1061,Beneficiamento de arroz e fabricação de produtos do arroz,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,"Moagem, fabricação de produtos amiláceos e de alimentos para animais"
+1062,Moagem de trigo e fabricação de derivados,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,"Moagem, fabricação de produtos amiláceos e de alimentos para animais"
+1063,Fabricação de farinha de mandioca e derivados,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,"Moagem, fabricação de produtos amiláceos e de alimentos para animais"
+1064,"Fabricação de farinha de milho e derivados, exceto óleos de milho",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,"Moagem, fabricação de produtos amiláceos e de alimentos para animais"
+1065,Fabricação de amidos e féculas de vegetais e de óleos de milho,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,"Moagem, fabricação de produtos amiláceos e de alimentos para animais"
+1066,Fabricação de alimentos para animais,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,"Moagem, fabricação de produtos amiláceos e de alimentos para animais"
+1069,Moagem e fabricação de produtos de origem vegetal não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,"Moagem, fabricação de produtos amiláceos e de alimentos para animais"
+1071,Fabricação de açúcar em bruto,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Fabricação e refino de açúcar
+1072,Fabricação de açúcar refinado,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Fabricação e refino de açúcar
+1081,Torrefação e moagem de café,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Torrefação e moagem de café
+1082,Fabricação de produtos à base de café,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Torrefação e moagem de café
+1091,Fabricação de produtos de panificação,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Fabricação de outros produtos alimentícios
+1092,Fabricação de biscoitos e bolachas,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Fabricação de outros produtos alimentícios
+1093,"Fabricação de produtos derivados do cacau, de chocolates e confeitos",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Fabricação de outros produtos alimentícios
+1094,Fabricação de massas alimentícias,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Fabricação de outros produtos alimentícios
+1095,"Fabricação de especiarias, molhos, temperos e condimentos",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Fabricação de outros produtos alimentícios
+1096,Fabricação de alimentos e pratos prontos,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Fabricação de outros produtos alimentícios
+1099,Fabricação de produtos alimentícios não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS ALIMENTÍCIOS,Fabricação de outros produtos alimentícios
+1111,Fabricação de aguardentes e outras bebidas destiladas,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE BEBIDAS,Fabricação de bebidas alcoólicas
+1112,Fabricação de vinho,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE BEBIDAS,Fabricação de bebidas alcoólicas
+1113,"Fabricação de malte, cervejas e chopes",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE BEBIDAS,Fabricação de bebidas alcoólicas
+1121,Fabricação de águas envasadas,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE BEBIDAS,Fabricação de bebidas não-alcoólicas
+1122,Fabricação de refrigerantes e de outras bebidas não-alcoólicas,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE BEBIDAS,Fabricação de bebidas não-alcoólicas
+1210,Processamento industrial do fumo,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DO FUMO,Processamento industrial do fumo
+1220,Fabricação de produtos do fumo,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DO FUMO,Fabricação de produtos do fumo
+1311,Preparação e fiação de fibras de algodão,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,Preparação e fiação de fibras têxteis
+1312,"Preparação e fiação de fibras têxteis naturais, exceto algodão",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,Preparação e fiação de fibras têxteis
+1313,Fiação de fibras artificiais e sintéticas,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,Preparação e fiação de fibras têxteis
+1314,Fabricação de linhas para costurar e bordar,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,Preparação e fiação de fibras têxteis
+1321,Tecelagem de fios de algodão,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,"Tecelagem, exceto malha"
+1322,"Tecelagem de fios de fibras têxteis naturais, exceto algodão",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,"Tecelagem, exceto malha"
+1323,Tecelagem de fios de fibras artificiais e sintéticas,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,"Tecelagem, exceto malha"
+1330,Fabricação de tecidos de malha,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,Fabricação de tecidos de malha
+1340,"Acabamentos em fios, tecidos e artefatos têxteis",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,"Acabamentos em fios, tecidos e artefatos têxteis"
+1351,Fabricação de artefatos têxteis para uso doméstico,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,"Fabricação de artefatos têxteis, exceto vestuário"
+1352,Fabricação de artefatos de tapeçaria,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,"Fabricação de artefatos têxteis, exceto vestuário"
+1353,Fabricação de artefatos de cordoaria,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,"Fabricação de artefatos têxteis, exceto vestuário"
+1354,"Fabricação de tecidos especiais, inclusive artefatos",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,"Fabricação de artefatos têxteis, exceto vestuário"
+1359,Fabricação de outros produtos têxteis não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS TÊXTEIS,"Fabricação de artefatos têxteis, exceto vestuário"
+1411,Confecção de roupas íntimas,INDÚSTRIAS DE TRANSFORMAÇÃO,CONFECÇÃO DE ARTIGOS DO VESTUÁRIO E ACESSÓRIOS,Confecção de artigos do vestuário e acessórios
+1412,"Confecção de peças do vestuário, exceto roupas íntimas",INDÚSTRIAS DE TRANSFORMAÇÃO,CONFECÇÃO DE ARTIGOS DO VESTUÁRIO E ACESSÓRIOS,Confecção de artigos do vestuário e acessórios
+1413,Confecção de roupas profissionais,INDÚSTRIAS DE TRANSFORMAÇÃO,CONFECÇÃO DE ARTIGOS DO VESTUÁRIO E ACESSÓRIOS,Confecção de artigos do vestuário e acessórios
+1414,"Fabricação de acessórios do vestuário, exceto para segurança e proteção",INDÚSTRIAS DE TRANSFORMAÇÃO,CONFECÇÃO DE ARTIGOS DO VESTUÁRIO E ACESSÓRIOS,Confecção de artigos do vestuário e acessórios
+1421,Fabricação de meias,INDÚSTRIAS DE TRANSFORMAÇÃO,CONFECÇÃO DE ARTIGOS DO VESTUÁRIO E ACESSÓRIOS,Fabricação de artigos de malharia e tricotagem
+1422,"Fabricação de artigos do vestuário, produzidos em malharias e tricotagens, exceto meias",INDÚSTRIAS DE TRANSFORMAÇÃO,CONFECÇÃO DE ARTIGOS DO VESTUÁRIO E ACESSÓRIOS,Fabricação de artigos de malharia e tricotagem
+1510,Curtimento e outras preparações de couro,INDÚSTRIAS DE TRANSFORMAÇÃO,"PREPARAÇÃO DE COUROS E FABRICAÇÃO DE ARTEFATOS DE COURO, ARTIGOS PARA VIAGEM E CALÇADOS",Curtimento e outras preparações de couro
+1521,"Fabricação de artigos para viagem, bolsas e semelhantes de qualquer material",INDÚSTRIAS DE TRANSFORMAÇÃO,"PREPARAÇÃO DE COUROS E FABRICAÇÃO DE ARTEFATOS DE COURO, ARTIGOS PARA VIAGEM E CALÇADOS",Fabricação de artigos para viagem e de artefatos diversos de couro
+1529,Fabricação de artefatos de couro não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,"PREPARAÇÃO DE COUROS E FABRICAÇÃO DE ARTEFATOS DE COURO, ARTIGOS PARA VIAGEM E CALÇADOS",Fabricação de artigos para viagem e de artefatos diversos de couro
+1531,Fabricação de calçados de couro,INDÚSTRIAS DE TRANSFORMAÇÃO,"PREPARAÇÃO DE COUROS E FABRICAÇÃO DE ARTEFATOS DE COURO, ARTIGOS PARA VIAGEM E CALÇADOS",Fabricação de calçados
+1532,Fabricação de tênis de qualquer material,INDÚSTRIAS DE TRANSFORMAÇÃO,"PREPARAÇÃO DE COUROS E FABRICAÇÃO DE ARTEFATOS DE COURO, ARTIGOS PARA VIAGEM E CALÇADOS",Fabricação de calçados
+1533,Fabricação de calçados de material sintético,INDÚSTRIAS DE TRANSFORMAÇÃO,"PREPARAÇÃO DE COUROS E FABRICAÇÃO DE ARTEFATOS DE COURO, ARTIGOS PARA VIAGEM E CALÇADOS",Fabricação de calçados
+1539,Fabricação de calçados de materiais não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,"PREPARAÇÃO DE COUROS E FABRICAÇÃO DE ARTEFATOS DE COURO, ARTIGOS PARA VIAGEM E CALÇADOS",Fabricação de calçados
+1540,"Fabricação de partes para calçados, de qualquer material",INDÚSTRIAS DE TRANSFORMAÇÃO,"PREPARAÇÃO DE COUROS E FABRICAÇÃO DE ARTEFATOS DE COURO, ARTIGOS PARA VIAGEM E CALÇADOS","Fabricação de partes para calçados, de qualquer material"
+1610,Desdobramento de madeira,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MADEIRA,Desdobramento de madeira
+1621,"Fabricação de madeira laminada e de chapas de madeira compensada, prensada e aglomerada",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MADEIRA,"Fabricação de produtos de madeira, cortiça e material trançado, exceto móveis"
+1622,Fabricação de estruturas de madeira e de artigos de carpintaria para construção,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MADEIRA,"Fabricação de produtos de madeira, cortiça e material trançado, exceto móveis"
+1623,Fabricação de artefatos de tanoaria e de embalagens de madeira,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MADEIRA,"Fabricação de produtos de madeira, cortiça e material trançado, exceto móveis"
+1629,"Fabricação de artefatos de madeira, palha, cortiça, vime e material trançado não especificados anteriormente, exceto móveis",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MADEIRA,"Fabricação de produtos de madeira, cortiça e material trançado, exceto móveis"
+1710,Fabricação de celulose e outras pastas para a fabricação de papel,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE CELULOSE, PAPEL E PRODUTOS DE PAPEL",Fabricação de celulose e outras pastas para a fabricação de papel
+1721,Fabricação de papel,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE CELULOSE, PAPEL E PRODUTOS DE PAPEL","Fabricação de papel, cartolina e papel-cartão"
+1722,Fabricação de cartolina e papel-cartão,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE CELULOSE, PAPEL E PRODUTOS DE PAPEL","Fabricação de papel, cartolina e papel-cartão"
+1731,Fabricação de embalagens de papel,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE CELULOSE, PAPEL E PRODUTOS DE PAPEL","Fabricação de embalagens de papel, cartolina, papel-cartão e papelão ondulado"
+1732,Fabricação de embalagens de cartolina e papel-cartão,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE CELULOSE, PAPEL E PRODUTOS DE PAPEL","Fabricação de embalagens de papel, cartolina, papel-cartão e papelão ondulado"
+1733,Fabricação de chapas e de embalagens de papelão ondulado,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE CELULOSE, PAPEL E PRODUTOS DE PAPEL","Fabricação de embalagens de papel, cartolina, papel-cartão e papelão ondulado"
+1741,"Fabricação de produtos de papel, cartolina, papel-cartão e papelão ondulado para uso comercial e de escritório",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE CELULOSE, PAPEL E PRODUTOS DE PAPEL","Fabricação de produtos diversos de papel, cartolina, papel-cartão e papelão ondulado"
+1742,Fabricação de produtos de papel para usos doméstico e higiênico-sanitário,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE CELULOSE, PAPEL E PRODUTOS DE PAPEL","Fabricação de produtos diversos de papel, cartolina, papel-cartão e papelão ondulado"
+1749,"Fabricação de produtos de pastas celulósicas, papel, cartolina, papel-cartão e papelão ondulado não especificados anteriormente",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE CELULOSE, PAPEL E PRODUTOS DE PAPEL","Fabricação de produtos diversos de papel, cartolina, papel-cartão e papelão ondulado"
+1811,"Impressão de jornais, livros, revistas e outras publicações periódicas",INDÚSTRIAS DE TRANSFORMAÇÃO,IMPRESSÃO E REPRODUÇÃO DE GRAVAÇÕES,Atividade de impressão
+1812,Impressão de material de segurança,INDÚSTRIAS DE TRANSFORMAÇÃO,IMPRESSÃO E REPRODUÇÃO DE GRAVAÇÕES,Atividade de impressão
+1813,Impressão de materiais para outros usos,INDÚSTRIAS DE TRANSFORMAÇÃO,IMPRESSÃO E REPRODUÇÃO DE GRAVAÇÕES,Atividade de impressão
+1821,Serviços de pré-impressão,INDÚSTRIAS DE TRANSFORMAÇÃO,IMPRESSÃO E REPRODUÇÃO DE GRAVAÇÕES,Serviços de pré-impressão e acabamentos gráficos
+1822,Serviços de acabamentos gráficos,INDÚSTRIAS DE TRANSFORMAÇÃO,IMPRESSÃO E REPRODUÇÃO DE GRAVAÇÕES,Serviços de pré-impressão e acabamentos gráficos
+1830,Reprodução de materiais gravados em qualquer suporte,INDÚSTRIAS DE TRANSFORMAÇÃO,IMPRESSÃO E REPRODUÇÃO DE GRAVAÇÕES,Reprodução de materiais gravados em qualquer suporte
+1910,Coquerias,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Coquerias
+1921,Fabricação de produtos do refino de petróleo,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+1922,"Fabricação de produtos derivados do petróleo, exceto produtos do refino",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+1931,Fabricação de álcool,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+1932,"Fabricação de biocombustíveis, exceto álcool",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2011,Fabricação de cloro e álcalis,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2012,Fabricação de intermediários para fertilizantes,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2013,Fabricação de adubos e fertilizantes,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2014,Fabricação de gases industriais,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2019,Fabricação de produtos químicos inorgânicos não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2021,Fabricação de produtos petroquímicos básicos,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2022,"Fabricação de intermediários para plastificantes, resinas e fibras",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2029,Fabricação de produtos químicos orgânicos não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2031,Fabricação de resinas termoplásticas,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2032,Fabricação de resinas termofixas,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2033,Fabricação de elastômeros,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2040,Fabricação de fibras artificiais e sintéticas,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2051,Fabricação de defensivos agrícolas,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2052,Fabricação de desinfestantes domissanitários,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos derivados do petróleo
+2061,Fabricação de sabões e detergentes sintéticos,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS","Fabricação de sabões, detergentes, produtos de limpeza, cosméticos, produtos de perfumaria e de higiene pessoal"
+2062,Fabricação de produtos de limpeza e polimento,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS","Fabricação de sabões, detergentes, produtos de limpeza, cosméticos, produtos de perfumaria e de higiene pessoal"
+2063,"Fabricação de cosméticos, produtos de perfumaria e de higiene pessoal",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS","Fabricação de sabões, detergentes, produtos de limpeza, cosméticos, produtos de perfumaria e de higiene pessoal"
+2071,"Fabricação de tintas, vernizes, esmaltes e lacas",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS","Fabricação de tintas, vernizes, esmaltes, lacas e produtos afins"
+2072,Fabricação de tintas de impressão,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS","Fabricação de tintas, vernizes, esmaltes, lacas e produtos afins"
+2073,"Fabricação de impermeabilizantes, solventes e produtos afins",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS","Fabricação de tintas, vernizes, esmaltes, lacas e produtos afins"
+2091,Fabricação de adesivos e selantes,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos e preparados químicos diversos
+2092,Fabricação de explosivos,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos e preparados químicos diversos
+2093,Fabricação de aditivos de uso industrial,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos e preparados químicos diversos
+2094,Fabricação de catalisadores,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos e preparados químicos diversos
+2099,Fabricação de produtos químicos não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE COQUE, DE PRODUTOS DERIVADOS DO PETRÓLEO E DE BIOCOMBUSTÍVEIS",Fabricação de produtos e preparados químicos diversos
+2110,Fabricação de produtos farmoquímicos,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS FARMOQUÍMICOS E FARMACÊUTICOS,Fabricação de produtos farmoquímicos
+2121,Fabricação de medicamentos para uso humano,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS FARMOQUÍMICOS E FARMACÊUTICOS,Fabricação de produtos farmacêuticos
+2122,Fabricação de medicamentos para uso veterinário,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS FARMOQUÍMICOS E FARMACÊUTICOS,Fabricação de produtos farmacêuticos
+2123,Fabricação de preparações farmacêuticas,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS FARMOQUÍMICOS E FARMACÊUTICOS,Fabricação de produtos farmacêuticos
+2211,Fabricação de pneumáticos e de câmaras-de-ar,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE BORRACHA E DE MATERIAL PLÁSTICO,Fabricação de produtos de borracha
+2212,Reforma de pneumáticos usados,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE BORRACHA E DE MATERIAL PLÁSTICO,Fabricação de produtos de borracha
+2219,Fabricação de artefatos de borracha não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE BORRACHA E DE MATERIAL PLÁSTICO,Fabricação de produtos de borracha
+2221,Fabricação de laminados planos e tubulares de material plástico,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE BORRACHA E DE MATERIAL PLÁSTICO,Fabricação de produtos de material plástico
+2222,Fabricação de embalagens de material plástico,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE BORRACHA E DE MATERIAL PLÁSTICO,Fabricação de produtos de material plástico
+2223,Fabricação de tubos e acessórios de material plástico para uso na construção,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE BORRACHA E DE MATERIAL PLÁSTICO,Fabricação de produtos de material plástico
+2229,Fabricação de artefatos de material plástico não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE BORRACHA E DE MATERIAL PLÁSTICO,Fabricação de produtos de material plástico
+2311,Fabricação de vidro plano e de segurança,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MINERAIS NÃO-METÁLICOS,Fabricação de vidro e de produtos do vidro
+2312,Fabricação de embalagens de vidro,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MINERAIS NÃO-METÁLICOS,Fabricação de vidro e de produtos do vidro
+2319,Fabricação de artigos de vidro,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MINERAIS NÃO-METÁLICOS,Fabricação de vidro e de produtos do vidro
+2320,Fabricação de cimento,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MINERAIS NÃO-METÁLICOS,Fabricação de cimento
+2330,"Fabricação de artefatos de concreto, cimento, fibrocimento, gesso e materiais semelhantes",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MINERAIS NÃO-METÁLICOS,"Fabricação de artefatos de concreto, cimento, fibrocimento, gesso e materiais semelhantes"
+2341,Fabricação de produtos cerâmicos refratários,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MINERAIS NÃO-METÁLICOS,Fabricação de produtos cerâmicos
+2342,Fabricação de produtos cerâmicos não-refratários para uso estrutural na construção,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MINERAIS NÃO-METÁLICOS,Fabricação de produtos cerâmicos
+2349,Fabricação de produtos cerâmicos não-refratários não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MINERAIS NÃO-METÁLICOS,Fabricação de produtos cerâmicos
+2391,Aparelhamento e outros trabalhos em pedras,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MINERAIS NÃO-METÁLICOS,Aparelhamento de pedras e fabricação de outros produtos de minerais não-metálicos
+2392,Fabricação de cal e gesso,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MINERAIS NÃO-METÁLICOS,Aparelhamento de pedras e fabricação de outros produtos de minerais não-metálicos
+2399,Fabricação de produtos de minerais não-metálicos não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DE MINERAIS NÃO-METÁLICOS,Aparelhamento de pedras e fabricação de outros produtos de minerais não-metálicos
+2411,Produção de ferro-gusa,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,Produção de ferro-gusa e de ferroligas
+2412,Produção de ferroligas,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,Produção de ferro-gusa e de ferroligas
+2421,Produção de semi-acabados de aço,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,Siderurgia
+2422,Produção de laminados planos de aço,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,Siderurgia
+2423,Produção de laminados longos de aço,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,Siderurgia
+2424,"Produção de relaminados, trefilados e perfilados de aço",INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,Siderurgia
+2431,Produção de tubos de aço com costura,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,"Produção de tubos de aço, exceto tubos sem costura"
+2439,Produção de outros tubos de ferro e aço,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,"Produção de tubos de aço, exceto tubos sem costura"
+2441,Metalurgia do alumínio e suas ligas,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,Metalurgia dos metais não-ferrosos
+2442,Metalurgia dos metais preciosos,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,Metalurgia dos metais não-ferrosos
+2443,Metalurgia do cobre,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,Metalurgia dos metais não-ferrosos
+2449,Metalurgia dos metais não-ferrosos e suas ligas não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,Metalurgia dos metais não-ferrosos
+2451,Fundição de ferro e aço,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,Fundição
+2452,Fundição de metais não-ferrosos e suas ligas,INDÚSTRIAS DE TRANSFORMAÇÃO,METALURGIA,Fundição
+2511,Fabricação de estruturas metálicas,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS",Fabricação de estruturas metálicas e obras de caldeiraria pesada
+2512,Fabricação de esquadrias de metal,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS",Fabricação de estruturas metálicas e obras de caldeiraria pesada
+2513,Fabricação de obras de caldeiraria pesada,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS",Fabricação de estruturas metálicas e obras de caldeiraria pesada
+2521,"Fabricação de tanques, reservatórios metálicos e caldeiras para aquecimento central",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS","Fabricação de tanques, reservatórios metálicos e caldeiras"
+2522,"Fabricação de caldeiras geradoras de vapor, exceto para aquecimento central e para veículos",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS","Fabricação de tanques, reservatórios metálicos e caldeiras"
+2531,Produção de forjados de aço e de metais não-ferrosos e suas ligas,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS","Forjaria, estamparia, metalurgia do pó e serviços de tratamento de metais"
+2532,Produção de artefatos estampados de metal; metalurgia do pó,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS","Forjaria, estamparia, metalurgia do pó e serviços de tratamento de metais"
+2539,"Serviços de usinagem, solda, tratamento e revestimento em metais",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS","Forjaria, estamparia, metalurgia do pó e serviços de tratamento de metais"
+2541,Fabricação de artigos de cutelaria,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS","Fabricação de artigos de cutelaria, de serralheria e ferramentas"
+2542,"Fabricação de artigos de serralheria, exceto esquadrias",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS","Fabricação de artigos de cutelaria, de serralheria e ferramentas"
+2543,Fabricação de ferramentas,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS","Fabricação de artigos de cutelaria, de serralheria e ferramentas"
+2550,"Fabricação de equipamento bélico pesado, armas de fogo e munições",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS","Fabricação de equipamento bélico pesado, armas de fogo e munições"
+2591,Fabricação de embalagens metálicas,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS",Fabricação de produtos de metal não especificados anteriormente
+2592,Fabricação de produtos de trefilados de metal,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS",Fabricação de produtos de metal não especificados anteriormente
+2593,Fabricação de artigos de metal para uso doméstico e pessoal,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS",Fabricação de produtos de metal não especificados anteriormente
+2599,Fabricação de produtos de metal não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE PRODUTOS DE METAL, EXCETO MÁQUINAS E EQUIPAMENTOS",Fabricação de produtos de metal não especificados anteriormente
+2610,Fabricação de componentes eletrônicos,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE EQUIPAMENTOS DE INFORMÁTICA, PRODUTOS ELETRÔNICOS E ÓPTICOS",Fabricação de componentes eletrônicos
+2621,Fabricação de equipamentos de informática,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE EQUIPAMENTOS DE INFORMÁTICA, PRODUTOS ELETRÔNICOS E ÓPTICOS",Fabricação de equipamentos de informática e periféricos
+2622,Fabricação de periféricos para equipamentos de informática,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE EQUIPAMENTOS DE INFORMÁTICA, PRODUTOS ELETRÔNICOS E ÓPTICOS",Fabricação de equipamentos de informática e periféricos
+2631,Fabricação de equipamentos transmissores de comunicação,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE EQUIPAMENTOS DE INFORMÁTICA, PRODUTOS ELETRÔNICOS E ÓPTICOS",Fabricação de equipamentos de comunicação
+2632,Fabricação de aparelhos telefônicos e de outros equipamentos de comunicação,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE EQUIPAMENTOS DE INFORMÁTICA, PRODUTOS ELETRÔNICOS E ÓPTICOS",Fabricação de equipamentos de comunicação
+2640,"Fabricação de aparelhos de recepção, reprodução, gravação e amplificação de áudio e vídeo",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE EQUIPAMENTOS DE INFORMÁTICA, PRODUTOS ELETRÔNICOS E ÓPTICOS","Fabricação de aparelhos de recepção, reprodução, gravação e amplificação de áudio e vídeo"
+2651,"Fabricação de aparelhos e equipamentos de medida, teste e controle",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE EQUIPAMENTOS DE INFORMÁTICA, PRODUTOS ELETRÔNICOS E ÓPTICOS","Fabricação de aparelhos e instrumentos de medida, teste e controle; cronômetros e relógios"
+2652,Fabricação de cronômetros e relógios,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE EQUIPAMENTOS DE INFORMÁTICA, PRODUTOS ELETRÔNICOS E ÓPTICOS","Fabricação de aparelhos e instrumentos de medida, teste e controle; cronômetros e relógios"
+2660,Fabricação de aparelhos eletromédicos e eletroterapêuticos e equipamentos de irradiação,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE EQUIPAMENTOS DE INFORMÁTICA, PRODUTOS ELETRÔNICOS E ÓPTICOS",Fabricação de aparelhos eletromédicos e eletroterapêuticos e equipamentos de irradiação
+2670,"Fabricação de equipamentos e instrumentos ópticos, fotográficos e cinematográficos",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE EQUIPAMENTOS DE INFORMÁTICA, PRODUTOS ELETRÔNICOS E ÓPTICOS","Fabricação de equipamentos e instrumentos ópticos, fotográficos e cinematográficos"
+2680,"Fabricação de mídias virgens, magnéticas e ópticas",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE EQUIPAMENTOS DE INFORMÁTICA, PRODUTOS ELETRÔNICOS E ÓPTICOS","Fabricação de mídias virgens, magnéticas e ópticas"
+2710,"Fabricação de geradores, transformadores e motores elétricos",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE MÁQUINAS, APARELHOS E MATERIAIS ELÉTRICOS","Fabricação de geradores, transformadores e motores elétricos"
+2721,"Fabricação de pilhas, baterias e acumuladores elétricos, exceto para veículos automotores",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE MÁQUINAS, APARELHOS E MATERIAIS ELÉTRICOS","Fabricação de pilhas, baterias e acumuladores elétricos"
+2722,Fabricação de baterias e acumuladores para veículos automotores,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE MÁQUINAS, APARELHOS E MATERIAIS ELÉTRICOS","Fabricação de pilhas, baterias e acumuladores elétricos"
+2731,Fabricação de aparelhos e equipamentos para distribuição e controle de energia elétrica,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE MÁQUINAS, APARELHOS E MATERIAIS ELÉTRICOS",Fabricação de equipamentos para distribuição e controle de energia elétrica
+2732,Fabricação de material elétrico para instalações em circuito de consumo,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE MÁQUINAS, APARELHOS E MATERIAIS ELÉTRICOS",Fabricação de equipamentos para distribuição e controle de energia elétrica
+2733,"Fabricação de fios, cabos e condutores elétricos isolados",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE MÁQUINAS, APARELHOS E MATERIAIS ELÉTRICOS",Fabricação de equipamentos para distribuição e controle de energia elétrica
+2740,Fabricação de lâmpadas e outros equipamentos de iluminação,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE MÁQUINAS, APARELHOS E MATERIAIS ELÉTRICOS",Fabricação de lâmpadas e outros equipamentos de iluminação
+2751,"Fabricação de fogões, refrigeradores e máquinas de lavar e secar para uso doméstico",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE MÁQUINAS, APARELHOS E MATERIAIS ELÉTRICOS",Fabricação de eletrodomésticos
+2759,Fabricação de aparelhos eletrodomésticos não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE MÁQUINAS, APARELHOS E MATERIAIS ELÉTRICOS",Fabricação de eletrodomésticos
+2790,Fabricação de equipamentos e aparelhos elétricos não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE MÁQUINAS, APARELHOS E MATERIAIS ELÉTRICOS",Fabricação de equipamentos e aparelhos elétricos não especificados anteriormente
+2811,"Fabricação de motores e turbinas, exceto para aviões e veículos rodoviários",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,"Fabricação de motores, bombas, compressores e equipamentos de transmissão"
+2812,"Fabricação de equipamentos hidráulicos e pneumáticos, exceto válvulas",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,"Fabricação de motores, bombas, compressores e equipamentos de transmissão"
+2813,"Fabricação de válvulas, registros e dispositivos semelhantes",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,"Fabricação de motores, bombas, compressores e equipamentos de transmissão"
+2814,Fabricação de compressores,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,"Fabricação de motores, bombas, compressores e equipamentos de transmissão"
+2815,Fabricação de equipamentos de transmissão para fins industriais,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,"Fabricação de motores, bombas, compressores e equipamentos de transmissão"
+2821,Fabricação de aparelhos e equipamentos para instalações térmicas,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso geral
+2822,"Fabricação de máquinas, equipamentos e aparelhos para transporte e elevação de cargas e pessoas",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso geral
+2823,Fabricação de máquinas e aparelhos de refrigeração e ventilação para uso industrial e comercial,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso geral
+2824,Fabricação de aparelhos e equipamentos de ar condicionado,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso geral
+2825,Fabricação de máquinas e equipamentos para saneamento básico e ambiental,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso geral
+2829,Fabricação de máquinas e equipamentos de uso geral não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso geral
+2831,Fabricação de tratores agrícolas,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de tratores e de máquinas e equipamentos para a agricultura e pecuária
+2832,Fabricação de equipamentos para irrigação agrícola,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de tratores e de máquinas e equipamentos para a agricultura e pecuária
+2833,"Fabricação de máquinas e equipamentos para a agricultura e pecuária, exceto para irrigação",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de tratores e de máquinas e equipamentos para a agricultura e pecuária
+2840,Fabricação de máquinas-ferramenta,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas-ferramenta
+2851,Fabricação de máquinas e equipamentos para a prospecção e extração de petróleo,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso na extração mineral e na construção
+2852,"Fabricação de outras máquinas e equipamentos para uso na extração mineral, exceto na extração de petróleo",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso na extração mineral e na construção
+2853,"Fabricação de tratores, exceto agrícolas",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso na extração mineral e na construção
+2854,"Fabricação de máquinas e equipamentos para terraplenagem, pavimentação e construção, exceto tratores",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso na extração mineral e na construção
+2861,"Fabricação de máquinas para a indústria metalúrgica, exceto máquinas-ferramenta",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso industrial específico
+2862,"Fabricação de máquinas e equipamentos para as indústrias de alimentos, bebidas e fumo",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso industrial específico
+2863,Fabricação de máquinas e equipamentos para a indústria têxtil,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso industrial específico
+2864,"Fabricação de máquinas e equipamentos para as indústrias do vestuário, do couro e de calçados",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso industrial específico
+2865,"Fabricação de máquinas e equipamentos para as indústrias de celulose, papel e papelão e artefatos",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso industrial específico
+2866,Fabricação de máquinas e equipamentos para a indústria do plástico,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso industrial específico
+2869,Fabricação de máquinas e equipamentos para uso industrial específico não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÁQUINAS E EQUIPAMENTOS,Fabricação de máquinas e equipamentos de uso industrial específico
+2910,"Fabricação de automóveis, camionetas e utilitários",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE VEÍCULOS AUTOMOTORES, REBOQUES E CARROCERIAS","Fabricação de automóveis, camionetas e utilitários"
+2920,Fabricação de caminhões e ônibus,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE VEÍCULOS AUTOMOTORES, REBOQUES E CARROCERIAS",Fabricação de caminhões e ônibus
+2930,"Fabricação de cabines, carrocerias e reboques para veículos automotores",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE VEÍCULOS AUTOMOTORES, REBOQUES E CARROCERIAS","Fabricação de cabines, carrocerias e reboques para veículos automotores"
+2941,Fabricação de peças e acessórios para o sistema motor de veículos automotores,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE VEÍCULOS AUTOMOTORES, REBOQUES E CARROCERIAS",Fabricação de peças e acessórios para veículos automotores
+2942,Fabricação de peças e acessórios para os sistemas de marcha e transmissão de veículos automotores,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE VEÍCULOS AUTOMOTORES, REBOQUES E CARROCERIAS",Fabricação de peças e acessórios para veículos automotores
+2943,Fabricação de peças e acessórios para o sistema de freios de veículos automotores,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE VEÍCULOS AUTOMOTORES, REBOQUES E CARROCERIAS",Fabricação de peças e acessórios para veículos automotores
+2944,Fabricação de peças e acessórios para o sistema de direção e suspensão de veículos automotores,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE VEÍCULOS AUTOMOTORES, REBOQUES E CARROCERIAS",Fabricação de peças e acessórios para veículos automotores
+2945,"Fabricação de material elétrico e eletrônico para veículos automotores, exceto baterias",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE VEÍCULOS AUTOMOTORES, REBOQUES E CARROCERIAS",Fabricação de peças e acessórios para veículos automotores
+2949,Fabricação de peças e acessórios para veículos automotores não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE VEÍCULOS AUTOMOTORES, REBOQUES E CARROCERIAS",Fabricação de peças e acessórios para veículos automotores
+2950,Recondicionamento e recuperação de motores para veículos automotores,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE VEÍCULOS AUTOMOTORES, REBOQUES E CARROCERIAS",Recondicionamento e recuperação de motores para veículos automotores
+3011,Construção de embarcações e estruturas flutuantes,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE OUTROS EQUIPAMENTOS DE TRANSPORTE, EXCETO VEÍCULOS AUTOMOTORES",Construção de embarcações
+3012,Construção de embarcações para esporte e lazer,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE OUTROS EQUIPAMENTOS DE TRANSPORTE, EXCETO VEÍCULOS AUTOMOTORES",Construção de embarcações
+3031,"Fabricação de locomotivas, vagões e outros materiais rodantes",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE OUTROS EQUIPAMENTOS DE TRANSPORTE, EXCETO VEÍCULOS AUTOMOTORES",Fabricação de veículos ferroviários
+3032,Fabricação de peças e acessórios para veículos ferroviários,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE OUTROS EQUIPAMENTOS DE TRANSPORTE, EXCETO VEÍCULOS AUTOMOTORES",Fabricação de veículos ferroviários
+3041,Fabricação de aeronaves,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE OUTROS EQUIPAMENTOS DE TRANSPORTE, EXCETO VEÍCULOS AUTOMOTORES",Fabricação de aeronaves
+3042,"Fabricação de turbinas, motores e outros componentes e peças para aeronaves",INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE OUTROS EQUIPAMENTOS DE TRANSPORTE, EXCETO VEÍCULOS AUTOMOTORES",Fabricação de aeronaves
+3050,Fabricação de veículos militares de combate,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE OUTROS EQUIPAMENTOS DE TRANSPORTE, EXCETO VEÍCULOS AUTOMOTORES",Fabricação de veículos militares de combate
+3091,Fabricação de motocicletas,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE OUTROS EQUIPAMENTOS DE TRANSPORTE, EXCETO VEÍCULOS AUTOMOTORES",Fabricação de equipamentos de transporte não especificados anteriormente
+3092,Fabricação de bicicletas e triciclos não-motorizados,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE OUTROS EQUIPAMENTOS DE TRANSPORTE, EXCETO VEÍCULOS AUTOMOTORES",Fabricação de equipamentos de transporte não especificados anteriormente
+3099,Fabricação de equipamentos de transporte não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,"FABRICAÇÃO DE OUTROS EQUIPAMENTOS DE TRANSPORTE, EXCETO VEÍCULOS AUTOMOTORES",Fabricação de equipamentos de transporte não especificados anteriormente
+3101,Fabricação de móveis com predominância de madeira,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÓVEIS,Fabricação de móveis
+3102,Fabricação de móveis com predominância de metal,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÓVEIS,Fabricação de móveis
+3103,"Fabricação de móveis de outros materiais, exceto madeira e metal",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÓVEIS,Fabricação de móveis
+3104,Fabricação de colchões,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE MÓVEIS,Fabricação de móveis
+3211,Lapidação de gemas e fabricação de artefatos de ourivesaria e joalheria,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DIVERSOS,"Fabricação de artigos de joalheria, bijuteria e semelhantes"
+3212,Fabricação de bijuterias e artefatos semelhantes,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DIVERSOS,"Fabricação de artigos de joalheria, bijuteria e semelhantes"
+3220,Fabricação de instrumentos musicais,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DIVERSOS,Fabricação de instrumentos musicais
+3230,Fabricação de artefatos para pesca e esporte,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DIVERSOS,Fabricação de artefatos para pesca e esporte
+3240,Fabricação de brinquedos e jogos recreativos,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DIVERSOS,Fabricação de brinquedos e jogos recreativos
+3250,Fabricação de instrumentos e materiais para uso médico e odontológico e de artigos ópticos,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DIVERSOS,Fabricação de instrumentos e materiais para uso médico e odontológico e de artigos ópticos
+3291,"Fabricação de escovas, pincéis e vassouras",INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DIVERSOS,Fabricação de produtos diversos
+3292,Fabricação de equipamentos e acessórios para segurança e proteção pessoal e profissional,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DIVERSOS,Fabricação de produtos diversos
+3299,Fabricação de produtos diversos não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,FABRICAÇÃO DE PRODUTOS DIVERSOS,Fabricação de produtos diversos
+3311,"Manutenção e reparação de tanques, reservatórios metálicos e caldeiras, exceto para veículos",INDÚSTRIAS DE TRANSFORMAÇÃO,"MANUTENÇÃO, REPARAÇÃO E INSTALAÇÃO DE MÁQUINAS E EQUIPAMENTOS",Manutenção e reparação de máquinas e equipamentos
+3312,Manutenção e reparação de equipamentos eletrônicos e ópticos,INDÚSTRIAS DE TRANSFORMAÇÃO,"MANUTENÇÃO, REPARAÇÃO E INSTALAÇÃO DE MÁQUINAS E EQUIPAMENTOS",Manutenção e reparação de máquinas e equipamentos
+3313,Manutenção e reparação de máquinas e equipamentos elétricos,INDÚSTRIAS DE TRANSFORMAÇÃO,"MANUTENÇÃO, REPARAÇÃO E INSTALAÇÃO DE MÁQUINAS E EQUIPAMENTOS",Manutenção e reparação de máquinas e equipamentos
+3314,Manutenção e reparação de máquinas e equipamentos da indústria mecânica,INDÚSTRIAS DE TRANSFORMAÇÃO,"MANUTENÇÃO, REPARAÇÃO E INSTALAÇÃO DE MÁQUINAS E EQUIPAMENTOS",Manutenção e reparação de máquinas e equipamentos
+3315,Manutenção e reparação de veículos ferroviários,INDÚSTRIAS DE TRANSFORMAÇÃO,"MANUTENÇÃO, REPARAÇÃO E INSTALAÇÃO DE MÁQUINAS E EQUIPAMENTOS",Manutenção e reparação de máquinas e equipamentos
+3316,Manutenção e reparação de aeronaves,INDÚSTRIAS DE TRANSFORMAÇÃO,"MANUTENÇÃO, REPARAÇÃO E INSTALAÇÃO DE MÁQUINAS E EQUIPAMENTOS",Manutenção e reparação de máquinas e equipamentos
+3317,Manutenção e reparação de embarcações,INDÚSTRIAS DE TRANSFORMAÇÃO,"MANUTENÇÃO, REPARAÇÃO E INSTALAÇÃO DE MÁQUINAS E EQUIPAMENTOS",Manutenção e reparação de máquinas e equipamentos
+3319,Manutenção e reparação de equipamentos e produtos não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,"MANUTENÇÃO, REPARAÇÃO E INSTALAÇÃO DE MÁQUINAS E EQUIPAMENTOS",Manutenção e reparação de máquinas e equipamentos
+3321,Instalação de máquinas e equipamentos industriais,INDÚSTRIAS DE TRANSFORMAÇÃO,"MANUTENÇÃO, REPARAÇÃO E INSTALAÇÃO DE MÁQUINAS E EQUIPAMENTOS",Instalação de máquinas e equipamentos
+3329,Instalação de equipamentos não especificados anteriormente,INDÚSTRIAS DE TRANSFORMAÇÃO,"MANUTENÇÃO, REPARAÇÃO E INSTALAÇÃO DE MÁQUINAS E EQUIPAMENTOS",Instalação de máquinas e equipamentos
+3511,Geração de energia elétrica,ELETRICIDADE E GÁS,"ELETRICIDADE, GÁS E OUTRAS UTILIDADES","Geração, transmissão e distribuição de energia elétrica"
+3512,Transmissão de energia elétrica,ELETRICIDADE E GÁS,"ELETRICIDADE, GÁS E OUTRAS UTILIDADES","Geração, transmissão e distribuição de energia elétrica"
+3513,Comércio atacadista de energia elétrica,ELETRICIDADE E GÁS,"ELETRICIDADE, GÁS E OUTRAS UTILIDADES","Geração, transmissão e distribuição de energia elétrica"
+3514,Distribuição de energia elétrica,ELETRICIDADE E GÁS,"ELETRICIDADE, GÁS E OUTRAS UTILIDADES","Geração, transmissão e distribuição de energia elétrica"
+3520,Produção de gás; processamento de gás natural; distribuição de combustíveis gasosos por redes urbanas,ELETRICIDADE E GÁS,"ELETRICIDADE, GÁS E OUTRAS UTILIDADES",Produção e distribuição de combustíveis gasosos por redes urbanas
+3530,"Produção e distribuição de vapor, água quente e ar condicionado",ELETRICIDADE E GÁS,"ELETRICIDADE, GÁS E OUTRAS UTILIDADES","Produção e distribuição de vapor, água quente e ar condicionado"
+3600,"Captação, tratamento e distribuição de água","ÁGUA, ESGOTO, ATIVIDADES DE GESTÃO DE RESÍDUOS E DESCONTAMINAÇÃO","CAPTAÇÃO, TRATAMENTO E DISTRIBUIÇÃO DE ÁGUA","Captação, tratamento e distribuição de água"
+3701,Gestão de redes de esgoto,"ÁGUA, ESGOTO, ATIVIDADES DE GESTÃO DE RESÍDUOS E DESCONTAMINAÇÃO",ESGOTO E ATIVIDADES RELACIONADAS,Esgoto e atividades relacionadas
+3702,"Atividades relacionadas a esgoto, exceto a gestão de redes","ÁGUA, ESGOTO, ATIVIDADES DE GESTÃO DE RESÍDUOS E DESCONTAMINAÇÃO",ESGOTO E ATIVIDADES RELACIONADAS,Esgoto e atividades relacionadas
+3811,Coleta de resíduos não-perigosos,"ÁGUA, ESGOTO, ATIVIDADES DE GESTÃO DE RESÍDUOS E DESCONTAMINAÇÃO","COLETA, TRATAMENTO E DISPOSIÇÃO DE RESÍDUOS; RECUPERAÇÃO DE MATERIAIS",Coleta de resíduos
+3812,Coleta de resíduos perigosos,"ÁGUA, ESGOTO, ATIVIDADES DE GESTÃO DE RESÍDUOS E DESCONTAMINAÇÃO","COLETA, TRATAMENTO E DISPOSIÇÃO DE RESÍDUOS; RECUPERAÇÃO DE MATERIAIS",Coleta de resíduos
+3821,Tratamento e disposição de resíduos não-perigosos,"ÁGUA, ESGOTO, ATIVIDADES DE GESTÃO DE RESÍDUOS E DESCONTAMINAÇÃO","COLETA, TRATAMENTO E DISPOSIÇÃO DE RESÍDUOS; RECUPERAÇÃO DE MATERIAIS",Tratamento e disposição de resíduos
+3822,Tratamento e disposição de resíduos perigosos,"ÁGUA, ESGOTO, ATIVIDADES DE GESTÃO DE RESÍDUOS E DESCONTAMINAÇÃO","COLETA, TRATAMENTO E DISPOSIÇÃO DE RESÍDUOS; RECUPERAÇÃO DE MATERIAIS",Tratamento e disposição de resíduos
+3831,Recuperação de materiais metálicos,"ÁGUA, ESGOTO, ATIVIDADES DE GESTÃO DE RESÍDUOS E DESCONTAMINAÇÃO","COLETA, TRATAMENTO E DISPOSIÇÃO DE RESÍDUOS; RECUPERAÇÃO DE MATERIAIS",Recuperação de materiais
+3832,Recuperação de materiais plásticos,"ÁGUA, ESGOTO, ATIVIDADES DE GESTÃO DE RESÍDUOS E DESCONTAMINAÇÃO","COLETA, TRATAMENTO E DISPOSIÇÃO DE RESÍDUOS; RECUPERAÇÃO DE MATERIAIS",Recuperação de materiais
+3839,Recuperação de materiais não especificados anteriormente,"ÁGUA, ESGOTO, ATIVIDADES DE GESTÃO DE RESÍDUOS E DESCONTAMINAÇÃO","COLETA, TRATAMENTO E DISPOSIÇÃO DE RESÍDUOS; RECUPERAÇÃO DE MATERIAIS",Recuperação de materiais
+3900,Descontaminação e outros serviços de gestão de resíduos,"ÁGUA, ESGOTO, ATIVIDADES DE GESTÃO DE RESÍDUOS E DESCONTAMINAÇÃO",DESCONTAMINAÇÃO E OUTROS SERVIÇOS DE GESTÃO DE RESÍDUOS,Descontaminação e outros serviços de gestão de resíduos
+4110,Incorporação de empreendimentos imobiliários,CONSTRUÇÃO,CONSTRUÇÃO DE EDIFÍCIOS,Incorporação de empreendimentos imobiliários
+4120,Construção de edifícios,CONSTRUÇÃO,CONSTRUÇÃO DE EDIFÍCIOS,Construção de edifícios
+4211,Construção de rodovias e ferrovias,CONSTRUÇÃO,OBRAS DE INFRA-ESTRUTURA,"Construção de rodovias, ferrovias, obras urbanas e obras-de-arte especiais"
+4212,Construção de obras-de-arte especiais,CONSTRUÇÃO,OBRAS DE INFRA-ESTRUTURA,"Construção de rodovias, ferrovias, obras urbanas e obras-de-arte especiais"
+4213,"Obras de urbanização - ruas, praças e calçadas",CONSTRUÇÃO,OBRAS DE INFRA-ESTRUTURA,"Construção de rodovias, ferrovias, obras urbanas e obras-de-arte especiais"
+4221,Obras para geração e distribuição de energia elétrica e para telecomunicações,CONSTRUÇÃO,OBRAS DE INFRA-ESTRUTURA,"Obras de infra-estrutura para energia elétrica, telecomunicações, água, esgoto e transporte por dutos"
+4222,"Construção de redes de abastecimento de água, coleta de esgoto e construções correlatas",CONSTRUÇÃO,OBRAS DE INFRA-ESTRUTURA,"Obras de infra-estrutura para energia elétrica, telecomunicações, água, esgoto e transporte por dutos"
+4223,"Construção de redes de transportes por dutos, exceto para água e esgoto",CONSTRUÇÃO,OBRAS DE INFRA-ESTRUTURA,"Obras de infra-estrutura para energia elétrica, telecomunicações, água, esgoto e transporte por dutos"
+4291,"Obras portuárias, marítimas e fluviais",CONSTRUÇÃO,OBRAS DE INFRA-ESTRUTURA,Construção de outras obras de infra-estrutura
+4292,Montagem de instalações industriais e de estruturas metálicas,CONSTRUÇÃO,OBRAS DE INFRA-ESTRUTURA,Construção de outras obras de infra-estrutura
+4299,Obras de engenharia civil não especificadas anteriormente,CONSTRUÇÃO,OBRAS DE INFRA-ESTRUTURA,Construção de outras obras de infra-estrutura
+4311,Demolição e preparação de canteiros de obras,CONSTRUÇÃO,SERVIÇOS ESPECIALIZADOS PARA CONSTRUÇÃO,Demolição e preparação do terreno
+4312,Perfurações e sondagens,CONSTRUÇÃO,SERVIÇOS ESPECIALIZADOS PARA CONSTRUÇÃO,Demolição e preparação do terreno
+4313,Obras de terraplenagem,CONSTRUÇÃO,SERVIÇOS ESPECIALIZADOS PARA CONSTRUÇÃO,Demolição e preparação do terreno
+4319,Serviços de preparação do terreno não especificados anteriormente,CONSTRUÇÃO,SERVIÇOS ESPECIALIZADOS PARA CONSTRUÇÃO,Demolição e preparação do terreno
+4321,Instalações elétricas,CONSTRUÇÃO,SERVIÇOS ESPECIALIZADOS PARA CONSTRUÇÃO,"Instalações elétricas, hidráulicas e outras instalações em construções"
+4322,"Instalações hidráulicas, de sistemas de ventilação e refrigeração",CONSTRUÇÃO,SERVIÇOS ESPECIALIZADOS PARA CONSTRUÇÃO,"Instalações elétricas, hidráulicas e outras instalações em construções"
+4329,Obras de instalações em construções não especificadas anteriormente,CONSTRUÇÃO,SERVIÇOS ESPECIALIZADOS PARA CONSTRUÇÃO,"Instalações elétricas, hidráulicas e outras instalações em construções"
+4330,Obras de acabamento,CONSTRUÇÃO,SERVIÇOS ESPECIALIZADOS PARA CONSTRUÇÃO,Obras de acabamento
+4391,Obras de fundações,CONSTRUÇÃO,SERVIÇOS ESPECIALIZADOS PARA CONSTRUÇÃO,Outros serviços especializados para construção
+4399,Serviços especializados para construção não especificados anteriormente,CONSTRUÇÃO,SERVIÇOS ESPECIALIZADOS PARA CONSTRUÇÃO,Outros serviços especializados para construção
+4511,Comércio a varejo e por atacado de veículos automotores,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO E REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,Comércio de veículos automotores
+4512,Representantes comerciais e agentes do comércio de veículos automotores,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO E REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,Comércio de veículos automotores
+4520,Manutenção e reparação de veículos automotores,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO E REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,Manutenção e reparação de veículos automotores
+4530,Comércio de peças e acessórios para veículos automotores,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO E REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,Comércio de peças e acessórios para veículos automotores
+4541,"Comércio por atacado e a varejo de motocicletas, peças e acessórios",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO E REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"Comércio, manutenção e reparação de motocicletas, peças e acessórios"
+4542,"Representantes comerciais e agentes do comércio de motocicletas, peças e acessórios",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO E REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"Comércio, manutenção e reparação de motocicletas, peças e acessórios"
+4543,Manutenção e reparação de motocicletas,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO E REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"Comércio, manutenção e reparação de motocicletas, peças e acessórios"
+4611,Representantes comerciais e agentes do comércio de matérias-primas agrícolas e animais vivos,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Representantes comerciais e agentes do comércio, exceto de veículos automotores e motocicletas"
+4612,"Representantes comerciais e agentes do comércio de combustíveis, minerais, produtos siderúrgicos e químicos",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Representantes comerciais e agentes do comércio, exceto de veículos automotores e motocicletas"
+4613,"Representantes comerciais e agentes do comércio de madeira, material de construção e ferragens",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Representantes comerciais e agentes do comércio, exceto de veículos automotores e motocicletas"
+4614,"Representantes comerciais e agentes do comércio de máquinas, equipamentos, embarcações e aeronaves",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Representantes comerciais e agentes do comércio, exceto de veículos automotores e motocicletas"
+4615,"Representantes comerciais e agentes do comércio de eletrodomésticos, móveis e artigos de uso doméstico",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Representantes comerciais e agentes do comércio, exceto de veículos automotores e motocicletas"
+4616,"Representantes comerciais e agentes do comércio de têxteis, vestuário, calçados e artigos de viagem",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Representantes comerciais e agentes do comércio, exceto de veículos automotores e motocicletas"
+4617,"Representantes comerciais e agentes do comércio de produtos alimentícios, bebidas e fumo",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Representantes comerciais e agentes do comércio, exceto de veículos automotores e motocicletas"
+4618,Representantes comerciais e agentes do comércio especializado em produtos não especificados anteriormente,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Representantes comerciais e agentes do comércio, exceto de veículos automotores e motocicletas"
+4619,Representantes comerciais e agentes do comércio de mercadorias em geral não especializado,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Representantes comerciais e agentes do comércio, exceto de veículos automotores e motocicletas"
+4621,Comércio atacadista de café em grão,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de matérias-primas agrícolas e animais vivos
+4622,Comércio atacadista de soja,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de matérias-primas agrícolas e animais vivos
+4623,"Comércio atacadista de animais vivos, alimentos para animais e matérias-primas agrícolas, exceto café e soja",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de matérias-primas agrícolas e animais vivos
+4631,Comércio atacadista de leite e laticínios,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista especializado em produtos alimentícios, bebidas e fumo"
+4632,"Comércio atacadista de cereais e leguminosas beneficiados, farinhas, amidos e féculas",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista especializado em produtos alimentícios, bebidas e fumo"
+4633,Comércio atacadista de hortifrutigranjeiros,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista especializado em produtos alimentícios, bebidas e fumo"
+4634,"Comércio atacadista de carnes, produtos da carne e pescado",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista especializado em produtos alimentícios, bebidas e fumo"
+4635,Comércio atacadista de bebidas,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista especializado em produtos alimentícios, bebidas e fumo"
+4636,Comércio atacadista de produtos do fumo,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista especializado em produtos alimentícios, bebidas e fumo"
+4637,Comércio atacadista especializado em produtos alimentícios não especificados anteriormente,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista especializado em produtos alimentícios, bebidas e fumo"
+4639,Comércio atacadista de produtos alimentícios em geral,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista especializado em produtos alimentícios, bebidas e fumo"
+4641,"Comércio atacadista de tecidos, artefatos de tecidos e de armarinho",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de produtos de consumo não-alimentar
+4642,Comércio atacadista de artigos do vestuário e acessórios,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de produtos de consumo não-alimentar
+4643,Comércio atacadista de calçados e artigos de viagem,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de produtos de consumo não-alimentar
+4644,Comércio atacadista de produtos farmacêuticos para uso humano e veterinário,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de produtos de consumo não-alimentar
+4645,"Comércio atacadista de instrumentos e materiais para uso médico, cirúrgico, ortopédico e odontológico",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de produtos de consumo não-alimentar
+4646,"Comércio atacadista de cosméticos, produtos de perfumaria e de higiene pessoal",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de produtos de consumo não-alimentar
+4647,"Comércio atacadista de artigos de escritório e de papelaria; livros, jornais e outras publicações",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de produtos de consumo não-alimentar
+4649,Comércio atacadista de equipamentos e artigos de uso pessoal e doméstico não especificados anteriormente,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de produtos de consumo não-alimentar
+4651,"Comércio atacadista de computadores, periféricos e suprimentos de informática",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de equipamentos e produtos de tecnologias de informação e comunicação
+4652,Comércio atacadista de componentes eletrônicos e equipamentos de telefonia e comunicação,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista de equipamentos e produtos de tecnologias de informação e comunicação
+4661,"Comércio atacadista de máquinas, aparelhos e equipamentos para uso agropecuário; partes e peças",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista de máquinas, aparelhos e equipamentos, exceto de tecnologias de informação e comunicação"
+4662,"Comércio atacadista de máquinas, equipamentos para terraplenagem, mineração e construção; partes e peças",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista de máquinas, aparelhos e equipamentos, exceto de tecnologias de informação e comunicação"
+4663,Comércio atacadista de máquinas e equipamentos para uso industrial; partes e peças,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista de máquinas, aparelhos e equipamentos, exceto de tecnologias de informação e comunicação"
+4664,"Comércio atacadista de máquinas, aparelhos e equipamentos para uso odonto-médico-hospitalar; partes e peças",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista de máquinas, aparelhos e equipamentos, exceto de tecnologias de informação e comunicação"
+4665,Comércio atacadista de máquinas e equipamentos para uso comercial; partes e peças,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista de máquinas, aparelhos e equipamentos, exceto de tecnologias de informação e comunicação"
+4669,"Comércio atacadista de máquinas, aparelhos e equipamentos não especificados anteriormente; partes e peças",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista de máquinas, aparelhos e equipamentos, exceto de tecnologias de informação e comunicação"
+4671,Comércio atacadista de madeira e produtos derivados,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista de madeira, ferragens, ferramentas, material elétrico e material de construção"
+4672,Comércio atacadista de ferragens e ferramentas,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista de madeira, ferragens, ferramentas, material elétrico e material de construção"
+4673,Comércio atacadista de material elétrico,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista de madeira, ferragens, ferramentas, material elétrico e material de construção"
+4674,Comércio atacadista de cimento,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista de madeira, ferragens, ferramentas, material elétrico e material de construção"
+4679,Comércio atacadista especializado de materiais de construção não especificados anteriormente e de materiais de construção em geral,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS","Comércio atacadista de madeira, ferragens, ferramentas, material elétrico e material de construção"
+4681,"Comércio atacadista de combustíveis sólidos, líquidos e gasosos, exceto gás natural e GLP",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista especializado em outros produtos
+4682,Comércio atacadista de gás liqüefeito de petróleo (GLP),COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista especializado em outros produtos
+4683,"Comércio atacadista de defensivos agrícolas, adubos, fertilizantes e corretivos do solo",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista especializado em outros produtos
+4684,"Comércio atacadista de produtos químicos e petroquímicos, exceto agroquímicos",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista especializado em outros produtos
+4685,"Comércio atacadista de produtos siderúrgicos e metalúrgicos, exceto para construção",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista especializado em outros produtos
+4686,Comércio atacadista de papel e papelão em bruto e de embalagens,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista especializado em outros produtos
+4687,Comércio atacadista de resíduos e sucatas,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista especializado em outros produtos
+4689,Comércio atacadista especializado de outros produtos intermediários não especificados anteriormente,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista especializado em outros produtos
+4691,"Comércio atacadista de mercadorias em geral, com predominância de produtos alimentícios",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista não-especializado
+4692,"Comércio atacadista de mercadorias em geral, com predominância de insumos agropecuários",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista não-especializado
+4693,"Comércio atacadista de mercadorias em geral, sem predominância de alimentos ou de insumos agropecuários",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,"COMÉRCIO POR ATACADO, EXCETO VEÍCULOS AUTOMOTORES E MOTOCICLETAS",Comércio atacadista não-especializado
+4711,"Comércio varejista de mercadorias em geral, com predominância de produtos alimentícios - hipermercados e supermercados",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista não-especializado
+4712,"Comércio varejista de mercadorias em geral, com predominância de produtos alimentícios - minimercados, mercearias e armazéns",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista não-especializado
+4713,"Comércio varejista de mercadorias em geral, sem predominância de produtos alimentícios",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista não-especializado
+4721,"Comércio varejista de produtos de padaria, laticínio, doces, balas e semelhantes",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,"Comércio varejista de produtos alimentícios, bebidas e fumo"
+4722,Comércio varejista de carnes e pescados - açougues e peixarias,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,"Comércio varejista de produtos alimentícios, bebidas e fumo"
+4723,Comércio varejista de bebidas,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,"Comércio varejista de produtos alimentícios, bebidas e fumo"
+4724,Comércio varejista de hortifrutigranjeiros,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,"Comércio varejista de produtos alimentícios, bebidas e fumo"
+4729,Comércio varejista de produtos alimentícios em geral ou especializado em produtos alimentícios não especificados anteriormente; produtos do fumo,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,"Comércio varejista de produtos alimentícios, bebidas e fumo"
+4731,Comércio varejista de combustíveis para veículos automotores,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de combustíveis para veículos automotores
+4732,Comércio varejista de lubrificantes,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de combustíveis para veículos automotores
+4741,Comércio varejista de tintas e materiais para pintura,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de material de construção
+4742,Comércio varejista de material elétrico,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de material de construção
+4743,Comércio varejista de vidros,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de material de construção
+4744,"Comércio varejista de ferragens, madeira e materiais de construção",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de material de construção
+4751,Comércio varejista especializado de equipamentos e suprimentos de informática,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de equipamentos de informática e comunicação; equipamentos e artigos de uso doméstico
+4752,Comércio varejista especializado de equipamentos de telefonia e comunicação,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de equipamentos de informática e comunicação; equipamentos e artigos de uso doméstico
+4753,Comércio varejista especializado de eletrodomésticos e equipamentos de áudio e vídeo,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de equipamentos de informática e comunicação; equipamentos e artigos de uso doméstico
+4754,"Comércio varejista especializado de móveis, colchoaria e artigos de iluminação",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de equipamentos de informática e comunicação; equipamentos e artigos de uso doméstico
+4755,"Comércio varejista especializado de tecidos e artigos de cama, mesa e banho",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de equipamentos de informática e comunicação; equipamentos e artigos de uso doméstico
+4756,Comércio varejista especializado de instrumentos musicais e acessórios,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de equipamentos de informática e comunicação; equipamentos e artigos de uso doméstico
+4757,"Comércio varejista especializado de peças e acessórios para aparelhos eletroeletrônicos para uso doméstico, exceto informática e comunicação",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de equipamentos de informática e comunicação; equipamentos e artigos de uso doméstico
+4759,Comércio varejista de artigos de uso doméstico não especificados anteriormente,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de equipamentos de informática e comunicação; equipamentos e artigos de uso doméstico
+4761,"Comércio varejista de livros, jornais, revistas e papelaria",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,"Comércio varejista de artigos culturais, recreativos e esportivos"
+4762,"Comércio varejista de discos, CDs, DVDs e fitas",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,"Comércio varejista de artigos culturais, recreativos e esportivos"
+4763,Comércio varejista de artigos recreativos e esportivos,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,"Comércio varejista de artigos culturais, recreativos e esportivos"
+4771,Comércio varejista de produtos farmacêuticos para uso humano e veterinário,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,"Comércio varejista de produtos farmacêuticos, perfumaria e cosméticos e artigos médicos, ópticos e ortopédicos"
+4772,"Comércio varejista de cosméticos, produtos de perfumaria e de higiene pessoal",COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,"Comércio varejista de produtos farmacêuticos, perfumaria e cosméticos e artigos médicos, ópticos e ortopédicos"
+4773,Comércio varejista de artigos médicos e ortopédicos,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,"Comércio varejista de produtos farmacêuticos, perfumaria e cosméticos e artigos médicos, ópticos e ortopédicos"
+4774,Comércio varejista de artigos de óptica,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,"Comércio varejista de produtos farmacêuticos, perfumaria e cosméticos e artigos médicos, ópticos e ortopédicos"
+4781,Comércio varejista de artigos do vestuário e acessórios,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de produtos novos não especificados anteriormente e de produtos usados
+4782,Comércio varejista de calçados e artigos de viagem,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de produtos novos não especificados anteriormente e de produtos usados
+4783,Comércio varejista de jóias e relógios,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de produtos novos não especificados anteriormente e de produtos usados
+4784,Comércio varejista de gás liqüefeito de petróleo (GLP),COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de produtos novos não especificados anteriormente e de produtos usados
+4785,Comércio varejista de artigos usados,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de produtos novos não especificados anteriormente e de produtos usados
+4789,Comércio varejista de outros produtos novos não especificados anteriormente,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio varejista de produtos novos não especificados anteriormente e de produtos usados
+4790,Comércio ambulante e outros tipos de comércio varejista,COMÉRCIO; REPARAÇÃO DE VEÍCULOS AUTOMOTORES E MOTOCICLETAS,COMÉRCIO VAREJISTA,Comércio ambulante e outros tipos de comércio varejista
+4911,Transporte ferroviário de carga,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE TERRESTRE,Transporte ferroviário e metroferroviário
+4912,Transporte metroferroviário de passageiros,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE TERRESTRE,Transporte ferroviário e metroferroviário
+4921,"Transporte rodoviário coletivo de passageiros, com itinerário fixo, municipal e em região metropolitana","TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE TERRESTRE,Transporte rodoviário de passageiros
+4922,"Transporte rodoviário coletivo de passageiros, com itinerário fixo, intermunicipal, interestadual e internacional","TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE TERRESTRE,Transporte rodoviário de passageiros
+4923,Transporte rodoviário de táxi,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE TERRESTRE,Transporte rodoviário de passageiros
+4924,Transporte escolar,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE TERRESTRE,Transporte rodoviário de passageiros
+4929,"Transporte rodoviário coletivo de passageiros, sob regime de fretamento, e outros transportes rodoviários não especificados anteriormente","TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE TERRESTRE,Transporte rodoviário de passageiros
+4930,Transporte rodoviário de carga,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE TERRESTRE,Transporte rodoviário de carga
+4940,Transporte dutoviário,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE TERRESTRE,Transporte dutoviário
+4950,"Trens turísticos, teleféricos e similares","TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE TERRESTRE,"Trens turísticos, teleféricos e similares"
+5011,Transporte marítimo de cabotagem,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE AQUAVIÁRIO,Transporte marítimo de cabotagem e longo curso
+5012,Transporte marítimo de longo curso,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE AQUAVIÁRIO,Transporte marítimo de cabotagem e longo curso
+5021,Transporte por navegação interior de carga,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE AQUAVIÁRIO,Transporte por navegação interior
+5022,Transporte por navegação interior de passageiros em linhas regulares,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE AQUAVIÁRIO,Transporte por navegação interior
+5030,Navegação de apoio,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE AQUAVIÁRIO,Navegação de apoio
+5091,Transporte por navegação de travessia,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE AQUAVIÁRIO,Outros transportes aquaviários
+5099,Transportes aquaviários não especificados anteriormente,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE AQUAVIÁRIO,Outros transportes aquaviários
+5111,Transporte aéreo de passageiros regular,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE AÉREO,Transporte aéreo de passageiros
+5112,Transporte aéreo de passageiros não-regular,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE AÉREO,Transporte aéreo de passageiros
+5120,Transporte aéreo de carga,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE AÉREO,Transporte aéreo de carga
+5130,Transporte espacial,"TRANSPORTE, ARMAZENAGEM E CORREIO",TRANSPORTE AÉREO,Transporte espacial
+5211,Armazenamento,"TRANSPORTE, ARMAZENAGEM E CORREIO",ARMAZENAMENTO E ATIVIDADES AUXILIARES DOS TRANSPORTES,"Armazenamento, carga e descarga"
+5212,Carga e descarga,"TRANSPORTE, ARMAZENAGEM E CORREIO",ARMAZENAMENTO E ATIVIDADES AUXILIARES DOS TRANSPORTES,"Armazenamento, carga e descarga"
+5221,"Concessionárias de rodovias, pontes, túneis e serviços relacionados","TRANSPORTE, ARMAZENAGEM E CORREIO",ARMAZENAMENTO E ATIVIDADES AUXILIARES DOS TRANSPORTES,"Armazenamento, carga e descarga"
+5222,Terminais rodoviários e ferroviários,"TRANSPORTE, ARMAZENAGEM E CORREIO",ARMAZENAMENTO E ATIVIDADES AUXILIARES DOS TRANSPORTES,Atividades auxiliares dos transportes terrestres
+5223,Estacionamento de veículos,"TRANSPORTE, ARMAZENAGEM E CORREIO",ARMAZENAMENTO E ATIVIDADES AUXILIARES DOS TRANSPORTES,Atividades auxiliares dos transportes terrestres
+5229,Atividades auxiliares dos transportes terrestres não especificadas anteriormente,"TRANSPORTE, ARMAZENAGEM E CORREIO",ARMAZENAMENTO E ATIVIDADES AUXILIARES DOS TRANSPORTES,Atividades auxiliares dos transportes terrestres
+5231,Gestão de portos e terminais,"TRANSPORTE, ARMAZENAGEM E CORREIO",ARMAZENAMENTO E ATIVIDADES AUXILIARES DOS TRANSPORTES,Atividades auxiliares dos transportes aquaviários
+5232,Atividades de agenciamento marítimo,"TRANSPORTE, ARMAZENAGEM E CORREIO",ARMAZENAMENTO E ATIVIDADES AUXILIARES DOS TRANSPORTES,Atividades auxiliares dos transportes aquaviários
+5239,Atividades auxiliares dos transportes aquaviários não especificadas anteriormente,"TRANSPORTE, ARMAZENAGEM E CORREIO",ARMAZENAMENTO E ATIVIDADES AUXILIARES DOS TRANSPORTES,Atividades auxiliares dos transportes aquaviários
+5240,Atividades auxiliares dos transportes aéreos,"TRANSPORTE, ARMAZENAGEM E CORREIO",ARMAZENAMENTO E ATIVIDADES AUXILIARES DOS TRANSPORTES,Atividades auxiliares dos transportes aéreos
+5250,Atividades relacionadas à organização do transporte de carga,"TRANSPORTE, ARMAZENAGEM E CORREIO",ARMAZENAMENTO E ATIVIDADES AUXILIARES DOS TRANSPORTES,Atividades relacionadas à organização do transporte de carga
+5310,Atividades de Correio,"TRANSPORTE, ARMAZENAGEM E CORREIO",CORREIO E OUTRAS ATIVIDADES DE ENTREGA,Atividades de Correio
+5320,Atividades de malote e de entrega,"TRANSPORTE, ARMAZENAGEM E CORREIO",CORREIO E OUTRAS ATIVIDADES DE ENTREGA,Atividades de malote e de entrega
+5510,Hotéis e similares,ALOJAMENTO E ALIMENTAÇÃO,ALOJAMENTO,Hotéis e similares
+5590,Outros tipos de alojamento não especificados anteriormente,ALOJAMENTO E ALIMENTAÇÃO,ALOJAMENTO,Outros tipos de alojamento não especificados anteriormente
+5611,Restaurantes e outros estabelecimentos de serviços de alimentação e bebidas,ALOJAMENTO E ALIMENTAÇÃO,ALIMENTAÇÃO,Restaurantes e outros serviços de alimentação e bebidas
+5612,Serviços ambulantes de alimentação,ALOJAMENTO E ALIMENTAÇÃO,ALIMENTAÇÃO,Restaurantes e outros serviços de alimentação e bebidas
+5620,"Serviços de catering, bufê e outros serviços de comida preparada",ALOJAMENTO E ALIMENTAÇÃO,ALIMENTAÇÃO,"Serviços de catering, bufê e outros serviços de comida preparada"
+5811,Edição de livros,INFORMAÇÃO E COMUNICAÇÃO,EDIÇÃO E EDIÇÃO INTEGRADA À IMPRESSÃO,"Edição de livros, jornais, revistas e outras atividades de edição"
+5812,Edição de jornais,INFORMAÇÃO E COMUNICAÇÃO,EDIÇÃO E EDIÇÃO INTEGRADA À IMPRESSÃO,"Edição de livros, jornais, revistas e outras atividades de edição"
+5813,Edição de revistas,INFORMAÇÃO E COMUNICAÇÃO,EDIÇÃO E EDIÇÃO INTEGRADA À IMPRESSÃO,"Edição de livros, jornais, revistas e outras atividades de edição"
+5819,"Edição de cadastros, listas e outros produtos gráficos",INFORMAÇÃO E COMUNICAÇÃO,EDIÇÃO E EDIÇÃO INTEGRADA À IMPRESSÃO,"Edição de livros, jornais, revistas e outras atividades de edição"
+5821,Edição integrada à impressão de livros,INFORMAÇÃO E COMUNICAÇÃO,EDIÇÃO E EDIÇÃO INTEGRADA À IMPRESSÃO,"Edição integrada à impressão de livros, jornais, revistas e outras publicações"
+5822,Edição integrada à impressão de jornais,INFORMAÇÃO E COMUNICAÇÃO,EDIÇÃO E EDIÇÃO INTEGRADA À IMPRESSÃO,"Edição integrada à impressão de livros, jornais, revistas e outras publicações"
+5823,Edição integrada à impressão de revistas,INFORMAÇÃO E COMUNICAÇÃO,EDIÇÃO E EDIÇÃO INTEGRADA À IMPRESSÃO,"Edição integrada à impressão de livros, jornais, revistas e outras publicações"
+5829,"Edição integrada à impressão de cadastros, listas e outros produtos gráficos",INFORMAÇÃO E COMUNICAÇÃO,EDIÇÃO E EDIÇÃO INTEGRADA À IMPRESSÃO,"Edição integrada à impressão de livros, jornais, revistas e outras publicações"
+5911,"Atividades de produção cinematográfica, de vídeos e de programas de televisão",INFORMAÇÃO E COMUNICAÇÃO,"ATIVIDADES CINEMATOGRÁFICAS, PRODUÇÃO DE VÍDEOS E DE PROGRAMAS DE TELEVISÃO; GRAVAÇÃO DE SOM E EDIÇÃO DE MÚSICA","Atividades cinematográficas, produção de vídeos e de programas de televisão"
+5912,"Atividades de pós-produção cinematográfica, de vídeos e de programas de televisão",INFORMAÇÃO E COMUNICAÇÃO,"ATIVIDADES CINEMATOGRÁFICAS, PRODUÇÃO DE VÍDEOS E DE PROGRAMAS DE TELEVISÃO; GRAVAÇÃO DE SOM E EDIÇÃO DE MÚSICA","Atividades cinematográficas, produção de vídeos e de programas de televisão"
+5913,"Distribuição cinematográfica, de vídeo e de programas de televisão",INFORMAÇÃO E COMUNICAÇÃO,"ATIVIDADES CINEMATOGRÁFICAS, PRODUÇÃO DE VÍDEOS E DE PROGRAMAS DE TELEVISÃO; GRAVAÇÃO DE SOM E EDIÇÃO DE MÚSICA","Atividades cinematográficas, produção de vídeos e de programas de televisão"
+5914,Atividades de exibição cinematográfica,INFORMAÇÃO E COMUNICAÇÃO,"ATIVIDADES CINEMATOGRÁFICAS, PRODUÇÃO DE VÍDEOS E DE PROGRAMAS DE TELEVISÃO; GRAVAÇÃO DE SOM E EDIÇÃO DE MÚSICA","Atividades cinematográficas, produção de vídeos e de programas de televisão"
+5920,Atividades de gravação de som e de edição de música,INFORMAÇÃO E COMUNICAÇÃO,"ATIVIDADES CINEMATOGRÁFICAS, PRODUÇÃO DE VÍDEOS E DE PROGRAMAS DE TELEVISÃO; GRAVAÇÃO DE SOM E EDIÇÃO DE MÚSICA",Atividades de gravação de som e de edição de música
+6010,Atividades de rádio,INFORMAÇÃO E COMUNICAÇÃO,ATIVIDADES DE RÁDIO E DE TELEVISÃO,Atividades de rádio
+6021,Atividades de televisão aberta,INFORMAÇÃO E COMUNICAÇÃO,ATIVIDADES DE RÁDIO E DE TELEVISÃO,Atividades de televisão
+6022,Programadoras e atividades relacionadas à televisão por assinatura,INFORMAÇÃO E COMUNICAÇÃO,ATIVIDADES DE RÁDIO E DE TELEVISÃO,Atividades de televisão
+6110,Telecomunicações por fio,INFORMAÇÃO E COMUNICAÇÃO,TELECOMUNICAÇÕES,Telecomunicações por fio
+6120,Telecomunicações sem fio,INFORMAÇÃO E COMUNICAÇÃO,TELECOMUNICAÇÕES,Telecomunicações sem fio
+6130,Telecomunicações por satélite,INFORMAÇÃO E COMUNICAÇÃO,TELECOMUNICAÇÕES,Telecomunicações por satélite
+6141,Operadoras de televisão por assinatura por cabo,INFORMAÇÃO E COMUNICAÇÃO,TELECOMUNICAÇÕES,Operadoras de televisão por assinatura
+6142,Operadoras de televisão por assinatura por microondas,INFORMAÇÃO E COMUNICAÇÃO,TELECOMUNICAÇÕES,Operadoras de televisão por assinatura
+6143,Operadoras de televisão por assinatura por satélite,INFORMAÇÃO E COMUNICAÇÃO,TELECOMUNICAÇÕES,Operadoras de televisão por assinatura
+6190,Outras atividades de telecomunicações,INFORMAÇÃO E COMUNICAÇÃO,TELECOMUNICAÇÕES,Outras atividades de telecomunicações
+6201,Desenvolvimento de programas de computador sob encomenda,INFORMAÇÃO E COMUNICAÇÃO,ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO,Atividades dos serviços de tecnologia da informação
+6202,Desenvolvimento e licenciamento de programas de computador customizáveis,INFORMAÇÃO E COMUNICAÇÃO,ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO,Atividades dos serviços de tecnologia da informação
+6203,Desenvolvimento e licenciamento de programas de computador não-customizáveis,INFORMAÇÃO E COMUNICAÇÃO,ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO,Atividades dos serviços de tecnologia da informação
+6204,Consultoria em tecnologia da informação,INFORMAÇÃO E COMUNICAÇÃO,ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO,Atividades dos serviços de tecnologia da informação
+6209,"Suporte técnico, manutenção e outros serviços em tecnologia da informação",INFORMAÇÃO E COMUNICAÇÃO,ATIVIDADES DOS SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO,Atividades dos serviços de tecnologia da informação
+6311,"Tratamento de dados, provedores de serviços de aplicação e serviços de hospedagem na internet",INFORMAÇÃO E COMUNICAÇÃO,ATIVIDADES DE PRESTAÇÃO DE SERVIÇOS DE INFORMAÇÃO,"Tratamento de dados, hospedagem na internet e outras atividades relacionadas"
+6319,"Portais, provedores de conteúdo e outros serviços de informação na internet",INFORMAÇÃO E COMUNICAÇÃO,ATIVIDADES DE PRESTAÇÃO DE SERVIÇOS DE INFORMAÇÃO,"Tratamento de dados, hospedagem na internet e outras atividades relacionadas"
+6391,Agências de notícias,INFORMAÇÃO E COMUNICAÇÃO,ATIVIDADES DE PRESTAÇÃO DE SERVIÇOS DE INFORMAÇÃO,Outras atividades de prestação de serviços de informação
+6399,Outras atividades de prestação de serviços de informação não especificadas anteriormente,INFORMAÇÃO E COMUNICAÇÃO,ATIVIDADES DE PRESTAÇÃO DE SERVIÇOS DE INFORMAÇÃO,Outras atividades de prestação de serviços de informação
+6410,Banco Central,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Banco Central
+6421,Bancos comerciais,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Intermediação monetária - depósitos à vista
+6422,"Bancos múltiplos, com carteira comercial","ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Intermediação monetária - depósitos à vista
+6423,Caixas econômicas,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Intermediação monetária - depósitos à vista
+6424,Crédito cooperativo,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Intermediação monetária - depósitos à vista
+6431,"Bancos múltiplos, sem carteira comercial","ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Intermediação não-monetária - outros instrumentos de captação
+6432,Bancos de investimento,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Intermediação não-monetária - outros instrumentos de captação
+6433,Bancos de desenvolvimento,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Intermediação não-monetária - outros instrumentos de captação
+6434,Agências de fomento,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Intermediação não-monetária - outros instrumentos de captação
+6435,Crédito imobiliário,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Intermediação não-monetária - outros instrumentos de captação
+6436,"Sociedades de crédito, financiamento e investimento - financeiras","ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Intermediação não-monetária - outros instrumentos de captação
+6437,Sociedades de crédito ao microempreendedor,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Intermediação não-monetária - outros instrumentos de captação
+6438,Bancos de câmbio e outras instituições de intermediação não-monetária,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Intermediação não-monetária - outros instrumentos de captação
+6440,Arrendamento mercantil,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Arrendamento mercantil
+6450,Sociedades de capitalização,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Sociedades de capitalização
+6461,Holdings de instituições financeiras,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Atividades de sociedades de participação
+6462,Holdings de instituições não-financeiras,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Atividades de sociedades de participação
+6463,"Outras sociedades de participação, exceto holdings","ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Atividades de sociedades de participação
+6470,Fundos de investimento,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Fundos de investimento
+6491,Sociedades de fomento mercantil - factoring,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Atividades de serviços financeiros não especificadas anteriormente
+6492,Securitização de créditos,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Atividades de serviços financeiros não especificadas anteriormente
+6493,Administração de consórcios para aquisição de bens e direitos,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Atividades de serviços financeiros não especificadas anteriormente
+6499,Outras atividades de serviços financeiros não especificadas anteriormente,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS",ATIVIDADES DE SERVIÇOS FINANCEIROS,Atividades de serviços financeiros não especificadas anteriormente
+6511,Seguros de vida,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","SEGUROS, RESSEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE",Seguros de vida e não-vida
+6512,Seguros não-vida,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","SEGUROS, RESSEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE",Seguros de vida e não-vida
+6520,Seguros-saúde,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","SEGUROS, RESSEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE",Seguros-saúde
+6530,Resseguros,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","SEGUROS, RESSEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE",Resseguros
+6541,Previdência complementar fechada,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","SEGUROS, RESSEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE",Previdência complementar
+6542,Previdência complementar aberta,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","SEGUROS, RESSEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE",Previdência complementar
+6550,Planos de saúde,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","SEGUROS, RESSEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE",Planos de saúde
+6611,Administração de bolsas e mercados de balcão organizados,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","ATIVIDADES AUXILIARES DOS SERVIÇOS FINANCEIROS, SEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE",Atividades auxiliares dos serviços financeiros
+6612,"Atividades de intermediários em transações de títulos, valores mobiliários e mercadorias","ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","ATIVIDADES AUXILIARES DOS SERVIÇOS FINANCEIROS, SEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE",Atividades auxiliares dos serviços financeiros
+6613,Administração de cartões de crédito,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","ATIVIDADES AUXILIARES DOS SERVIÇOS FINANCEIROS, SEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE",Atividades auxiliares dos serviços financeiros
+6619,Atividades auxiliares dos serviços financeiros não especificadas anteriormente,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","ATIVIDADES AUXILIARES DOS SERVIÇOS FINANCEIROS, SEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE",Atividades auxiliares dos serviços financeiros
+6621,Avaliação de riscos e perdas,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","ATIVIDADES AUXILIARES DOS SERVIÇOS FINANCEIROS, SEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE","Atividades auxiliares dos seguros, da previdência complementar e dos planos de saúde"
+6622,"Corretores e agentes de seguros, de planos de previdência complementar e de saúde","ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","ATIVIDADES AUXILIARES DOS SERVIÇOS FINANCEIROS, SEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE","Atividades auxiliares dos seguros, da previdência complementar e dos planos de saúde"
+6629,"Atividades auxiliares dos seguros, da previdência complementar e dos planos de saúde não especificadas anteriormente","ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","ATIVIDADES AUXILIARES DOS SERVIÇOS FINANCEIROS, SEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE","Atividades auxiliares dos seguros, da previdência complementar e dos planos de saúde"
+6630,Atividades de administração de fundos por contrato ou comissão,"ATIVIDADES FINANCEIRAS, DE SEGUROS E SERVIÇOS RELACIONADOS","ATIVIDADES AUXILIARES DOS SERVIÇOS FINANCEIROS, SEGUROS, PREVIDÊNCIA COMPLEMENTAR E PLANOS DE SAÚDE",Atividades de administração de fundos por contrato ou comissão
+6810,Atividades imobiliárias de imóveis próprios,ATIVIDADES IMOBILIÁRIAS,ATIVIDADES IMOBILIÁRIAS,Atividades imobiliárias de imóveis próprios
+6821,"Intermediação na compra, venda e aluguel de imóveis",ATIVIDADES IMOBILIÁRIAS,ATIVIDADES IMOBILIÁRIAS,Atividades imobiliárias por contrato ou comissão
+6822,Gestão e administração da propriedade imobiliária,ATIVIDADES IMOBILIÁRIAS,ATIVIDADES IMOBILIÁRIAS,Atividades imobiliárias por contrato ou comissão
+6911,"Atividades jurídicas, exceto cartórios","ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS","ATIVIDADES JURÍDICAS, DE CONTABILIDADE E DE AUDITORIA",Atividades jurídicas
+6912,Cartórios,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS","ATIVIDADES JURÍDICAS, DE CONTABILIDADE E DE AUDITORIA",Atividades jurídicas
+6920,"Atividades de contabilidade, consultoria e auditoria contábil e tributária","ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS","ATIVIDADES JURÍDICAS, DE CONTABILIDADE E DE AUDITORIA","Atividades de contabilidade, consultoria e auditoria contábil e tributária"
+7010,Sedes de empresas e unidades administrativas locais,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",ATIVIDADES DE SEDES DE EMPRESAS E DE CONSULTORIA EM GESTÃO EMPRESARIAL,Sedes de empresas e unidades administrativas locais
+7020,Atividades de consultoria em gestão empresarial,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",ATIVIDADES DE SEDES DE EMPRESAS E DE CONSULTORIA EM GESTÃO EMPRESARIAL,Atividades de consultoria em gestão empresarial
+7111,Serviços de arquitetura,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",SERVIÇOS DE ARQUITETURA E ENGENHARIA; TESTES E ANÁLISES TÉCNICAS,Serviços de arquitetura e engenharia e atividades técnicas relacionadas
+7112,Serviços de engenharia,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",SERVIÇOS DE ARQUITETURA E ENGENHARIA; TESTES E ANÁLISES TÉCNICAS,Serviços de arquitetura e engenharia e atividades técnicas relacionadas
+7119,Atividades técnicas relacionadas à arquitetura e engenharia,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",SERVIÇOS DE ARQUITETURA E ENGENHARIA; TESTES E ANÁLISES TÉCNICAS,Serviços de arquitetura e engenharia e atividades técnicas relacionadas
+7120,Testes e análises técnicas,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",SERVIÇOS DE ARQUITETURA E ENGENHARIA; TESTES E ANÁLISES TÉCNICAS,Testes e análises técnicas
+7210,Pesquisa e desenvolvimento experimental em ciências físicas e naturais,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",PESQUISA E DESENVOLVIMENTO CIENTÍFICO,Pesquisa e desenvolvimento experimental em ciências físicas e naturais
+7220,Pesquisa e desenvolvimento experimental em ciências sociais e humanas,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",PESQUISA E DESENVOLVIMENTO CIENTÍFICO,Pesquisa e desenvolvimento experimental em ciências sociais e humanas
+7311,Agências de publicidade,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",PUBLICIDADE E PESQUISA DE MERCADO,Publicidade
+7312,"Agenciamento de espaços para publicidade, exceto em veículos de comunicação","ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",PUBLICIDADE E PESQUISA DE MERCADO,Publicidade
+7319,Atividades de publicidade não especificadas anteriormente,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",PUBLICIDADE E PESQUISA DE MERCADO,Publicidade
+7320,Pesquisas de mercado e de opinião pública,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",PUBLICIDADE E PESQUISA DE MERCADO,Pesquisas de mercado e de opinião pública
+7410,Design e decoração de interiores,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS","OUTRAS ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",Design e decoração de interiores
+7420,Atividades fotográficas e similares,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS","OUTRAS ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",Atividades fotográficas e similares
+7490,"Atividades profissionais, científicas e técnicas não especificadas anteriormente","ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS","OUTRAS ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS","Atividades profissionais, científicas e técnicas não especificadas anteriormente"
+7500,Atividades veterinárias,"ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS",ATIVIDADES VETERINÁRIAS,Atividades veterinárias
+7711,Locação de automóveis sem condutor,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,ALUGUÉIS NÃO-IMOBILIÁRIOS E GESTÃO DE ATIVOS INTANGÍVEIS NÃO-FINANCEIROS,Locação de meios de transporte sem condutor
+7719,"Locação de meios de transporte, exceto automóveis, sem condutor",ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,ALUGUÉIS NÃO-IMOBILIÁRIOS E GESTÃO DE ATIVOS INTANGÍVEIS NÃO-FINANCEIROS,Locação de meios de transporte sem condutor
+7721,Aluguel de equipamentos recreativos e esportivos,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,ALUGUÉIS NÃO-IMOBILIÁRIOS E GESTÃO DE ATIVOS INTANGÍVEIS NÃO-FINANCEIROS,Aluguel de objetos pessoais e domésticos
+7722,"Aluguel de fitas de vídeo, DVDs e similares",ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,ALUGUÉIS NÃO-IMOBILIÁRIOS E GESTÃO DE ATIVOS INTANGÍVEIS NÃO-FINANCEIROS,Aluguel de objetos pessoais e domésticos
+7723,"Aluguel de objetos do vestuário, jóias e acessórios",ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,ALUGUÉIS NÃO-IMOBILIÁRIOS E GESTÃO DE ATIVOS INTANGÍVEIS NÃO-FINANCEIROS,Aluguel de objetos pessoais e domésticos
+7729,Aluguel de objetos pessoais e domésticos não especificados anteriormente,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,ALUGUÉIS NÃO-IMOBILIÁRIOS E GESTÃO DE ATIVOS INTANGÍVEIS NÃO-FINANCEIROS,Aluguel de objetos pessoais e domésticos
+7731,Aluguel de máquinas e equipamentos agrícolas sem operador,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,ALUGUÉIS NÃO-IMOBILIÁRIOS E GESTÃO DE ATIVOS INTANGÍVEIS NÃO-FINANCEIROS,Aluguel de máquinas e equipamentos sem operador
+7732,Aluguel de máquinas e equipamentos para construção sem operador,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,ALUGUÉIS NÃO-IMOBILIÁRIOS E GESTÃO DE ATIVOS INTANGÍVEIS NÃO-FINANCEIROS,Aluguel de máquinas e equipamentos sem operador
+7733,Aluguel de máquinas e equipamentos para escritório,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,ALUGUÉIS NÃO-IMOBILIÁRIOS E GESTÃO DE ATIVOS INTANGÍVEIS NÃO-FINANCEIROS,Aluguel de máquinas e equipamentos sem operador
+7739,Aluguel de máquinas e equipamentos não especificados anteriormente,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,ALUGUÉIS NÃO-IMOBILIÁRIOS E GESTÃO DE ATIVOS INTANGÍVEIS NÃO-FINANCEIROS,Aluguel de máquinas e equipamentos sem operador
+7740,Gestão de ativos intangíveis não-financeiros,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,ALUGUÉIS NÃO-IMOBILIÁRIOS E GESTÃO DE ATIVOS INTANGÍVEIS NÃO-FINANCEIROS,Gestão de ativos intangíveis não-financeiros
+7810,Seleção e agenciamento de mão-de-obra,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"SELEÇÃO, AGENCIAMENTO E LOCAÇÃO DE MÃO-DE-OBRA",Seleção e agenciamento de mão-de-obra
+7820,Locação de mão-de-obra temporária,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"SELEÇÃO, AGENCIAMENTO E LOCAÇÃO DE MÃO-DE-OBRA",Locação de mão-de-obra temporária
+7830,Fornecimento e gestão de recursos humanos para terceiros,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"SELEÇÃO, AGENCIAMENTO E LOCAÇÃO DE MÃO-DE-OBRA",Fornecimento e gestão de recursos humanos para terceiros
+7911,Agências de viagens,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"AGÊNCIAS DE VIAGENS, OPERADORES TURÍSTICOS E SERVIÇOS DE RESERVAS",Agências de viagens e operadores turísticos
+7912,Operadores turísticos,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"AGÊNCIAS DE VIAGENS, OPERADORES TURÍSTICOS E SERVIÇOS DE RESERVAS",Agências de viagens e operadores turísticos
+7990,Serviços de reservas e outros serviços de turismo não especificados anteriormente,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"AGÊNCIAS DE VIAGENS, OPERADORES TURÍSTICOS E SERVIÇOS DE RESERVAS",Serviços de reservas e outros serviços de turismo não especificados anteriormente
+8011,Atividades de vigilância e segurança privada,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"ATIVIDADES DE VIGILÂNCIA, SEGURANÇA E INVESTIGAÇÃO","Atividades de vigilância, segurança privada e transporte de valores"
+8012,Atividades de transporte de valores,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"ATIVIDADES DE VIGILÂNCIA, SEGURANÇA E INVESTIGAÇÃO","Atividades de vigilância, segurança privada e transporte de valores"
+8020,Atividades de monitoramento de sistemas de segurança,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"ATIVIDADES DE VIGILÂNCIA, SEGURANÇA E INVESTIGAÇÃO",Atividades de monitoramento de sistemas de segurança
+8030,Atividades de investigação particular,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"ATIVIDADES DE VIGILÂNCIA, SEGURANÇA E INVESTIGAÇÃO",Atividades de investigação particular
+8111,"Serviços combinados para apoio a edifícios, exceto condomínios prediais",ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,SERVIÇOS PARA EDIFÍCIOS E ATIVIDADES PAISAGÍSTICAS,Serviços combinados para apoio a edifícios
+8112,Condomínios prediais,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,SERVIÇOS PARA EDIFÍCIOS E ATIVIDADES PAISAGÍSTICAS,Serviços combinados para apoio a edifícios
+8121,Limpeza em prédios e em domicílios,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,SERVIÇOS PARA EDIFÍCIOS E ATIVIDADES PAISAGÍSTICAS,Atividades de limpeza
+8122,Imunização e controle de pragas urbanas,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,SERVIÇOS PARA EDIFÍCIOS E ATIVIDADES PAISAGÍSTICAS,Atividades de limpeza
+8129,Atividades de limpeza não especificadas anteriormente,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,SERVIÇOS PARA EDIFÍCIOS E ATIVIDADES PAISAGÍSTICAS,Atividades de limpeza
+8130,Atividades paisagísticas,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,SERVIÇOS PARA EDIFÍCIOS E ATIVIDADES PAISAGÍSTICAS,Atividades paisagísticas
+8211,Serviços combinados de escritório e apoio administrativo,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"SERVIÇOS DE ESCRITÓRIO, DE APOIO ADMINISTRATIVO E OUTROS SERVIÇOS PRESTADOS ÀS EMPRESAS",Serviços de escritório e apoio administrativo
+8219,"Fotocópias, preparação de documentos e outros serviços especializados de apoio administrativo",ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"SERVIÇOS DE ESCRITÓRIO, DE APOIO ADMINISTRATIVO E OUTROS SERVIÇOS PRESTADOS ÀS EMPRESAS",Serviços de escritório e apoio administrativo
+8220,Atividades de teleatendimento,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"SERVIÇOS DE ESCRITÓRIO, DE APOIO ADMINISTRATIVO E OUTROS SERVIÇOS PRESTADOS ÀS EMPRESAS",Atividades de teleatendimento
+8230,"Atividades de organização de eventos, exceto culturais e esportivos",ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"SERVIÇOS DE ESCRITÓRIO, DE APOIO ADMINISTRATIVO E OUTROS SERVIÇOS PRESTADOS ÀS EMPRESAS","Atividades de organização de eventos, exceto culturais e esportivos"
+8291,Atividades de cobrança e informações cadastrais,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"SERVIÇOS DE ESCRITÓRIO, DE APOIO ADMINISTRATIVO E OUTROS SERVIÇOS PRESTADOS ÀS EMPRESAS",Outras atividades de serviços prestados principalmente às empresas
+8292,Envasamento e empacotamento sob contrato,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"SERVIÇOS DE ESCRITÓRIO, DE APOIO ADMINISTRATIVO E OUTROS SERVIÇOS PRESTADOS ÀS EMPRESAS",Outras atividades de serviços prestados principalmente às empresas
+8299,Atividades de serviços prestados principalmente às empresas não especificadas anteriormente,ATIVIDADES ADMINISTRATIVAS E SERVIÇOS COMPLEMENTARES,"SERVIÇOS DE ESCRITÓRIO, DE APOIO ADMINISTRATIVO E OUTROS SERVIÇOS PRESTADOS ÀS EMPRESAS",Outras atividades de serviços prestados principalmente às empresas
+8411,Administração pública em geral,"ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL","ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL",Administração do estado e da política econômica e social
+8412,"Regulação das atividades de saúde, educação, serviços culturais e outros serviços sociais","ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL","ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL",Administração do estado e da política econômica e social
+8413,Regulação das atividades econômicas,"ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL","ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL",Administração do estado e da política econômica e social
+8421,Relações exteriores,"ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL","ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL",Serviços coletivos prestados pela administração pública
+8422,Defesa,"ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL","ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL",Serviços coletivos prestados pela administração pública
+8423,Justiça,"ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL","ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL",Serviços coletivos prestados pela administração pública
+8424,Segurança e ordem pública,"ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL","ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL",Serviços coletivos prestados pela administração pública
+8425,Defesa Civil,"ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL","ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL",Serviços coletivos prestados pela administração pública
+8430,Seguridade social obrigatória,"ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL","ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL",Seguridade social obrigatória
+8511,Educação infantil - creche,EDUCAÇÃO,EDUCAÇÃO,Educação infantil e ensino fundamental
+8512,Educação infantil - pré-escola,EDUCAÇÃO,EDUCAÇÃO,Educação infantil e ensino fundamental
+8513,Ensino fundamental,EDUCAÇÃO,EDUCAÇÃO,Educação infantil e ensino fundamental
+8520,Ensino médio,EDUCAÇÃO,EDUCAÇÃO,Ensino médio
+8531,Educação superior - graduação,EDUCAÇÃO,EDUCAÇÃO,Educação superior
+8532,Educação superior - graduação e pós-graduação,EDUCAÇÃO,EDUCAÇÃO,Educação superior
+8533,Educação superior - pós-graduação e extensão,EDUCAÇÃO,EDUCAÇÃO,Educação superior
+8541,Educação profissional de nível técnico,EDUCAÇÃO,EDUCAÇÃO,Educação profissional de nível técnico e tecnológico
+8542,Educação profissional de nível tecnológico,EDUCAÇÃO,EDUCAÇÃO,Educação profissional de nível técnico e tecnológico
+8550,Atividades de apoio à educação,EDUCAÇÃO,EDUCAÇÃO,Atividades de apoio à educação
+8591,Ensino de esportes,EDUCAÇÃO,EDUCAÇÃO,Outras atividades de ensino
+8592,Ensino de arte e cultura,EDUCAÇÃO,EDUCAÇÃO,Outras atividades de ensino
+8593,Ensino de idiomas,EDUCAÇÃO,EDUCAÇÃO,Outras atividades de ensino
+8599,Atividades de ensino não especificadas anteriormente,EDUCAÇÃO,EDUCAÇÃO,Outras atividades de ensino
+8610,Atividades de atendimento hospitalar,SAÚDE HUMANA E SERVIÇOS SOCIAIS,ATIVIDADES DE ATENÇÃO À SAÚDE HUMANA,Atividades de atendimento hospitalar
+8621,Serviços móveis de atendimento a urgências,SAÚDE HUMANA E SERVIÇOS SOCIAIS,ATIVIDADES DE ATENÇÃO À SAÚDE HUMANA,Serviços móveis de atendimento a urgências e de remoção de pacientes
+8622,"Serviços de remoção de pacientes, exceto os serviços móveis de atendimento a urgências",SAÚDE HUMANA E SERVIÇOS SOCIAIS,ATIVIDADES DE ATENÇÃO À SAÚDE HUMANA,Serviços móveis de atendimento a urgências e de remoção de pacientes
+8630,Atividades de atenção ambulatorial executadas por médicos e odontólogos,SAÚDE HUMANA E SERVIÇOS SOCIAIS,ATIVIDADES DE ATENÇÃO À SAÚDE HUMANA,Atividades de atenção ambulatorial executadas por médicos e odontólogos
+8640,Atividades de serviços de complementação diagnóstica e terapêutica,SAÚDE HUMANA E SERVIÇOS SOCIAIS,ATIVIDADES DE ATENÇÃO À SAÚDE HUMANA,Atividades de serviços de complementação diagnóstica e terapêutica
+8650,"Atividades de profissionais da área de saúde, exceto médicos e odontólogos",SAÚDE HUMANA E SERVIÇOS SOCIAIS,ATIVIDADES DE ATENÇÃO À SAÚDE HUMANA,"Atividades de profissionais da área de saúde, exceto médicos e odontólogos"
+8660,Atividades de apoio à gestão de saúde,SAÚDE HUMANA E SERVIÇOS SOCIAIS,ATIVIDADES DE ATENÇÃO À SAÚDE HUMANA,Atividades de apoio à gestão de saúde
+8690,Atividades de atenção à saúde humana não especificadas anteriormente,SAÚDE HUMANA E SERVIÇOS SOCIAIS,ATIVIDADES DE ATENÇÃO À SAÚDE HUMANA,Atividades de atenção à saúde humana não especificadas anteriormente
+8711,"Atividades de assistência a idosos, deficientes físicos, imunodeprimidos e convalescentes prestadas em residências coletivas e particulares",SAÚDE HUMANA E SERVIÇOS SOCIAIS,"ATIVIDADES DE ATENÇÃO À SAÚDE HUMANA INTEGRADAS COM ASSISTÊNCIA SOCIAL, PRESTADAS EM RESIDÊNCIAS COLETIVAS E PARTICULARES","Atividades de assistência a idosos, deficientes físicos, imunodeprimidos e convalescentes, e de infra-estrutura e apoio a pacientes prestadas em residências coletivas e particulares"
+8712,Atividades de fornecimento de infra-estrutura de apoio e assistência a paciente no domicílio,SAÚDE HUMANA E SERVIÇOS SOCIAIS,"ATIVIDADES DE ATENÇÃO À SAÚDE HUMANA INTEGRADAS COM ASSISTÊNCIA SOCIAL, PRESTADAS EM RESIDÊNCIAS COLETIVAS E PARTICULARES","Atividades de assistência a idosos, deficientes físicos, imunodeprimidos e convalescentes, e de infra-estrutura e apoio a pacientes prestadas em residências coletivas e particulares"
+8720,"Atividades de assistência psicossocial e à saúde a portadores de distúrbios psíquicos, deficiência mental e dependência química",SAÚDE HUMANA E SERVIÇOS SOCIAIS,"ATIVIDADES DE ATENÇÃO À SAÚDE HUMANA INTEGRADAS COM ASSISTÊNCIA SOCIAL, PRESTADAS EM RESIDÊNCIAS COLETIVAS E PARTICULARES","Atividades de assistência psicossocial e à saúde a portadores de distúrbios psíquicos, deficiência mental e dependência química"
+8730,Atividades de assistência social prestadas em residências coletivas e particulares,SAÚDE HUMANA E SERVIÇOS SOCIAIS,"ATIVIDADES DE ATENÇÃO À SAÚDE HUMANA INTEGRADAS COM ASSISTÊNCIA SOCIAL, PRESTADAS EM RESIDÊNCIAS COLETIVAS E PARTICULARES",Atividades de assistência social prestadas em residências coletivas e particulares
+8800,Serviços de assistência social sem alojamento,SAÚDE HUMANA E SERVIÇOS SOCIAIS,SERVIÇOS DE ASSISTÊNCIA SOCIAL SEM ALOJAMENTO,Serviços de assistência social sem alojamento
+9001,"Artes cênicas, espetáculos e atividades complementares","ARTES, CULTURA, ESPORTE E RECREAÇÃO","ATIVIDADES ARTÍSTICAS, CRIATIVAS E DE ESPETÁCULOS","Atividades artísticas, criativas e de espetáculos"
+9002,Criação artística,"ARTES, CULTURA, ESPORTE E RECREAÇÃO","ATIVIDADES ARTÍSTICAS, CRIATIVAS E DE ESPETÁCULOS","Atividades artísticas, criativas e de espetáculos"
+9003,"Gestão de espaços para artes cênicas, espetáculos e outras atividades artísticas","ARTES, CULTURA, ESPORTE E RECREAÇÃO","ATIVIDADES ARTÍSTICAS, CRIATIVAS E DE ESPETÁCULOS","Atividades artísticas, criativas e de espetáculos"
+9101,Atividades de bibliotecas e arquivos,"ARTES, CULTURA, ESPORTE E RECREAÇÃO",ATIVIDADES LIGADAS AO PATRIMÔNIO CULTURAL E AMBIENTAL,Atividades ligadas ao patrimônio cultural e ambiental
+9102,"Atividades de museus e de exploração, restauração artística e conservação de lugares e prédios históricos e atrações similares","ARTES, CULTURA, ESPORTE E RECREAÇÃO",ATIVIDADES LIGADAS AO PATRIMÔNIO CULTURAL E AMBIENTAL,Atividades ligadas ao patrimônio cultural e ambiental
+9103,"Atividades de jardins botânicos, zoológicos, parques nacionais, reservas ecológicas e áreas de proteção ambiental","ARTES, CULTURA, ESPORTE E RECREAÇÃO",ATIVIDADES LIGADAS AO PATRIMÔNIO CULTURAL E AMBIENTAL,Atividades ligadas ao patrimônio cultural e ambiental
+9200,Atividades de exploração de jogos de azar e apostas,"ARTES, CULTURA, ESPORTE E RECREAÇÃO",ATIVIDADES DE EXPLORAÇÃO DE JOGOS DE AZAR E APOSTAS,Atividades de exploração de jogos de azar e apostas
+9311,Gestão de instalações de esportes,"ARTES, CULTURA, ESPORTE E RECREAÇÃO",ATIVIDADES ESPORTIVAS E DE RECREAÇÃO E LAZER,Atividades esportivas
+9312,"Clubes sociais, esportivos e similares","ARTES, CULTURA, ESPORTE E RECREAÇÃO",ATIVIDADES ESPORTIVAS E DE RECREAÇÃO E LAZER,Atividades esportivas
+9313,Atividades de condicionamento físico,"ARTES, CULTURA, ESPORTE E RECREAÇÃO",ATIVIDADES ESPORTIVAS E DE RECREAÇÃO E LAZER,Atividades esportivas
+9319,Atividades esportivas não especificadas anteriormente,"ARTES, CULTURA, ESPORTE E RECREAÇÃO",ATIVIDADES ESPORTIVAS E DE RECREAÇÃO E LAZER,Atividades esportivas
+9321,Parques de diversão e parques temáticos,"ARTES, CULTURA, ESPORTE E RECREAÇÃO",ATIVIDADES ESPORTIVAS E DE RECREAÇÃO E LAZER,Atividades de recreação e lazer
+9329,Atividades de recreação e lazer não especificadas anteriormente,"ARTES, CULTURA, ESPORTE E RECREAÇÃO",ATIVIDADES ESPORTIVAS E DE RECREAÇÃO E LAZER,Atividades de recreação e lazer
+9411,Atividades de organizações associativas patronais e empresariais,OUTRAS ATIVIDADES DE SERVIÇOS,ATIVIDADES DE ORGANIZAÇÕES ASSOCIATIVAS,"Atividades de organizações associativas patronais, empresariais e profissionais"
+9412,Atividades de organizações associativas profissionais,OUTRAS ATIVIDADES DE SERVIÇOS,ATIVIDADES DE ORGANIZAÇÕES ASSOCIATIVAS,"Atividades de organizações associativas patronais, empresariais e profissionais"
+9420,Atividades de organizações sindicais,OUTRAS ATIVIDADES DE SERVIÇOS,ATIVIDADES DE ORGANIZAÇÕES ASSOCIATIVAS,Atividades de organizações sindicais
+9430,Atividades de associações de defesa de direitos sociais,OUTRAS ATIVIDADES DE SERVIÇOS,ATIVIDADES DE ORGANIZAÇÕES ASSOCIATIVAS,Atividades de associações de defesa de direitos sociais
+9491,Atividades de organizações religiosas,OUTRAS ATIVIDADES DE SERVIÇOS,ATIVIDADES DE ORGANIZAÇÕES ASSOCIATIVAS,Atividades de organizações associativas não especificadas anteriormente
+9492,Atividades de organizações políticas,OUTRAS ATIVIDADES DE SERVIÇOS,ATIVIDADES DE ORGANIZAÇÕES ASSOCIATIVAS,Atividades de organizações associativas não especificadas anteriormente
+9493,Atividades de organizações associativas ligadas à cultura e à arte,OUTRAS ATIVIDADES DE SERVIÇOS,ATIVIDADES DE ORGANIZAÇÕES ASSOCIATIVAS,Atividades de organizações associativas não especificadas anteriormente
+9499,Atividades associativas não especificadas anteriormente,OUTRAS ATIVIDADES DE SERVIÇOS,ATIVIDADES DE ORGANIZAÇÕES ASSOCIATIVAS,Atividades de organizações associativas não especificadas anteriormente
+9511,Reparação e manutenção de computadores e de equipamentos periféricos,OUTRAS ATIVIDADES DE SERVIÇOS,REPARAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DE INFORMÁTICA E COMUNICAÇÃO E DE OBJETOS PESSOAIS E DOMÉSTICOS,Reparação e manutenção de equipamentos de informática e comunicação
+9512,Reparação e manutenção de equipamentos de comunicação,OUTRAS ATIVIDADES DE SERVIÇOS,REPARAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DE INFORMÁTICA E COMUNICAÇÃO E DE OBJETOS PESSOAIS E DOMÉSTICOS,Reparação e manutenção de equipamentos de informática e comunicação
+9521,Reparação e manutenção de equipamentos eletroeletrônicos de uso pessoal e doméstico,OUTRAS ATIVIDADES DE SERVIÇOS,REPARAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DE INFORMÁTICA E COMUNICAÇÃO E DE OBJETOS PESSOAIS E DOMÉSTICOS,Reparação e manutenção de objetos e equipamentos pessoais e domésticos
+9529,Reparação e manutenção de objetos e equipamentos pessoais e domésticos não especificados anteriormente,OUTRAS ATIVIDADES DE SERVIÇOS,REPARAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DE INFORMÁTICA E COMUNICAÇÃO E DE OBJETOS PESSOAIS E DOMÉSTICOS,Reparação e manutenção de objetos e equipamentos pessoais e domésticos
+9601,"Lavanderias, tinturarias e toalheiros",OUTRAS ATIVIDADES DE SERVIÇOS,OUTRAS ATIVIDADES DE SERVIÇOS PESSOAIS,Outras atividades de serviços pessoais
+9602,Cabeleireiros e outras atividades de tratamento de beleza,OUTRAS ATIVIDADES DE SERVIÇOS,OUTRAS ATIVIDADES DE SERVIÇOS PESSOAIS,Outras atividades de serviços pessoais
+9603,Atividades funerárias e serviços relacionados,OUTRAS ATIVIDADES DE SERVIÇOS,OUTRAS ATIVIDADES DE SERVIÇOS PESSOAIS,Outras atividades de serviços pessoais
+9609,Atividades de serviços pessoais não especificadas anteriormente,OUTRAS ATIVIDADES DE SERVIÇOS,OUTRAS ATIVIDADES DE SERVIÇOS PESSOAIS,Outras atividades de serviços pessoais
+9700,Serviços domésticos,SERVIÇOS DOMÉSTICOS,SERVIÇOS DOMÉSTICOS,Serviços domésticos
+9900,Organismos internacionais e outras instituições extraterritoriais,ORGANISMOS INTERNACIONAIS E OUTRAS INSTITUIÇÕES EXTRATERRITORIAIS,ORGANISMOS INTERNACIONAIS E OUTRAS INSTITUIÇÕES EXTRATERRITORIAIS,Organismos internacionais e outras instituições extraterritoriais

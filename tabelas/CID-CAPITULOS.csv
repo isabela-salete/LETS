@@ -1,0 +1,23 @@
+NUMERO CAPITULO,CAT INICIAL,CAT FIM,DESCRICAO,DESCRABREV
+1,A00,B99,Capítulo I - Algumas doenças infecciosas e parasitárias,Algumas doenças infecciosas e parasitárias
+2,C00,D48,Capítulo II - Neoplasias [tumores],Neoplasias (tumores)
+3,D50,D89,Capítulo III  - Doenças do sangue e dos órgãos hematopoéticos e alguns transtornos imunitários,Doenças do sangue e dos órgãos hematopoéticos e alguns transtornos imunitários
+4,E00,E90,"Capítulo IV - Doenças endócrinas, nutricionais e metabólicas",Doenças endócrinas nutricionais e metabólicas
+5,F00,F99,Capítulo V - Transtornos mentais e comportamentais,Transtornos mentais e comportamentais
+6,G00,G99,Capítulo VI - Doenças do sistema nervoso,Doenças do sistema nervoso
+7,H00,H59,Capítulo VII - Doenças do olho e anexos,Doenças do olho e anexos
+8,H60,H95,Capítulo VIII - Doenças do ouvido e da apófise mastóide,Doenças do ouvido e da apófise mastóide
+9,I00,I99,Capítulo IX - Doenças do aparelho circulatório,Doenças do aparelho circulatório
+10,J00,J99,Capítulo X - Doenças do aparelho respiratório,Doenças do aparelho respiratório
+11,K00,K93,Capítulo XI - Doenças do aparelho digestivo,Doenças do aparelho digestivo
+12,L00,L99,Capítulo XII - Doenças da pele e do tecido subcutâneo,Doenças da pele e do tecido subcutâneo
+13,M00,M99,Capítulo XIII - Doenças do sistema osteomuscular e do tecido conjuntivo,Doenças do sistema osteomuscular e do tecido conjuntivo
+14,N00,N99,Capítulo XIV - Doenças do aparelho geniturinário,Doenças do aparelho geniturinário
+15,O00,O99,"Capítulo XV - Gravidez, parto e puerpério",Gravidez parto e puerpério
+16,P00,P96,Capítulo XVI - Algumas afecções originadas no período perinatal,Algumas afecções originadas no período perinatal
+17,Q00,Q99,"Capítulo XVII - Malformações congênitas, deformidades e anomalias cromossômicas","Malformações congênitas, deformidades e anomalias cromossômicas"
+18,R00,R99,"Capítulo XVIII - Sintomas, sinais e achados anormais de exames clínicos e de laboratório, não classificados em outra parte","Sintomas, sinais e achados anormais de exames clínicos e de laboratório, não classificados em outra parte"
+19,S00,T98,"Capítulo XIX - Lesões, envenenamento e algumas outras conseqüências de causas externas","Lesões, envenenamento e algumas outras conseqüências de causas externas"
+20,V01,Y98,Capítulo XX - Causas externas de morbidade e de mortalidade,Causas externas de morbidade e mortalidade
+21,Z00,Z99,Capítulo XXI - Fatores que influenciam o estado de saúde e o contato com os serviços de saúde,Contatos com serviços de saúde
+22,U04,U99,Capítulo XXII - Códigos para propósitos especiais,Códigos para propósitos especiais
