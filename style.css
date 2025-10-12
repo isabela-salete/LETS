@@ -48,6 +48,21 @@
     background-image: url("https://img.icons8.com/ios-filled/50/000000/bar-chart.png"); /* Exemplo de ícone de barra */
 }
 
+/* Ícone para a aba "Gráfico 5" (se houver) */
+.stTabs [data-baseweb="tab-panel"] .stTabs [data-baseweb="tab-list"] button:nth-of-type(5) {
+    background-image: url("https://img.icons8.com/ios-filled/50/000000/bar-chart.png"); /* Exemplo de ícone de barra */
+}
+
+/* Ícone para a aba "Gráfico 6" (se houver) */
+.stTabs [data-baseweb="tab-panel"] .stTabs [data-baseweb="tab-list"] button:nth-of-type(6) {
+    background-image: url("https://img.icons8.com/ios-filled/50/000000/bar-chart.png"); /* Exemplo de ícone de barra */
+}
+
+/* Ícone para a aba "Gráfico 7" (se houver) */
+.stTabs [data-baseweb="tab-panel"] .stTabs [data-baseweb="tab-list"] button:nth-of-type(7) {
+    background-image: url("https://img.icons8.com/ios-filled/50/000000/bar-chart.png"); /* Exemplo de ícone de barra */
+}
+
 
 /* --- Estilo da Aba Ativa (Geral para ambas as camadas) --- */
 .stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
