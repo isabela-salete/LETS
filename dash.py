@@ -5,13 +5,103 @@ import numpy as np
 import json
 from unidecode import unidecode
 import re
+import base64
+import os
+import textwrap
+
+pd.options.mode.chained_assignment = None
 
 st.set_page_config(layout='wide')
 
-st.image('logo-fat.png', width= 500 )
+# Função para converter a imagem em Base64
+def get_base64_of_bin_file(bin_file):
+    """Carrega o arquivo binário da imagem, codifica em Base64 e retorna uma string."""
+    try:
+        with open(bin_file, 'rb') as f:
+            data = f.read()
+        return base64.b64encode(data).decode()
+    except FileNotFoundError:
+        return "" # Retorna uma string vazia se o arquivo não for encontrado
 
-st.title('Observatório de Engenharia do Trabalho e Sustentabilidade')
-st.subheader('Análise exploratória de dados relacionados a segurança do trabalho na Região do Médio Vale Paraíba')
+# ---
+# Lógica da Barra Fixa
+# ---
+
+# Caminho para o seu arquivo de imagem
+img_file = 'logo-fat.png'
+img_base64 = ""
+
+# Verifica se o arquivo existe antes de tentar carregar
+if os.path.exists(img_file):
+    img_base64 = get_base64_of_bin_file(img_file)
+else:
+    st.error(f"Erro: O arquivo de imagem '{img_file}' não foi encontrado na pasta do script. Verifique o nome e o caminho.")
+
+# Injetando o CSS e a imagem codificada no HTML
+st.markdown(
+    """
+    <style>
+    /* Oculta a barra de navegação de páginas nativa */
+    section[data-testid="stSidebarNav"] {
+        display: none;
+    }
+
+    /* Estilo para a nossa barra fixa principal */
+    .fixed-header {
+        position: fixed;
+        top: 60px;
+        left: 0px;
+        width: 107.5%;
+        background-color: #f0f4f6; 
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        transition: left 0.3s, width 0.3s;
+        justify-content: center;
+    }
+    
+    .header-image {
+        height: 80px;
+        margin-right: 40px;
+    }
+    .header-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #000;
+        margin: 0;
+    }
+
+    /* Ajuste para a sidebar quando ela está aberta. */
+    .sidebar-open .fixed-header {
+        left: 250px;
+        width: calc(100% - 250px);
+    }
+    
+    .stApp {
+        padding-top: 80px; 
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Conteúdo da barra fixa, agora com a imagem em Base64
+st.markdown(
+    f"""
+    <div class="fixed-header">
+        <img class="header-image" src="data:image/png;base64,{img_base64}" alt="Logo">
+        <h1 class="header-title">Observatório de Engenharia do Trabalho e Sustentabilidade</h1>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+#st.image('logo-fat.png', width= 500 )
+st.subheader(" ")
+st.header('Análise exploratória de dados relacionados a segurança do trabalho na Região do Médio Vale Paraíba')
 
 
 def slugify(text):
@@ -89,14 +179,14 @@ for i, municipio in enumerate(municipios):
             st.write('A Região do Vale do Paraíba é uma importante faixa territorial localizada entre os estados do Rio de Janeiro, São Paulo e Minas Gerais, tendo o rio Paraíba do Sul como elemento central que conecta seus diversos municípios. Historicamente marcada pelo ciclo do café no século XIX, a região preserva traços coloniais e um rico patrimônio cultural, além de desenvolver-se fortemente ao longo das principais rotas de circulação do Sudeste brasileiro, como a Via Dutra (BR-116).No aspecto econômico, o Vale do Paraíba se destaca por sua diversidade produtiva, que vai desde a agricultura familiar e o turismo rural até polos industriais de grande porte, com forte presença da indústria automobilística, siderúrgica e de tecnologia. Cidades como Volta Redonda, Resende, São José dos Campos e Taubaté são exemplos de centros urbanos com infraestrutura consolidada e papel estratégico no desenvolvimento regional. A região também é conhecida pela sua paisagem montanhosa, áreas de proteção ambiental e por abrigar unidades de conservação como o Parque Nacional de Itatiaia. O turismo ecológico, religioso e histórico tem crescido como atividade complementar à economia.Socialmente, o Vale do Paraíba apresenta bons índices de escolarização e acesso a serviços urbanos, mas ainda enfrenta desafios relacionados à mobilidade, desigualdade social e crescimento urbano desordenado em algumas áreas. Iniciativas intermunicipais e consórcios regionais vêm sendo desenvolvidos para integrar políticas públicas e impulsionar o desenvolvimento sustentável e equilibrado da região.')
             
             #mapa 
-            mapa = px.choropleth_mapbox(data_frame = df_semacento,
+            mapa = px.choropleth_map(data_frame = df_semacento,
                                         geojson=dfci,
                                         color = "count",
                                         color_continuous_scale="greens",
                                         locations="Município Empregador",
                                         featureidkey="properties.name",
                                         center={"lat": -22.5, "lon": -44.1},                       
-                                        mapbox_style="carto-positron",
+                                        map_style="carto-positron",
                                         zoom=8.2,
                                         opacity=1,
                                         hover_name = 'Município Empregador')
@@ -118,14 +208,17 @@ for i, municipio in enumerate(municipios):
 
                 #treemap de municipio
             fig2222 = px.treemap(municipio_counts, path=['Município Empregador'], values='count',
-                                title=' ')
+                                title=' ', color='count', color_continuous_scale='Reds',)
 
             fig2222.data[0].textinfo = 'label+value'
 
             fig2222.update_layout(
-                    margin=dict(t=50, l=25, r=25, b=25),
-                    title_font_size=28,
-                    uniformtext=dict(minsize=14, mode='show'))
+                margin=dict(t=50, l=25, r=25, b=25),
+                title_font_size=28,
+                uniformtext=dict(minsize=14, mode='show'),
+                # --- Adicione estas duas linhas para remover o fundo ---
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)')
 
             col2.plotly_chart(fig2222)
 
@@ -153,7 +246,7 @@ for i, municipio in enumerate(municipios):
 
         if municipio != "Geral" and not df_municipio_mapa.empty:
             col7,col8 = st.columns([1.2,1.5], gap='large')
-            fig = px.choropleth_mapbox(
+            fig = px.choropleth_map(
                 data_frame=df_municipio_mapa,
                 geojson=dfci,
                 color="count",
@@ -161,7 +254,7 @@ for i, municipio in enumerate(municipios):
                 locations="Município Empregador",
                 featureidkey="properties.name",
                 center={"lat": -22.5, "lon": -44.1},  # ajuste conforme o município
-                mapbox_style="carto-positron",
+                map_style="carto-positron",
                 zoom=8.2,
                 opacity=1,
                 hover_name="Município Empregador"
@@ -180,9 +273,9 @@ for i, municipio in enumerate(municipios):
         df_municipio2 = df2[df2["Município Empregador"] == municipio]
         
         # Abas internas para os gráficos
-        abas_graficos = st.tabs(["Acidentes por Tempo","Acidentes por Idade", "CID", "CNAE"])  # Nome das abas dos gráficos, pode ser dinâmico também
+        abas_graficos = st.tabs(["Acidentes por Tempo", "Acidentes por Idade", "CID", "CNAE", "CBO", "Característica da Lesão"])  # Nome das abas dos gráficos, pode ser dinâmico também
 
-        for j, nome_grafico in enumerate(["Acidentes por Tempo","Acidentes por Idade", "CID", "CNAE"]):  # Exemplo de gráficos
+        for j, nome_grafico in enumerate(["Acidentes por Tempo","Acidentes por Idade", "CID", "CNAE", "CBO", "Característica da Lesão"]):  # Exemplo de gráficos
             with abas_graficos[j]:
                 if not df_municipio2.empty:
                     if nome_grafico == "Acidentes por Tempo":
@@ -203,60 +296,197 @@ for i, municipio in enumerate(municipios):
 
                         if escolha == 'Geral':
                             dados_ano = df_municipio2['ano'].value_counts().sort_index()
-                            fig = px.bar(x=dados_ano.index, y=dados_ano.values, labels={'x': 'Ano', 'y': 'Contagem'}, title='Distribuição por Ano')
+                            fig = px.line(x=dados_ano.index, y=dados_ano.values, labels={'x': 'Ano', 'y': 'Contagem'}, title='Distribuição por Ano')
                         else:
                             ano_escolhido = int(escolha)
                             df_filtrado = df_municipio2[df_municipio2['ano'] == ano_escolhido]
                             dados_mes = df_filtrado['mes'].value_counts().sort_index()
-                            fig = px.bar(x=dados_mes.index, y=dados_mes.values, labels={'x': 'Mês', 'y': 'Contagem'}, title=f'Distribuição por Mês em {ano_escolhido}')
+                            fig = px.line(x=dados_mes.index, y=dados_mes.values, labels={'x': 'Mês', 'y': 'Contagem'}, title=f'Distribuição por Mês em {ano_escolhido}')
                             fig.update_layout(xaxis=dict(tickmode='array', tickvals=list(range(1, 13)), ticktext=['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']))
 
-                        fig.update_traces(texttemplate='%{y}', textposition='inside')
+                        fig.update_traces(mode='lines+markers', texttemplate='%{y}', textposition='top center', marker=dict(size=10))
                         st.plotly_chart(fig, use_container_width=True, key=f"{nome_grafico}_{municipio}")
+
                     elif nome_grafico == "CNAE":
-                        # Exemplo de gráfico CNAE (usando a coluna 'CNAE2.0 Empregador.1')
-                        st.subheader("Distribuição de CNAE")
-                        df_cnae = df_municipio2['CNAE2.0 Empregador.1'].value_counts().reset_index()
-                        df_cnae.columns = ['CNAE2.0 Empregador.1', 'count']  # Renomeando para facilitar no gráfico
+                        st.header("Acidentes por Empregador")
 
-                        def grafico_atualizado2(n):
-                            fig = px.bar(df_cnae.head(n), 
-                                         x='CNAE2.0 Empregador.1', 
-                                         y='count', 
-                                         color='CNAE2.0 Empregador.1', 
-                                         log_y=True)
-                            return fig
+                    #Distribuição de Empregador (CBO)
+                        sub = st.subheader("Distribuição de CNAE")
 
-                        # Usando o slider para escolher quantas categorias exibir
-                        escolha2 = st.slider(label='Selecione a quantidade de informações',
-                                            min_value=1,
-                                            max_value=len(df_cnae),
-                                            value=5,
-                                            key=f"slider_{municipio}")
+                        #colunas para filtro e gráfico
+                        col_cnae1, col_cnae2 = st.columns([2.3,7])
 
-                        # Adicionando o key único para o gráfico para evitar o erro de ID duplicado
-                        st.plotly_chart(grafico_atualizado2(escolha2), use_container_width=True, key=f"cnae_{municipio}")
+                        #filtro sub grupo
+                        lista_cnae_secao = df_municipio2['CNAE-SEÇÃO'].unique().tolist()
+                        lista_cnae_secao.insert(0, 'Todos')
+
+                        lista_cnae_divisao = df_municipio2['CNAE-DIVISÃO'].unique().tolist()
+                        lista_cnae_divisao.insert(0, 'Todos')
+
+                        lista_cnae_grupo = df_municipio2['CNAE-GRUPO'].unique().tolist()
+                        lista_cnae_grupo.insert(0, 'Todos')
+
+                        cnae_secao_selecionado = col_cnae1.selectbox('Selecione uma Seção (CNAE):',
+                                            lista_cnae_secao, key=f"cnae_secao_{sub}_{municipio}")
+                        
+                        cnae_divisao_selecionado = col_cnae1.selectbox('Selecione uma Divisão (CNAE):',
+                                            lista_cnae_divisao, key=f"cnae_divisao_{sub}_{municipio}")
+                        
+                        cnae_grupo_selecionado = col_cnae1.selectbox('Selecione um Grupo (CNAE):',
+                                            lista_cnae_grupo, key=f"cnae_grupo_{sub}_{municipio}")
+                        
+                        df_filtrado = df_municipio2.copy()
+
+                        if cnae_secao_selecionado != 'Todos':    
+                            df_filtrado = df_filtrado[df_filtrado['CNAE-SEÇÃO'] == cnae_secao_selecionado]
+
+                        if cnae_divisao_selecionado != 'Todos':    
+                            df_filtrado = df_filtrado[df_filtrado['CNAE-DIVISÃO'] == cnae_divisao_selecionado]
+
+                        if cnae_grupo_selecionado != 'Todos':
+                             df_filtrado = df_filtrado[df_filtrado['CNAE-GRUPO'] == cnae_grupo_selecionado]
+                                
+                        if not df_filtrado.empty:
+                            #dados para o gráfico
+                            cnae_counts = df_filtrado['CNAE2.0 Empregador.1'].value_counts().reset_index()
+                            cnae_counts.columns = ['CNAE2.0 Empregador.1', 'count']
+
+                            top_20_counts = cnae_counts.head(20)
+                            top_20_counts['ranking'] = top_20_counts.index + 1
+                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+
+                            wrapper = textwrap.TextWrapper(width=25) 
+
+                            def formatar_texto_para_caixa(row):
+                                titulo_quebrado = wrapper.fill(text=row['CNAE2.0 Empregador.1']).replace('\n', '<br>')
+                                contagem = row['count']
+                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
+                            
+                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+
+
+                            #gráfico de calor
+                            fig_cnae_descricao = px.treemap(top_20_counts, path=['CNAE2.0 Empregador.1'], values='count',
+                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
+                            
+                            fig_cnae_descricao.update_traces(
+                                hovertemplate='<b>%{label}</b><br><br>' +
+                                            'Quantidade: %{value}<br>' +
+                                            'Posição: %{customdata[0]}' +
+                                            '<extra></extra>', 
+
+                                texttemplate='%{customdata[1]}', 
+                                textposition='top left',
+                                textfont_size=12,
+                                pathbar_visible=False,
+                                root_color = "white" 
+                            ) 
+
+
+                            fig_cnae_descricao.update_layout(
+                                margin=dict(t=50, l=25, r=25, b=25),
+                                title_font_size=28,
+                                #uniformtext=dict(minsize=9),
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)',)
+
+                            col_cnae2.plotly_chart(fig_cnae_descricao, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                        else:
+                            st.warning("Nenhum dado encontrado para a seleção atual.")
+
+                    #Distribuição de Seção (CNAE)
+                        sub = st.subheader("Distribuição de Seção (CNAE)")
                     
+                    #Distribuição de Divisão (CNAE)
+                        sub = st.subheader("Distribuição de Divisão (CNAE)")
+
+                    #Distribuição de Grupo (CNAE)
+                        sub = st.subheader("Distribuição de Grupo (CNAE)")
+
                     elif nome_grafico == "CID":
-                        st.subheader("Distribuição de Ferimentos (CID)")
-                        df_cid = df_municipio2['CID - Ferimento'].value_counts().reset_index()
-                        def grafico_atualizado3(n):
-                            fig23331 = px.bar(df_cid.head(n), 
-                                y='count', 
-                                x='CID - Ferimento',
-                                color= 'CID - Ferimento',
-                                log_y= True)
-                            return fig23331  
+                        st.header("Acidentes por Ferimentos")
+
+                    #Distribuição de Funções (CBO)
+                        sub = st.subheader("Distribuição de Ferimentos (CID)")
+
+                        #colunas para filtro e gráfico
+                        col_cid1, col_cid2 = st.columns([2.3,7])
+
+                        #filtro sub grupo
+                        lista_cid_grupo = df_municipio2['CID-GRUPO'].unique().tolist()
+                        lista_cid_grupo.insert(0, 'Todos')
+
+                        lista_cid_capitulo = df_municipio2['CID-CAPITULO'].unique().tolist()
+                        lista_cid_capitulo.insert(0, 'Todos')
                         
+                        df_filtrado = df_municipio2.copy()
+
+                        cid_grupo_selecionado = col_cid1.selectbox('Selecione um Grupo (CID):',
+                                            lista_cid_grupo, key=f"cid_grupo_{sub}_{municipio}")
                         
-                        # Usando o slider para escolher quantas categorias exibir
-                        escolha3 = st.slider(label='Selecione a quantidade de informações',
-                                            min_value=1,
-                                            max_value=len(df_cid),
-                                            value=5,
-                                            key=f"slider2_{municipio}")
-                        
-                        st.plotly_chart(grafico_atualizado3(escolha3), use_container_width=True, key=f"cid_{municipio}")
+                        cid_capitulo_selecionado = col_cid1.selectbox('Selecione um Capitulo (CID):',
+                                            lista_cid_capitulo, key=f"cid_capitulo_{sub}_{municipio}")
+
+                        if cid_grupo_selecionado != 'Todos':    
+                            df_filtrado = df_filtrado[df_filtrado['CID-GRUPO'] == cid_grupo_selecionado]
+
+                        if cid_capitulo_selecionado != 'Todos':    
+                            df_filtrado = df_filtrado[df_filtrado['CID-CAPITULO'] == cid_capitulo_selecionado]
+
+                                
+                        if not df_filtrado.empty:
+                            #dados para o gráfico
+                            cid_counts = df_filtrado['CID-Ferimento'].value_counts().reset_index()
+                            cid_counts.columns = ['CID-Ferimento', 'count']
+
+                            top_20_counts = cid_counts.head(20)
+                            top_20_counts['ranking'] = top_20_counts.index + 1
+                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+
+                            wrapper = textwrap.TextWrapper(width=25) 
+
+                            def formatar_texto_para_caixa(row):
+                                titulo_quebrado = wrapper.fill(text=row['CID-Ferimento']).replace('\n', '<br>')
+                                contagem = row['count']
+                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
+                            
+                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+
+
+                            #gráfico de calor
+                            fig_cid_ferimento = px.treemap(top_20_counts, path=['CID-Ferimento'], values='count',
+                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
+                            
+                            fig_cid_ferimento.update_traces(
+                                hovertemplate='<b>%{label}</b><br><br>' +
+                                            'Quantidade: %{value}<br>' +
+                                            'Posição: %{customdata[0]}' +
+                                            '<extra></extra>', 
+
+                                texttemplate='%{customdata[1]}', 
+                                textposition='top left',
+                                textfont_size=12,
+                                pathbar_visible=False,
+                                root_color = "white" 
+                            ) 
+
+
+                            fig_cid_ferimento.update_layout(
+                                margin=dict(t=50, l=25, r=25, b=25),
+                                title_font_size=28,
+                                #uniformtext=dict(minsize=9),
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)',)
+
+                            col_cid2.plotly_chart(fig_cid_ferimento, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                        else:
+                            st.warning("Nenhum dado encontrado para a seleção atual.")
+
+                    #Distribuição por Grupo (CID)
+                        sub = st.subheader("Distribuição por Grupo (CID)")
+
+                    #Distribuição por Capitulo (CID)
+                        sub = st.subheader("Distribuição por Capitulo (CID)")
 
                     elif nome_grafico == "Acidentes por Idade":
                         st.subheader('Distribuição dos Acidentes por Idade')
@@ -316,6 +546,403 @@ for i, municipio in enumerate(municipios):
 
                         fig33.update_traces(texttemplate='%{x}', textposition='inside')
                         st.plotly_chart(fig33, use_container_width=True, key=f"{nome_grafico}_{municipio}")
+
+                    elif nome_grafico == "CBO":
+                        st.header("Acidentes por Funções")
+
+                    #Distribuição de Funções (CBO)
+                        sub = st.subheader("Distribuição de Funções (CBO)")
+
+                        #colunas para filtro e gráfico
+                        col_cbo1, col_cbo2 = st.columns([2.3,7])
+
+                        #filtro sub grupo
+                        lista_cbo = df_municipio2['CBO-SubGrupoPrincipal'].unique().tolist()
+                        lista_cbo.insert(0, 'Todos')
+
+                        cbo_selecionado = col_cbo1.selectbox('Selecione um Subgrupo Principal:',
+                                            lista_cbo, key=f"{sub}_{municipio}")
+
+                        if cbo_selecionado == 'Todos':
+                            df_filtrado = df_municipio2
+                        else:
+                            df_filtrado = df_municipio2[df_municipio2['CBO-SubGrupoPrincipal'] == cbo_selecionado]
+                                
+                        if not df_filtrado.empty:
+                            #dados para o gráfico
+                            cbo_counts = df_filtrado['CBO-Função'].value_counts().reset_index()
+                            cbo_counts.columns = ['CBO-Função', 'count']
+
+                            top_20_counts = cbo_counts.head(20)
+                            top_20_counts['ranking'] = top_20_counts.index + 1
+                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+
+                            wrapper = textwrap.TextWrapper(width=25) 
+
+                            def formatar_texto_para_caixa(row):
+                                titulo_quebrado = wrapper.fill(text=row['CBO-Função']).replace('\n', '<br>')
+                                contagem = row['count']
+                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
+                            
+                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+
+
+                            #gráfico de calor
+                            fig_cbo_func = px.treemap(top_20_counts, path=['CBO-Função'], values='count',
+                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
+                            
+                            fig_cbo_func.update_traces(
+                                hovertemplate='<b>%{label}</b><br><br>' +
+                                            'Quantidade: %{value}<br>' +
+                                            'Posição: %{customdata[0]}' +
+                                            '<extra></extra>', 
+
+                                texttemplate='%{customdata[1]}', 
+                                textposition='top left',
+                                textfont_size=12,
+                                pathbar_visible=False,
+                                root_color = "white" 
+                            ) 
+
+
+                            fig_cbo_func.update_layout(
+                                margin=dict(t=50, l=25, r=25, b=25),
+                                title_font_size=28,
+                                #uniformtext=dict(minsize=9),
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)',)
+
+                            col_cbo2.plotly_chart(fig_cbo_func, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                        else:
+                            st.warning("Nenhum dado encontrado para a seleção atual.")
+
+                    #Distribuição de Subgrupo (CBO)
+                        sub = st.subheader("Distribuição de Subgrupo (CBO)")
+
+                        #colunas para filtro e gráfico
+                        col_cbo1, col_cbo2 = st.columns([2.3,7])
+
+                        #filtro
+                        lista_cbo = df_municipio2['CBO-SubGrupoPrincipal'].unique().tolist()
+                        lista_cbo.insert(0, 'Todos')
+
+                        cbo_selecionado = col_cbo1.selectbox('Selecione um Subgrupo Principal:',
+                                            lista_cbo, key=f"{sub}_{municipio}")
+
+                        if cbo_selecionado == 'Todos':
+                            df_filtrado = df_municipio2
+                        else:
+                            df_filtrado = df_municipio2[df_municipio2['CBO-SubGrupoPrincipal'] == cbo_selecionado]
+                                
+                        if not df_filtrado.empty:
+                            #dados para o gráfico
+                            cbo_counts = df_filtrado['CBO-SubGrupo'].value_counts().reset_index()
+                            cbo_counts.columns = ['CBO-SubGrupo', 'count']
+
+                            top_20_counts = cbo_counts.head(20)
+                            top_20_counts['ranking'] = top_20_counts.index + 1
+                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+
+                            wrapper = textwrap.TextWrapper(width=25)
+
+                            def formatar_texto_para_caixa(row):
+                                titulo_quebrado = wrapper.fill(text=row['CBO-SubGrupo']).replace('\n', '<br>')
+                                contagem = row['count']
+                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
+                            
+                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+
+
+                            #gráfico de calor
+                            fig_cbo_subg = px.treemap(top_20_counts, path=['CBO-SubGrupo'], values='count',
+                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
+                            
+                            fig_cbo_subg.update_traces(
+                                hovertemplate='<b>%{label}</b><br><br>' +
+                                            'Quantidade: %{value}<br>' +
+                                            'Posição: %{customdata[0]}' +
+                                            '<extra></extra>', 
+
+                                texttemplate='%{customdata[1]}', 
+                                textposition='top left',
+                                textfont_size=12,
+                                pathbar_visible=False,
+                                root_color = "white" 
+                            ) 
+
+
+                            fig_cbo_subg.update_layout(
+                                margin=dict(t=50, l=25, r=25, b=25),
+                                title_font_size=28,
+                                #uniformtext=dict(minsize=9),
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)',)
+
+                            col_cbo2.plotly_chart(fig_cbo_subg, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                        else:
+                            st.warning("Nenhum dado encontrado para a seleção atual.")
+                    
+                    elif nome_grafico == "Característica da Lesão":
+
+                        sub = st.subheader("Distribuição de Natureza da Lesão")
+
+                        #colunas para filtro e gráfico
+                        col_lesao1, col_lesao2 = st.columns([2.3,7])
+
+                        #filtro
+                        lista_cbo = df_municipio2['CBO-SubGrupoPrincipal'].unique().tolist()
+                        lista_cbo.insert(0, 'Todos')
+
+                        lista_cnae = df_municipio2['CNAE-DIVISÃO'].unique().tolist()
+                        lista_cnae.insert(0, 'Todos')
+
+                        lista_cid = df_municipio2['CID-CAPITULO'].unique().tolist()
+                        lista_cid.insert(0, 'Todos')
+
+                        cbo_selecionado = col_lesao1.selectbox('Selecione um Subgrupo Principal (CBO):',
+                                            lista_cbo, key=f"cbo_{sub}_{municipio}")
+                        
+                        cnae_selecionado = col_lesao1.selectbox('Selecione uma Divisão (CNAE):',
+                                            lista_cnae, key=f"cnae_{sub}_{municipio}")
+                        
+                        cid_selecionado = col_lesao1.selectbox('Selecione um Capítulo (CID):',
+                                            lista_cid, key=f"cid_{sub}_{municipio}")
+                        
+                        df_filtrado = df_municipio2.copy()
+
+                        if cbo_selecionado != 'Todos':    
+                            df_filtrado = df_filtrado[df_filtrado['CBO-SubGrupoPrincipal'] == cbo_selecionado]
+
+                        if cnae_selecionado != 'Todos':    
+                            df_filtrado = df_filtrado[df_filtrado['CNAE-DIVISÃO'] == cnae_selecionado]
+
+                        if cid_selecionado != 'Todos':
+                             df_filtrado = df_filtrado[df_filtrado['CID-CAPITULO'] == cid_selecionado]
+
+                                
+                        if not df_filtrado.empty:
+                            #dados para o gráfico
+                            cbo_counts = df_filtrado['Natureza da Lesão'].value_counts().reset_index()
+                            cbo_counts.columns = ['Natureza da Lesão', 'count']
+
+                            top_20_counts = cbo_counts.head(20)
+                            top_20_counts['ranking'] = top_20_counts.index + 1
+                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+
+                            wrapper = textwrap.TextWrapper(width=25) 
+
+                            @st.cache_data
+                            def formatar_texto_para_caixa(row):
+                                titulo_quebrado = wrapper.fill(text=row['Natureza da Lesão']).replace('\n', '<br>')
+                                contagem = row['count']
+                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
+                            
+                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+
+
+                            #gráfico de calor
+                            fig_lesao = px.treemap(top_20_counts, path=['Natureza da Lesão'], values='count',
+                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
+                            
+                            fig_lesao.update_traces(
+                                hovertemplate='<b>%{label}</b><br><br>' +
+                                            'Quantidade: %{value}<br>' +
+                                            'Posição: %{customdata[0]}' +
+                                            '<extra></extra>', 
+
+                                texttemplate='%{customdata[1]}', 
+                                textposition='top left',
+                                textfont_size=12,
+                                pathbar_visible=False,
+                                root_color = "white" 
+                            ) 
+
+
+                            fig_lesao.update_layout(
+                                margin=dict(t=50, l=25, r=25, b=25),
+                                title_font_size=28,
+                                #uniformtext=dict(minsize=9),
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)',)
+
+                            col_lesao2.plotly_chart(fig_lesao, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                            
+########################################################################################
+                            st.divider()
+
+                            sub = st.subheader('Distribuição de Parte do Corpo Atingida')
+
+                            #colunas para filtro e gráfico
+                            col_lesao1, col_lesao2 = st.columns([2.3,7])
+
+                            #filtro
+                            lista_cbo = df_municipio2['CBO-SubGrupoPrincipal'].unique().tolist()
+                            lista_cbo.insert(0, 'Todos')
+
+                            lista_cnae = df_municipio2['CNAE-DIVISÃO'].unique().tolist()
+                            lista_cnae.insert(0, 'Todos')
+
+                            lista_cid = df_municipio2['CID-CAPITULO'].unique().tolist()
+                            lista_cid.insert(0, 'Todos')
+
+                            cbo_selecionado = col_lesao1.selectbox('Selecione um Subgrupo Principal (CBO):',
+                                                lista_cbo, key=f"cbo_{sub}_{municipio}")
+                            
+                            cnae_selecionado = col_lesao1.selectbox('Selecione uma Divisão (CNAE):',
+                                                lista_cnae, key=f"cnae_{sub}_{municipio}")
+                            
+                            cid_selecionado = col_lesao1.selectbox('Selecione um Capítulo (CID):',
+                                                lista_cid, key=f"cid_{sub}_{municipio}")
+                            
+                            df_filtrado = df_municipio2.copy()
+
+                            if cbo_selecionado != 'Todos':    
+                                df_filtrado = df_filtrado[df_filtrado['CBO-SubGrupoPrincipal'] == cbo_selecionado]
+
+                            if cnae_selecionado != 'Todos':    
+                                df_filtrado = df_filtrado[df_filtrado['CNAE-DIVISÃO'] == cnae_selecionado]
+
+                            if cid_selecionado != 'Todos':
+                                df_filtrado = df_filtrado[df_filtrado['CID-CAPITULO'] == cid_selecionado]
+
+                                    
+                            if not df_filtrado.empty:
+                                #dados para o gráfico
+                                cbo_counts = df_filtrado['Parte Corpo Atingida'].value_counts().reset_index()
+                                cbo_counts.columns = ['Parte Corpo Atingida', 'count']
+
+                                top_20_counts = cbo_counts.head(20)
+                                top_20_counts['ranking'] = top_20_counts.index + 1
+                                top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+
+                                wrapper = textwrap.TextWrapper(width=25) 
+
+                                @st.cache_data
+                                def formatar_texto_para_caixa(row):
+                                    titulo_quebrado = wrapper.fill(text=row['Parte Corpo Atingida']).replace('\n', '<br>')
+                                    contagem = row['count']
+                                    return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
+                                
+                                top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+
+
+                                #gráfico de calor
+                                fig_corpo = px.treemap(top_20_counts, path=['Parte Corpo Atingida'], values='count',
+                                        title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
+                                
+                                fig_corpo.update_traces(
+                                    hovertemplate='<b>%{label}</b><br><br>' +
+                                                'Quantidade: %{value}<br>' +
+                                                'Posição: %{customdata[0]}' +
+                                                '<extra></extra>', 
+
+                                    texttemplate='%{customdata[1]}', 
+                                    textposition='top left',
+                                    textfont_size=12,
+                                    pathbar_visible=False,
+                                    root_color = "white" 
+                                ) 
+
+
+                                fig_corpo.update_layout(
+                                    margin=dict(t=50, l=25, r=25, b=25),
+                                    title_font_size=28,
+                                    #uniformtext=dict(minsize=9),
+                                    plot_bgcolor='rgba(0,0,0,0)',
+                                    paper_bgcolor='rgba(0,0,0,0)',)
+                                
+
+                                col_lesao2.plotly_chart(fig_corpo, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+
+                            st.divider()
+
+                            sub = st.subheader('Distribuição de Agente Causador do Acidente')
+                            #colunas para filtro e gráfico
+                            col_lesao1, col_lesao2 = st.columns([2.3,7])
+
+                            #filtro
+                            lista_cbo = df_municipio2['CBO-SubGrupoPrincipal'].unique().tolist()
+                            lista_cbo.insert(0, 'Todos')
+
+                            lista_cnae = df_municipio2['CNAE-DIVISÃO'].unique().tolist()
+                            lista_cnae.insert(0, 'Todos')
+
+                            lista_cid = df_municipio2['CID-CAPITULO'].unique().tolist()
+                            lista_cid.insert(0, 'Todos')
+
+                            cbo_selecionado = col_lesao1.selectbox('Selecione um Subgrupo Principal (CBO):',
+                                                lista_cbo, key=f"cbo_{sub}_{municipio}")
+                            
+                            cnae_selecionado = col_lesao1.selectbox('Selecione uma Divisão (CNAE):',
+                                                lista_cnae, key=f"cnae_{sub}_{municipio}")
+                            
+                            cid_selecionado = col_lesao1.selectbox('Selecione um Capítulo (CID):',
+                                                lista_cid, key=f"cid_{sub}_{municipio}")
+                            
+                            df_filtrado = df_municipio2.copy()
+
+                            if cbo_selecionado != 'Todos':    
+                                df_filtrado = df_filtrado[df_filtrado['CBO-SubGrupoPrincipal'] == cbo_selecionado]
+
+                            if cnae_selecionado != 'Todos':    
+                                df_filtrado = df_filtrado[df_filtrado['CNAE-DIVISÃO'] == cnae_selecionado]
+
+                            if cid_selecionado != 'Todos':
+                                df_filtrado = df_filtrado[df_filtrado['CID-CAPITULO'] == cid_selecionado]
+
+                                    
+                            if not df_filtrado.empty:
+                                #dados para o gráfico
+                                cbo_counts = df_filtrado['Agente Causador Acidente'].value_counts().reset_index()
+                                cbo_counts.columns = ['Agente Causador Acidente', 'count']
+
+                                top_20_counts = cbo_counts.head(20)
+                                top_20_counts['ranking'] = top_20_counts.index + 1
+                                top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+
+                                wrapper = textwrap.TextWrapper(width=25) 
+
+                                @st.cache_data
+                                def formatar_texto_para_caixa(row):
+                                    titulo_quebrado = wrapper.fill(text=row['Agente Causador Acidente']).replace('\n', '<br>')
+                                    contagem = row['count']
+                                    # Usamos 0.9em para o título e 1.3em para a contagem
+                                    return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
+                                
+                                top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+
+
+                                #gráfico de calor
+                                fig_agente = px.treemap(top_20_counts, path=['Agente Causador Acidente'], values='count',
+                                        title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
+                                
+                                fig_agente.update_traces(
+                                    hovertemplate='<b>%{label}</b><br><br>' +
+                                                'Quantidade: %{value}<br>' +
+                                                'Posição: %{customdata[0]}' +
+                                                '<extra></extra>', 
+
+                                    texttemplate='%{customdata[1]}', 
+                                    textposition='top left',
+                                    textfont_size=12,
+                                    pathbar_visible=False,
+                                    root_color = "white" 
+                                ) 
+
+
+                                fig_agente.update_layout(
+                                    margin=dict(t=50, l=25, r=25, b=25),
+                                    title_font_size=28,
+                                    #uniformtext=dict(minsize=9),
+                                    plot_bgcolor='rgba(0,0,0,0)',
+                                    paper_bgcolor='rgba(0,0,0,0)',)
+                                
+
+                                col_lesao2.plotly_chart(fig_agente, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+
+                        else:
+                            st.warning("Nenhum dado encontrado para a seleção atual.")
+    
+                        
                 else:
                     st.write("Sem dados para exibir.")
-
