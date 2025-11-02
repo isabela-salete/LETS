@@ -485,6 +485,71 @@ for i, municipio in enumerate(municipios):
                     #Distribuição por Grupo (CID)
                         sub = st.subheader("Distribuição por Grupo (CID)")
 
+                        #colunas para filtro e gráfico
+                        col_cid1, col_cid2 = st.columns([2.3,7])
+
+                        #filtro
+                        lista_cid = df_municipio2['CID-CAPITULO'].unique().tolist()
+                        lista_cid.insert(0, 'Todos')
+
+                        cid_selecionado = col_cid1.selectbox('Selecione um Capítulo:',
+                                            lista_cid, key=f"{sub}_{municipio}")
+                        
+                        if cid_selecionado == 'Todos':
+                            df_filtrado = df_municipio2
+                        else:
+                            df_filtrado = df_municipio2[df_municipio2['CID-CAPITULO'] == cid_selecionado]
+
+                        if not df_filtrado.empty:
+                            #dados para o gráfico
+                            cid_counts = df_filtrado['CID-GRUPO'].value_counts().reset_index()
+                            cid_counts.columns = ['CID-GRUPO', 'count']
+
+                            top_20_counts = cid_counts.head(20)
+                            top_20_counts['ranking'] = top_20_counts.index + 1
+                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+
+                            wrapper = textwrap.TextWrapper(width=25)
+
+                            def formatar_texto_para_caixa(row):
+                                titulo_quebrado = wrapper.fill(text=row['CID-GRUPO']).replace('\n', '<br>')
+                                contagem = row['count']
+                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
+                            
+                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+
+                            #gráfico de calor
+                            fig_cid_grupo = px.treemap(top_20_counts, path=['CID-GRUPO'], values='count',
+                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
+                            
+                            fig_cid_grupo.update_traces(
+                                hovertemplate='<b>%{label}</b><br><br>' +
+                                            'Quantidade: %{value}<br>' +
+                                            'Posição: %{customdata[0]}' +
+                                            '<extra></extra>', 
+
+                                texttemplate='%{customdata[1]}', 
+                                textposition='top left',
+                                textfont_size=12,
+                                pathbar_visible=False,
+                                root_color = "white" 
+                            ) 
+
+
+                            fig_cid_grupo.update_layout(
+                                margin=dict(t=50, l=25, r=25, b=25),
+                                title_font_size=28,
+                                #uniformtext=dict(minsize=9),
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)',)
+
+                            col_cid2.plotly_chart(fig_cid_grupo, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                        else:
+                            st.warning("Nenhum dado encontrado para a seleção atual.")
+
+
+
+
                     #Distribuição por Capitulo (CID)
                         sub = st.subheader("Distribuição por Capitulo (CID)")
 
@@ -494,7 +559,6 @@ for i, municipio in enumerate(municipios):
                         df_municipio2['Data Nascimento'] = pd.to_datetime(df_municipio2['Data Nascimento'])
                         df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'])
                         df_municipio2['Idade'] = df_municipio2['Data Acidente'] - df_municipio2['Data Nascimento']
-                        df_municipio2['Idade2'] =  df_municipio2['Data Nascimento'] - df_municipio2['Data Acidente']
                         df_municipio2['Idade'] = df_municipio2['Idade'].dt.days
                         df_municipio2['Idade'] = df_municipio2['Idade'] / 365.25
                         df_municipio2['Idade'] = df_municipio2['Idade'].fillna(0)
@@ -516,35 +580,70 @@ for i, municipio in enumerate(municipios):
                             labels=labels,
                             right=False)
 
-                        contagem_acidentes_df = df_acidentes_limpo.groupby(['Faixa Etária', 'Sexo']).size().reset_index(name='Quantidade de Acidentes')
+                        contagem_acidentes_df = df_acidentes_limpo.groupby(
+                            ['Faixa Etária', 'Sexo']
+                        ).size().reset_index(name='Quantidade de Acidentes')
+
+                        contagem_acidentes_df['Quantidade_Display'] = contagem_acidentes_df['Quantidade de Acidentes']
+
+                        contagem_acidentes_df['Quantidade_Pyramid'] = np.where(
+                            contagem_acidentes_df['Sexo'] == 'Masculino',
+                            -1 * contagem_acidentes_df['Quantidade de Acidentes'],
+                            contagem_acidentes_df['Quantidade de Acidentes']
+                        )
 
                         fig33 = px.bar(
                             contagem_acidentes_df,
-                            y='Faixa Etária',              
-                            x='Quantidade de Acidentes',   
-                            color='Sexo',                  
-                            orientation='h',               
-                            title='Quantidade de Acidentes por Faixa Etária e Sexo',
+                            y='Faixa Etária',
+                            x='Quantidade_Pyramid',
+                            color='Sexo',
+                            orientation='h',
+                            title='Distribuição de Acidentes por Faixa Etária e Sexo',
                             labels={
                                 'Faixa Etária': 'Faixa Etária (anos)',
-                                'Quantidade de Acidentes': 'Número de Acidentes'
+                                'Quantidade_Pyramid': 'Número de Acidentes'
                             },
-                            barmode='group',               
-                            category_orders={"Faixa Etária": labels},
+                            barmode='relative',
+                            category_orders={"Faixa Etária": labels}, 
                             color_discrete_map={
-                            'Masculino': 'blue',
-                            'Feminino': 'purple'
-                        } 
+                                'Masculino': 'blue',
+                                'Feminino': 'purple'
+                            },
+                            text='Quantidade_Display'
                         )
+
+                        max_val = contagem_acidentes_df['Quantidade_Display'].max()
+                        max_val = np.ceil(max_val / 10) * 10 
+
+                        tick_vals = np.linspace(-max_val, max_val, num=7) 
+                        tick_text = [str(int(abs(v))) for v in tick_vals]
+
 
                         fig33.update_layout(
                             xaxis_title='Número de Acidentes',
-                            yaxis_title='Faixa Etária',
                             legend_title='Sexo',
-                            height = 700
+                            height=700,
+                            barmode='relative',
+                            
+                            xaxis=dict(
+                                tickvals=tick_vals,
+                                ticktext=tick_text
+                            ),
+                            
+                            yaxis=dict(
+                                title='Faixa Etária',
+                                autorange='reversed'  
+                            )
                         )
 
-                        fig33.update_traces(texttemplate='%{x}', textposition='inside')
+                        fig33.update_traces(
+                            texttemplate='%{text}', 
+                            textposition='auto',
+                            hovertemplate='<b>%{y}</b><br>' +
+                                        'Sexo: %{fullData.name}<br>' +
+                                        'Qtd. Acidentes: %{text}<extra></extra>'
+                        )
+
                         st.plotly_chart(fig33, use_container_width=True, key=f"{nome_grafico}_{municipio}")
 
                     elif nome_grafico == "CBO":
