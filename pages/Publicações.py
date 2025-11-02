@@ -8,7 +8,5 @@ import re
 
 st.set_page_config(layout='wide')
 
-st.title("Teste - CAT")
-
-st.pdf('CAT.pdf', height=450)
+st.title("Publicações")
 
