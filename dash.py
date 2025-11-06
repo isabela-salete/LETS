@@ -23,10 +23,6 @@ def get_base64_of_bin_file(bin_file):
     except FileNotFoundError:
         return "" # Retorna uma string vazia se o arquivo não for encontrado
 
-# ---
-# Lógica da Barra Fixa
-# ---
-
 # Caminho para o seu arquivo de imagem
 img_file = 'logo-fat.png'
 img_base64 = ""
@@ -262,7 +258,7 @@ for i, municipio in enumerate(municipios):
 
             fig.update_geos(fitbounds="locations", visible=False)
             fig.update_layout(width=430, height=500, title='Mapa da Região')
-            col8.plotly_chart(fig, use_container_width=True, key=f"mapa_{municipio}")
+            col8.plotly_chart(fig, width='stretch', key=f"mapa_{municipio}")
             col7.write(descricoes_municipios.get(municipio, "Descrição não disponível."))
             st.write('Fonte: IBGE')
 
@@ -270,7 +266,10 @@ for i, municipio in enumerate(municipios):
             pass
         
         # Filtra o DataFrame para o município selecionado
-        df_municipio2 = df2[df2["Município Empregador"] == municipio]
+        if municipio == "Geral":
+            df_municipio2 = df2.copy()
+        else:
+            df_municipio2 = df2[df2["Município Empregador"] == municipio]
         
         # Abas internas para os gráficos
         abas_graficos = st.tabs(["Acidentes por Tempo", "Acidentes por Idade", "CID", "CNAE", "CBO", "Característica da Lesão"])  # Nome das abas dos gráficos, pode ser dinâmico também
@@ -280,7 +279,8 @@ for i, municipio in enumerate(municipios):
                 if not df_municipio2.empty:
                     if nome_grafico == "Acidentes por Tempo":
                         # Exemplo de gráfico PIP (usando a coluna 'Valor')
-                        st.subheader('Distribuição de Acidentes no Tempo')
+                        st.header("Acidentes por Tempo")
+                        #st.subheader('Distribuição de Acidentes no Tempo')
                         ##dados
                         df_municipio2['data'] = pd.to_datetime(df_municipio2['Data Acidente'])
                         df_municipio2['mes'] = df_municipio2['data'].dt.month
@@ -305,7 +305,7 @@ for i, municipio in enumerate(municipios):
                             fig.update_layout(xaxis=dict(tickmode='array', tickvals=list(range(1, 13)), ticktext=['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']))
 
                         fig.update_traces(mode='lines+markers', texttemplate='%{y}', textposition='top center', marker=dict(size=10))
-                        st.plotly_chart(fig, use_container_width=True, key=f"{nome_grafico}_{municipio}")
+                        st.plotly_chart(fig, width='stretch', key=f"{nome_grafico}_{municipio}")
 
                     elif nome_grafico == "CNAE":
                         st.header("Acidentes por Empregador")
@@ -390,7 +390,7 @@ for i, municipio in enumerate(municipios):
                                 plot_bgcolor='rgba(0,0,0,0)',
                                 paper_bgcolor='rgba(0,0,0,0)',)
 
-                            col_cnae2.plotly_chart(fig_cnae_descricao, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_cnae2.plotly_chart(fig_cnae_descricao, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
 
@@ -478,7 +478,7 @@ for i, municipio in enumerate(municipios):
                                 plot_bgcolor='rgba(0,0,0,0)',
                                 paper_bgcolor='rgba(0,0,0,0)',)
 
-                            col_cid2.plotly_chart(fig_cid_ferimento, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_cid2.plotly_chart(fig_cid_ferimento, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
 
@@ -543,18 +543,17 @@ for i, municipio in enumerate(municipios):
                                 plot_bgcolor='rgba(0,0,0,0)',
                                 paper_bgcolor='rgba(0,0,0,0)',)
 
-                            col_cid2.plotly_chart(fig_cid_grupo, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_cid2.plotly_chart(fig_cid_grupo, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
-
-
 
 
                     #Distribuição por Capitulo (CID)
                         sub = st.subheader("Distribuição por Capitulo (CID)")
 
                     elif nome_grafico == "Acidentes por Idade":
-                        st.subheader('Distribuição dos Acidentes por Idade')
+                        st.header("Acidentes por Idade")
+                        #st.subheader('Distribuição dos Acidentes por Idade')
 
                         df_municipio2['Data Nascimento'] = pd.to_datetime(df_municipio2['Data Nascimento'])
                         df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'])
@@ -644,7 +643,7 @@ for i, municipio in enumerate(municipios):
                                         'Qtd. Acidentes: %{text}<extra></extra>'
                         )
 
-                        st.plotly_chart(fig33, use_container_width=True, key=f"{nome_grafico}_{municipio}")
+                        st.plotly_chart(fig33, width='stretch', key=f"{nome_grafico}_{municipio}")
 
                     elif nome_grafico == "CBO":
                         st.header("Acidentes por Funções")
@@ -711,7 +710,7 @@ for i, municipio in enumerate(municipios):
                                 plot_bgcolor='rgba(0,0,0,0)',
                                 paper_bgcolor='rgba(0,0,0,0)',)
 
-                            col_cbo2.plotly_chart(fig_cbo_func, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_cbo2.plotly_chart(fig_cbo_func, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
 
@@ -777,11 +776,13 @@ for i, municipio in enumerate(municipios):
                                 plot_bgcolor='rgba(0,0,0,0)',
                                 paper_bgcolor='rgba(0,0,0,0)',)
 
-                            col_cbo2.plotly_chart(fig_cbo_subg, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_cbo2.plotly_chart(fig_cbo_subg, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
                     
                     elif nome_grafico == "Característica da Lesão":
+
+                        st.header("Acidentes por Característica da Lesão")
 
                         sub = st.subheader("Distribuição de Natureza da Lesão")
 
@@ -864,7 +865,7 @@ for i, municipio in enumerate(municipios):
                                 plot_bgcolor='rgba(0,0,0,0)',
                                 paper_bgcolor='rgba(0,0,0,0)',)
 
-                            col_lesao2.plotly_chart(fig_lesao, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_lesao2.plotly_chart(fig_lesao, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
                             
 ########################################################################################
                             st.divider()
@@ -951,7 +952,7 @@ for i, municipio in enumerate(municipios):
                                     paper_bgcolor='rgba(0,0,0,0)',)
                                 
 
-                                col_lesao2.plotly_chart(fig_corpo, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                                col_lesao2.plotly_chart(fig_corpo, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
 
                             st.divider()
 
@@ -1037,7 +1038,7 @@ for i, municipio in enumerate(municipios):
                                     paper_bgcolor='rgba(0,0,0,0)',)
                                 
 
-                                col_lesao2.plotly_chart(fig_agente, use_container_width=True, key=f"{sub}_{nome_grafico}_{municipio}")
+                                col_lesao2.plotly_chart(fig_agente, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
 
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
