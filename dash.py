@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 import numpy as np
 import json
 from unidecode import unidecode
@@ -196,31 +197,62 @@ for i, municipio in enumerate(municipios):
                                 height = 550)
             st.plotly_chart(mapa)
             
-            #acidentes tree map
-                #colunas
+            #acidentes pareto
             st.subheader('Quantidade de Acidentes por Município')
-            col1, col2 =  st.columns([2, 7])
+            col1, col2 = st.columns([2, 7])
 
             col1.write("A distribuição do número de acidentes na Região do Médio Vale Paraíba mostra como os incidentes se concentram nas cidades de Volta Redonda, Barra Mansa e Resende.")
 
             municipio_counts = df2['Município Empregador'].value_counts().reset_index()
             municipio_counts.columns = ['Município Empregador', 'count']
 
-                #treemap de municipio
-            fig2222 = px.treemap(municipio_counts, path=['Município Empregador'], values='count',
-                                title=' ', color='count', color_continuous_scale='Reds',)
+            total_acidentes = municipio_counts['count'].sum()
+            municipio_counts['percentage'] = (municipio_counts['count'] / total_acidentes) * 100
+            municipio_counts['cumulative_perc'] = municipio_counts['percentage'].cumsum()
 
-            fig2222.data[0].textinfo = 'label+value'
+            fig_pareto = go.Figure()
 
-            fig2222.update_layout(
+            fig_pareto.add_trace(go.Bar(
+                x=municipio_counts['Município Empregador'],
+                y=municipio_counts['count'],
+                name='Quantidade',
+                marker_color='rgb(204, 33, 33)', 
+                opacity=0.7
+            ))
+
+            fig_pareto.add_trace(go.Scatter(
+                x=municipio_counts['Município Empregador'],
+                y=municipio_counts['cumulative_perc'],
+                name='% Acumulado',
+                mode='lines+markers',
+                yaxis='y2', 
+                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear') 
+            ))
+
+            fig_pareto.update_layout(
+                title=' ', 
                 margin=dict(t=50, l=25, r=25, b=25),
                 title_font_size=28,
-                uniformtext=dict(minsize=14, mode='show'),
-                # --- Adicione estas duas linhas para remover o fundo ---
+                
+                yaxis=dict(
+                    title='Quantidade de Acidentes'
+                ),
+                
+                yaxis2=dict(
+                    title='Porcentagem Acumulada (%)',
+                    overlaying='y', 
+                    side='right',   
+                    range=[0, 110], 
+                    showgrid=False  
+                ),
+                
+                legend=dict(x=0.7, y=0.9), 
                 plot_bgcolor='rgba(0,0,0,0)',
-                paper_bgcolor='rgba(0,0,0,0)')
+                paper_bgcolor='rgba(0,0,0,0)',
+                uniformtext=dict(minsize=14, mode='show')
+            )
 
-            col2.plotly_chart(fig2222)
+            col2.plotly_chart(fig_pareto, use_container_width=True)
 
         else:
             nome_sem_acento = municipios_sem_acento[municipio]
