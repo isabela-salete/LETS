@@ -216,23 +216,32 @@ for i, municipio in enumerate(municipios):
                 x=municipio_counts['Município Empregador'],
                 y=municipio_counts['count'],
                 name='Quantidade',
-                marker_color='rgb(204, 33, 33)', 
-                opacity=0.7
+                marker_color='rgb(255, 128, 0)',
+                opacity=0.7,
+                text=municipio_counts['count'],
+                textposition='outside' 
             ))
 
             fig_pareto.add_trace(go.Scatter(
                 x=municipio_counts['Município Empregador'],
                 y=municipio_counts['cumulative_perc'],
                 name='% Acumulado',
-                mode='lines+markers',
-                yaxis='y2', 
-                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear') 
+                mode='lines+markers+text', 
+                yaxis='y2',
+                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                text=[f'{val:.1f}%' for val in municipio_counts['cumulative_perc']],
+                textposition='top center'
             ))
 
             fig_pareto.update_layout(
                 title=' ', 
                 margin=dict(t=50, l=25, r=25, b=25),
                 title_font_size=28,
+
+                xaxis=dict(
+                    tickangle=-25,      
+                    automargin=True     
+                    ),
                 
                 yaxis=dict(
                     title='Quantidade de Acidentes'
@@ -246,7 +255,7 @@ for i, municipio in enumerate(municipios):
                     showgrid=False  
                 ),
                 
-                legend=dict(x=0.7, y=0.9), 
+                legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'), 
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)',
                 uniformtext=dict(minsize=14, mode='show')
@@ -314,7 +323,6 @@ for i, municipio in enumerate(municipios):
             with abas_graficos[j]:
                 if not df_municipio2.empty:
                     if nome_grafico == "Acidentes por Tempo":
-                        # Exemplo de gráfico PIP (usando a coluna 'Valor')
                         st.header("Acidentes por Tempo")
                         #st.subheader('Distribuição de Acidentes no Tempo')
                         ##dados
@@ -383,50 +391,75 @@ for i, municipio in enumerate(municipios):
                              df_filtrado = df_filtrado[df_filtrado['CNAE-GRUPO'] == cnae_grupo_selecionado]
                                 
                         if not df_filtrado.empty:
-                            #dados para o gráfico
                             cnae_counts = df_filtrado['CNAE2.0 Empregador.1'].value_counts().reset_index()
                             cnae_counts.columns = ['CNAE2.0 Empregador.1', 'count']
 
-                            top_20_counts = cnae_counts.head(20)
-                            top_20_counts['ranking'] = top_20_counts.index + 1
-                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
-
-                            wrapper = textwrap.TextWrapper(width=25) 
-
-                            def formatar_texto_para_caixa(row):
-                                titulo_quebrado = wrapper.fill(text=row['CNAE2.0 Empregador.1']).replace('\n', '<br>')
-                                contagem = row['count']
-                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
-                            
-                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+                            top_20_counts = cnae_counts.head(20).copy() 
 
 
-                            #gráfico de calor
-                            fig_cnae_descricao = px.treemap(top_20_counts, path=['CNAE2.0 Empregador.1'], values='count',
-                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
-                            
-                            fig_cnae_descricao.update_traces(
-                                hovertemplate='<b>%{label}</b><br><br>' +
-                                            'Quantidade: %{value}<br>' +
-                                            'Posição: %{customdata[0]}' +
-                                            '<extra></extra>', 
+                            total_amostra = top_20_counts['count'].sum()
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            top_20_counts['label_curto'] = top_20_counts['CNAE2.0 Empregador.1'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
 
-                                texttemplate='%{customdata[1]}', 
-                                textposition='top left',
-                                textfont_size=12,
-                                pathbar_visible=False,
-                                root_color = "white" 
-                            ) 
+                            fig_pareto_cnae = go.Figure()
 
+                            fig_pareto_cnae.add_trace(go.Bar(
+                                x=top_20_counts['CNAE2.0 Empregador.1'],
+                                y=top_20_counts['count'],
+                                name='Quantidade',
+                                marker_color='rgb(255, 128, 0)', 
+                                opacity=0.7,
+                                text=top_20_counts['count'],
+                                textposition='outside',
+                                customdata=top_20_counts['CNAE2.0 Empregador.1'],
+                                hovertemplate='<b>%{customdata}</b><br>Quantidade: %{y}<extra></extra>'
+                            ))
 
-                            fig_cnae_descricao.update_layout(
+                            fig_pareto_cnae.add_trace(go.Scatter(
+                                x=top_20_counts['CNAE2.0 Empregador.1'],
+                                y=top_20_counts['cumulative_perc'],
+                                name='% Acumulado',
+                                mode='lines+markers+text',
+                                yaxis='y2',
+                                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                                text=[f'{val:.1f}%' for val in top_20_counts['cumulative_perc']],
+                                textposition='top center'
+                            ))
+
+                            fig_pareto_cnae.update_layout(
+                                title=' ',
                                 margin=dict(t=50, l=25, r=25, b=25),
                                 title_font_size=28,
-                                #uniformtext=dict(minsize=9),
+                                
+                                xaxis=dict(
+                                    tickangle=-25,
+                                    tickfont=dict(size=12),
+                                    tickmode='array',
+                                    tickvals=top_20_counts['CNAE2.0 Empregador.1'],
+                                    ticktext=top_20_counts['label_curto'],      
+                                    automargin=True
+                                ),
+                                
+                                yaxis=dict(
+                                    title='Quantidade'
+                                ),
+                                
+                                yaxis2=dict(
+                                    title='Porcentagem Acumulada (%)',
+                                    overlaying='y',
+                                    side='right',
+                                    range=[0, 115], 
+                                    showgrid=False
+                                ),
+                                
+                                legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'),
                                 plot_bgcolor='rgba(0,0,0,0)',
-                                paper_bgcolor='rgba(0,0,0,0)',)
+                                paper_bgcolor='rgba(0,0,0,0)',
+                                uniformtext=dict(minsize=10, mode='show') 
+                            )
 
-                            col_cnae2.plotly_chart(fig_cnae_descricao, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_cnae2.plotly_chart(fig_pareto_cnae, width='stretch', key=f"{sub}_pareto_{municipio}")
+                        
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
 
@@ -460,47 +493,71 @@ for i, municipio in enumerate(municipios):
                             #dados para o gráfico
                             cnae_counts = df_filtrado['CNAE-SEÇÃO'].value_counts().reset_index()
                             cnae_counts.columns = ['CNAE-SEÇÃO', 'count']
-
-                            top_20_counts = cnae_counts.head(20)
-                            top_20_counts['ranking'] = top_20_counts.index + 1
-                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
-
-                            wrapper = textwrap.TextWrapper(width=25) 
-
-                            def formatar_texto_para_caixa(row):
-                                titulo_quebrado = wrapper.fill(text=row['CNAE-SEÇÃO']).replace('\n', '<br>')
-                                contagem = row['count']
-                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
                             
-                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+                            top_20_counts = cnae_counts.head(20).copy() 
+                            total_amostra = top_20_counts['count'].sum()
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            top_20_counts['label_curto'] = top_20_counts['CNAE-SEÇÃO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
 
+                            fig_pareto_cnae = go.Figure()
 
-                            #gráfico de calor
-                            fig_cnae_descricao = px.treemap(top_20_counts, path=['CNAE-SEÇÃO'], values='count',
-                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
-                            
-                            fig_cnae_descricao.update_traces(
-                                hovertemplate='<b>%{label}</b><br><br>' +
-                                            'Quantidade: %{value}<br>' +
-                                            'Posição: %{customdata[0]}' +
-                                            '<extra></extra>', 
+                            fig_pareto_cnae.add_trace(go.Bar(
+                                x=top_20_counts['CNAE-SEÇÃO'],
+                                y=top_20_counts['count'],
+                                name='Quantidade',
+                                marker_color='rgb(255, 128, 0)', 
+                                opacity=0.7,
+                                text=top_20_counts['count'],
+                                textposition='outside',
+                                customdata=top_20_counts['CNAE-SEÇÃO'],
+                                hovertemplate='<b>%{customdata}</b><br>Quantidade: %{y}<extra></extra>'
+                            ))
 
-                                texttemplate='%{customdata[1]}', 
-                                textposition='top left',
-                                textfont_size=12,
-                                pathbar_visible=False,
-                                root_color = "white" 
-                            ) 
+                            fig_pareto_cnae.add_trace(go.Scatter(
+                                x=top_20_counts['CNAE-SEÇÃO'],
+                                y=top_20_counts['cumulative_perc'],
+                                name='% Acumulado',
+                                mode='lines+markers+text',
+                                yaxis='y2',
+                                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                                text=[f'{val:.1f}%' for val in top_20_counts['cumulative_perc']],
+                                textposition='top center'
+                            ))
 
-
-                            fig_cnae_descricao.update_layout(
+                            fig_pareto_cnae.update_layout(
+                                title=' ',
                                 margin=dict(t=50, l=25, r=25, b=25),
                                 title_font_size=28,
-                                #uniformtext=dict(minsize=9),
+                                
+                                xaxis=dict(
+                                    tickangle=-25,
+                                    tickfont=dict(size=12),
+                                    tickmode='array',
+                                    tickvals=top_20_counts['CNAE-SEÇÃO'],
+                                    ticktext=top_20_counts['label_curto'],      
+                                    automargin=True
+                                ),
+                                
+                                yaxis=dict(
+                                    title='Quantidade'
+                                ),
+                                
+                                yaxis2=dict(
+                                    title='Porcentagem Acumulada (%)',
+                                    overlaying='y',
+                                    side='right',
+                                    range=[0, 115], 
+                                    showgrid=False
+                                ),
+                                
+                                legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'),
                                 plot_bgcolor='rgba(0,0,0,0)',
-                                paper_bgcolor='rgba(0,0,0,0)',)
+                                paper_bgcolor='rgba(0,0,0,0)',
+                                uniformtext=dict(minsize=10, mode='show') 
+                            )
 
-                            col_cnae2.plotly_chart(fig_cnae_descricao, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_cnae2.plotly_chart(fig_pareto_cnae, width='stretch', key=f"{sub}_pareto_{municipio}")
+                        
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
                     
@@ -525,47 +582,71 @@ for i, municipio in enumerate(municipios):
                             #dados para o gráfico
                             cnae_counts = df_filtrado['CNAE-DIVISÃO'].value_counts().reset_index()
                             cnae_counts.columns = ['CNAE-DIVISÃO', 'count']
-
-                            top_20_counts = cnae_counts.head(20)
-                            top_20_counts['ranking'] = top_20_counts.index + 1
-                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
-
-                            wrapper = textwrap.TextWrapper(width=25) 
-
-                            def formatar_texto_para_caixa(row):
-                                titulo_quebrado = wrapper.fill(text=row['CNAE-DIVISÃO']).replace('\n', '<br>')
-                                contagem = row['count']
-                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
                             
-                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+                            top_20_counts = cnae_counts.head(20).copy() 
+                            total_amostra = top_20_counts['count'].sum()
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            top_20_counts['label_curto'] = top_20_counts['CNAE-DIVISÃO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
 
+                            fig_pareto_cnae = go.Figure()
 
-                            #gráfico de calor
-                            fig_cnae_descricao = px.treemap(top_20_counts, path=['CNAE-DIVISÃO'], values='count',
-                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
-                            
-                            fig_cnae_descricao.update_traces(
-                                hovertemplate='<b>%{label}</b><br><br>' +
-                                            'Quantidade: %{value}<br>' +
-                                            'Posição: %{customdata[0]}' +
-                                            '<extra></extra>', 
+                            fig_pareto_cnae.add_trace(go.Bar(
+                                x=top_20_counts['CNAE-DIVISÃO'],
+                                y=top_20_counts['count'],
+                                name='Quantidade',
+                                marker_color='rgb(255, 128, 0)', 
+                                opacity=0.7,
+                                text=top_20_counts['count'],
+                                textposition='outside',
+                                customdata=top_20_counts['CNAE-DIVISÃO'],
+                                hovertemplate='<b>%{customdata}</b><br>Quantidade: %{y}<extra></extra>'
+                            ))
 
-                                texttemplate='%{customdata[1]}', 
-                                textposition='top left',
-                                textfont_size=12,
-                                pathbar_visible=False,
-                                root_color = "white" 
-                            ) 
+                            fig_pareto_cnae.add_trace(go.Scatter(
+                                x=top_20_counts['CNAE-DIVISÃO'],
+                                y=top_20_counts['cumulative_perc'],
+                                name='% Acumulado',
+                                mode='lines+markers+text',
+                                yaxis='y2',
+                                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                                text=[f'{val:.1f}%' for val in top_20_counts['cumulative_perc']],
+                                textposition='top center'
+                            ))
 
-
-                            fig_cnae_descricao.update_layout(
+                            fig_pareto_cnae.update_layout(
+                                title=' ',
                                 margin=dict(t=50, l=25, r=25, b=25),
                                 title_font_size=28,
-                                #uniformtext=dict(minsize=9),
+                                
+                                xaxis=dict(
+                                    tickangle=-25,
+                                    tickfont=dict(size=12),
+                                    tickmode='array',
+                                    tickvals=top_20_counts['CNAE-DIVISÃO'],
+                                    ticktext=top_20_counts['label_curto'],      
+                                    automargin=True
+                                ),
+                                
+                                yaxis=dict(
+                                    title='Quantidade'
+                                ),
+                                
+                                yaxis2=dict(
+                                    title='Porcentagem Acumulada (%)',
+                                    overlaying='y',
+                                    side='right',
+                                    range=[0, 115], 
+                                    showgrid=False
+                                ),
+                                
+                                legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'),
                                 plot_bgcolor='rgba(0,0,0,0)',
-                                paper_bgcolor='rgba(0,0,0,0)',)
+                                paper_bgcolor='rgba(0,0,0,0)',
+                                uniformtext=dict(minsize=10, mode='show') 
+                            )
 
-                            col_cnae2.plotly_chart(fig_cnae_descricao, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_cnae2.plotly_chart(fig_pareto_cnae, width='stretch', key=f"{sub}_pareto_{municipio}")
+                        
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
 
@@ -579,51 +660,74 @@ for i, municipio in enumerate(municipios):
                         cnae_counts = df_filtrado['CNAE-GRUPO'].value_counts().reset_index()
                         cnae_counts.columns = ['CNAE-GRUPO', 'count']
 
-                        top_20_counts = cnae_counts.head(20)
-                        top_20_counts['ranking'] = top_20_counts.index + 1
-                        top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+                        top_20_counts = cnae_counts.head(20).copy() 
+                        total_amostra = top_20_counts['count'].sum()
+                        top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                        top_20_counts['label_curto'] = top_20_counts['CNAE-GRUPO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
 
-                        wrapper = textwrap.TextWrapper(width=25) 
+                        fig_pareto_cnae = go.Figure()
 
-                        def formatar_texto_para_caixa(row):
-                            titulo_quebrado = wrapper.fill(text=row['CNAE-GRUPO']).replace('\n', '<br>')
-                            contagem = row['count']
-                            return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
-                            
-                        top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+                        fig_pareto_cnae.add_trace(go.Bar(
+                                x=top_20_counts['CNAE-GRUPO'],
+                                y=top_20_counts['count'],
+                                name='Quantidade',
+                                marker_color='rgb(255, 128, 0)', 
+                                opacity=0.7,
+                                text=top_20_counts['count'],
+                                textposition='outside',
+                                customdata=top_20_counts['CNAE-GRUPO'],
+                                hovertemplate='<b>%{customdata}</b><br>Quantidade: %{y}<extra></extra>'
+                            ))
 
+                        fig_pareto_cnae.add_trace(go.Scatter(
+                                x=top_20_counts['CNAE-GRUPO'],
+                                y=top_20_counts['cumulative_perc'],
+                                name='% Acumulado',
+                                mode='lines+markers+text',
+                                yaxis='y2',
+                                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                                text=[f'{val:.1f}%' for val in top_20_counts['cumulative_perc']],
+                                textposition='top center'
+                            ))
 
-                        #gráfico de calor
-                        fig_cnae_descricao = px.treemap(top_20_counts, path=['CNAE-GRUPO'], values='count',
-                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
-                            
-                        fig_cnae_descricao.update_traces(
-                                hovertemplate='<b>%{label}</b><br><br>' +
-                                            'Quantidade: %{value}<br>' +
-                                            'Posição: %{customdata[0]}' +
-                                            '<extra></extra>', 
-
-                                texttemplate='%{customdata[1]}', 
-                                textposition='top left',
-                                textfont_size=12,
-                                pathbar_visible=False,
-                                root_color = "white" 
-                            ) 
-
-
-                        fig_cnae_descricao.update_layout(
+                        fig_pareto_cnae.update_layout(
+                                title=' ',
                                 margin=dict(t=50, l=25, r=25, b=25),
                                 title_font_size=28,
-                                #uniformtext=dict(minsize=9),
+                                
+                                xaxis=dict(
+                                    tickangle=-25,
+                                    tickfont=dict(size=12),
+                                    tickmode='array',
+                                    tickvals=top_20_counts['CNAE-GRUPO'],
+                                    ticktext=top_20_counts['label_curto'],      
+                                    automargin=True
+                                ),
+                                
+                                yaxis=dict(
+                                    title='Quantidade'
+                                ),
+                                
+                                yaxis2=dict(
+                                    title='Porcentagem Acumulada (%)',
+                                    overlaying='y',
+                                    side='right',
+                                    range=[0, 115], 
+                                    showgrid=False
+                                ),
+                                
+                                legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'),
                                 plot_bgcolor='rgba(0,0,0,0)',
-                                paper_bgcolor='rgba(0,0,0,0)',)
+                                paper_bgcolor='rgba(0,0,0,0)',
+                                uniformtext=dict(minsize=10, mode='show') 
+                            )
 
-                        col_cnae2.plotly_chart(fig_cnae_descricao, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
+                        col_cnae2.plotly_chart(fig_pareto_cnae, width='stretch', key=f"{sub}_pareto_{municipio}")
 
                     elif nome_grafico == "CID":
                         st.header("Acidentes por Ferimentos")
 
-                    #Distribuição de Funções (CBO)
+                    #Distribuição de Funções (CID)
                         sub = st.subheader("Distribuição de Ferimentos (CID)")
 
                         #colunas para filtro e gráfico
@@ -656,46 +760,70 @@ for i, municipio in enumerate(municipios):
                             cid_counts = df_filtrado['CID-Ferimento'].value_counts().reset_index()
                             cid_counts.columns = ['CID-Ferimento', 'count']
 
-                            top_20_counts = cid_counts.head(20)
-                            top_20_counts['ranking'] = top_20_counts.index + 1
-                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+                            top_20_counts = cid_counts.head(20).copy()
+                            total_amostra = top_20_counts['count'].sum() 
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            top_20_counts['label_curto'] = top_20_counts['CID-Ferimento'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
 
-                            wrapper = textwrap.TextWrapper(width=25) 
+                            fig_pareto_cid = go.Figure()
 
-                            def formatar_texto_para_caixa(row):
-                                titulo_quebrado = wrapper.fill(text=row['CID-Ferimento']).replace('\n', '<br>')
-                                contagem = row['count']
-                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
-                            
-                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+                            fig_pareto_cid.add_trace(go.Bar(
+                                x=top_20_counts['CID-Ferimento'],
+                                y=top_20_counts['count'],
+                                name='Quantidade',
+                                marker_color='rgb(255, 128, 0)', 
+                                opacity=0.7,
+                                text=top_20_counts['count'],
+                                textposition='outside',
+                                customdata=top_20_counts['CID-Ferimento'],
+                                hovertemplate='<b>%{customdata}</b><br>Quantidade: %{y}<extra></extra>'
+                            ))
 
+                            fig_pareto_cid.add_trace(go.Scatter(
+                                x=top_20_counts['CID-Ferimento'],
+                                y=top_20_counts['cumulative_perc'],
+                                name='% Acumulado',
+                                mode='lines+markers+text',
+                                yaxis='y2',
+                                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                                text=[f'{val:.1f}%' for val in top_20_counts['cumulative_perc']],
+                                textposition='top center'
+                            ))
 
-                            #gráfico de calor
-                            fig_cid_ferimento = px.treemap(top_20_counts, path=['CID-Ferimento'], values='count',
-                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
-                            
-                            fig_cid_ferimento.update_traces(
-                                hovertemplate='<b>%{label}</b><br><br>' +
-                                            'Quantidade: %{value}<br>' +
-                                            'Posição: %{customdata[0]}' +
-                                            '<extra></extra>', 
-
-                                texttemplate='%{customdata[1]}', 
-                                textposition='top left',
-                                textfont_size=12,
-                                pathbar_visible=False,
-                                root_color = "white" 
-                            ) 
-
-
-                            fig_cid_ferimento.update_layout(
+                            fig_pareto_cid.update_layout(
+                                title=' ',
                                 margin=dict(t=50, l=25, r=25, b=25),
                                 title_font_size=28,
-                                #uniformtext=dict(minsize=9),
+                                
+                                xaxis=dict(
+                                    tickangle=-25,
+                                    tickfont=dict(size=12),
+                                    tickmode='array',
+                                    tickvals=top_20_counts['CID-Ferimento'],
+                                    ticktext=top_20_counts['label_curto'],      
+                                    automargin=True
+                                ),
+                                
+                                yaxis=dict(
+                                    title='Quantidade'
+                                ),
+                                
+                                yaxis2=dict(
+                                    title='Porcentagem Acumulada (%)',
+                                    overlaying='y',
+                                    side='right',
+                                    range=[0, 115], 
+                                    showgrid=False
+                                ),
+                                
+                                legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'),
                                 plot_bgcolor='rgba(0,0,0,0)',
-                                paper_bgcolor='rgba(0,0,0,0)',)
+                                paper_bgcolor='rgba(0,0,0,0)',
+                                uniformtext=dict(minsize=10, mode='show') 
+                            )
 
-                            col_cid2.plotly_chart(fig_cid_ferimento, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_cid2.plotly_chart(fig_pareto_cid, width='stretch', key=f"{sub}_pareto_{municipio}")
+                        
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
 
@@ -722,51 +850,76 @@ for i, municipio in enumerate(municipios):
                             cid_counts = df_filtrado['CID-GRUPO'].value_counts().reset_index()
                             cid_counts.columns = ['CID-GRUPO', 'count']
 
-                            top_20_counts = cid_counts.head(20)
-                            top_20_counts['ranking'] = top_20_counts.index + 1
-                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+                            top_20_counts = cid_counts.head(20).copy()
+                            total_amostra = top_20_counts['count'].sum() 
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            top_20_counts['label_curto'] = top_20_counts['CID-GRUPO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
 
-                            wrapper = textwrap.TextWrapper(width=25)
+                            fig_pareto_cid = go.Figure()
 
-                            def formatar_texto_para_caixa(row):
-                                titulo_quebrado = wrapper.fill(text=row['CID-GRUPO']).replace('\n', '<br>')
-                                contagem = row['count']
-                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
-                            
-                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+                            fig_pareto_cid.add_trace(go.Bar(
+                                x=top_20_counts['CID-GRUPO'],
+                                y=top_20_counts['count'],
+                                name='Quantidade',
+                                marker_color='rgb(255, 128, 0)', 
+                                opacity=0.7,
+                                text=top_20_counts['count'],
+                                textposition='outside',
+                                customdata=top_20_counts['CID-GRUPO'],
+                                hovertemplate='<b>%{customdata}</b><br>Quantidade: %{y}<extra></extra>'
+                            ))
 
-                            #gráfico de calor
-                            fig_cid_grupo = px.treemap(top_20_counts, path=['CID-GRUPO'], values='count',
-                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
-                            
-                            fig_cid_grupo.update_traces(
-                                hovertemplate='<b>%{label}</b><br><br>' +
-                                            'Quantidade: %{value}<br>' +
-                                            'Posição: %{customdata[0]}' +
-                                            '<extra></extra>', 
+                            fig_pareto_cid.add_trace(go.Scatter(
+                                x=top_20_counts['CID-GRUPO'],
+                                y=top_20_counts['cumulative_perc'],
+                                name='% Acumulado',
+                                mode='lines+markers+text',
+                                yaxis='y2',
+                                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                                text=[f'{val:.1f}%' for val in top_20_counts['cumulative_perc']],
+                                textposition='top center'
+                            ))
 
-                                texttemplate='%{customdata[1]}', 
-                                textposition='top left',
-                                textfont_size=12,
-                                pathbar_visible=False,
-                                root_color = "white" 
-                            ) 
-
-
-                            fig_cid_grupo.update_layout(
+                            fig_pareto_cid.update_layout(
+                                title=' ',
                                 margin=dict(t=50, l=25, r=25, b=25),
                                 title_font_size=28,
-                                #uniformtext=dict(minsize=9),
+                                
+                                xaxis=dict(
+                                    tickangle=-25,
+                                    tickfont=dict(size=12),
+                                    tickmode='array',
+                                    tickvals=top_20_counts['CID-GRUPO'],
+                                    ticktext=top_20_counts['label_curto'],      
+                                    automargin=True
+                                ),
+                                
+                                yaxis=dict(
+                                    title='Quantidade'
+                                ),
+                                
+                                yaxis2=dict(
+                                    title='Porcentagem Acumulada (%)',
+                                    overlaying='y',
+                                    side='right',
+                                    range=[0, 115], 
+                                    showgrid=False
+                                ),
+                                
+                                legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'),
                                 plot_bgcolor='rgba(0,0,0,0)',
-                                paper_bgcolor='rgba(0,0,0,0)',)
+                                paper_bgcolor='rgba(0,0,0,0)',
+                                uniformtext=dict(minsize=10, mode='show') 
+                            )
 
-                            col_cid2.plotly_chart(fig_cid_grupo, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_cid2.plotly_chart(fig_pareto_cid, width='stretch', key=f"{sub}_pareto_{municipio}")
+                        
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
 
 
                     #Distribuição por Capitulo (CID)
-                        sub = st.subheader("Distribuição por Capitulo (CID)")
+                        sub = st.subheader("Distribuição por Capítulo (CID)")
 
                         #colunas para filtro e gráfico
                         col_cid1, col_cid2 = st.columns([2.3,7])
@@ -775,45 +928,69 @@ for i, municipio in enumerate(municipios):
                         cid_counts = df_filtrado['CID-CAPITULO'].value_counts().reset_index()
                         cid_counts.columns = ['CID-CAPITULO', 'count']
 
-                        top_20_counts = cid_counts.head(20)
-                        top_20_counts['ranking'] = top_20_counts.index + 1
-                        top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+                        top_20_counts = cid_counts.head(20).copy()
+                        total_amostra = top_20_counts['count'].sum() 
+                        top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                        top_20_counts['label_curto'] = top_20_counts['CID-CAPITULO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
 
-                        wrapper = textwrap.TextWrapper(width=25)
+                        fig_pareto_cid = go.Figure()
 
-                        def formatar_texto_para_caixa(row):
-                            titulo_quebrado = wrapper.fill(text=row['CID-CAPITULO']).replace('\n', '<br>')
-                            contagem = row['count']
-                            return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
-                            
-                        top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+                        fig_pareto_cid.add_trace(go.Bar(
+                                x=top_20_counts['CID-CAPITULO'],
+                                y=top_20_counts['count'],
+                                name='Quantidade',
+                                marker_color='rgb(255, 128, 0)', 
+                                opacity=0.7,
+                                text=top_20_counts['count'],
+                                textposition='outside',
+                                customdata=top_20_counts['CID-CAPITULO'],
+                                hovertemplate='<b>%{customdata}</b><br>Quantidade: %{y}<extra></extra>'
+                            ))
 
-                            #gráfico de calor
-                        fig_cid_grupo = px.treemap(top_20_counts, path=['CID-CAPITULO'], values='count',
-                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
-                            
-                        fig_cid_grupo.update_traces(
-                                hovertemplate='<b>%{label}</b><br><br>' +
-                                            'Quantidade: %{value}<br>' +
-                                            'Posição: %{customdata[0]}' +
-                                            '<extra></extra>', 
+                        fig_pareto_cid.add_trace(go.Scatter(
+                                x=top_20_counts['CID-CAPITULO'],
+                                y=top_20_counts['cumulative_perc'],
+                                name='% Acumulado',
+                                mode='lines+markers+text',
+                                yaxis='y2',
+                                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                                text=[f'{val:.1f}%' for val in top_20_counts['cumulative_perc']],
+                                textposition='top center'
+                            ))
 
-                                texttemplate='%{customdata[1]}', 
-                                textposition='top left',
-                                textfont_size=12,
-                                pathbar_visible=False,
-                                root_color = "white" 
-                            ) 
-
-
-                        fig_cid_grupo.update_layout(
+                        fig_pareto_cid.update_layout(
+                                title=' ',
                                 margin=dict(t=50, l=25, r=25, b=25),
                                 title_font_size=28,
-                                #uniformtext=dict(minsize=9),
+                                
+                                xaxis=dict(
+                                    tickangle=-25,
+                                    tickfont=dict(size=12),
+                                    tickmode='array',
+                                    tickvals=top_20_counts['CID-CAPITULO'],
+                                    ticktext=top_20_counts['label_curto'],      
+                                    automargin=True
+                                ),
+                                
+                                yaxis=dict(
+                                    title='Quantidade'
+                                ),
+                                
+                                yaxis2=dict(
+                                    title='Porcentagem Acumulada (%)',
+                                    overlaying='y',
+                                    side='right',
+                                    range=[0, 115], 
+                                    showgrid=False
+                                ),
+                                
+                                legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'),
                                 plot_bgcolor='rgba(0,0,0,0)',
-                                paper_bgcolor='rgba(0,0,0,0)',)
+                                paper_bgcolor='rgba(0,0,0,0)',
+                                uniformtext=dict(minsize=10, mode='show') 
+                            )
 
-                        col_cid2.plotly_chart(fig_cid_grupo, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
+                        col_cid2.plotly_chart(fig_pareto_cid, width='stretch', key=f"{sub}_pareto_{municipio}")
 
                     elif nome_grafico == "Acidentes por Idade":
                         st.header("Acidentes por Idade")
@@ -935,46 +1112,70 @@ for i, municipio in enumerate(municipios):
                             cbo_counts = df_filtrado['CBO-Função'].value_counts().reset_index()
                             cbo_counts.columns = ['CBO-Função', 'count']
 
-                            top_20_counts = cbo_counts.head(20)
-                            top_20_counts['ranking'] = top_20_counts.index + 1
-                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+                            top_20_counts = cbo_counts.head(20).copy()
+                            total_amostra = top_20_counts['count'].sum() 
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            top_20_counts['label_curto'] = top_20_counts['CBO-Função'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
 
-                            wrapper = textwrap.TextWrapper(width=25) 
+                            fig_pareto_cbo = go.Figure()
 
-                            def formatar_texto_para_caixa(row):
-                                titulo_quebrado = wrapper.fill(text=row['CBO-Função']).replace('\n', '<br>')
-                                contagem = row['count']
-                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
-                            
-                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+                            fig_pareto_cbo.add_trace(go.Bar(
+                                x=top_20_counts['CBO-Função'],
+                                y=top_20_counts['count'],
+                                name='Quantidade',
+                                marker_color='rgb(255, 128, 0)', 
+                                opacity=0.7,
+                                text=top_20_counts['count'],
+                                textposition='outside',
+                                customdata=top_20_counts['CBO-Função'],
+                                hovertemplate='<b>%{customdata}</b><br>Quantidade: %{y}<extra></extra>'
+                            ))
 
+                            fig_pareto_cbo.add_trace(go.Scatter(
+                                x=top_20_counts['CBO-Função'],
+                                y=top_20_counts['cumulative_perc'],
+                                name='% Acumulado',
+                                mode='lines+markers+text',
+                                yaxis='y2',
+                                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                                text=[f'{val:.1f}%' for val in top_20_counts['cumulative_perc']],
+                                textposition='top center'
+                            ))
 
-                            #gráfico de calor
-                            fig_cbo_func = px.treemap(top_20_counts, path=['CBO-Função'], values='count',
-                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
-                            
-                            fig_cbo_func.update_traces(
-                                hovertemplate='<b>%{label}</b><br><br>' +
-                                            'Quantidade: %{value}<br>' +
-                                            'Posição: %{customdata[0]}' +
-                                            '<extra></extra>', 
-
-                                texttemplate='%{customdata[1]}', 
-                                textposition='top left',
-                                textfont_size=12,
-                                pathbar_visible=False,
-                                root_color = "white" 
-                            ) 
-
-
-                            fig_cbo_func.update_layout(
+                            fig_pareto_cbo.update_layout(
+                                title=' ',
                                 margin=dict(t=50, l=25, r=25, b=25),
                                 title_font_size=28,
-                                #uniformtext=dict(minsize=9),
+                                
+                                xaxis=dict(
+                                    tickangle=-25,
+                                    tickfont=dict(size=12),
+                                    tickmode='array',
+                                    tickvals=top_20_counts['CBO-Função'],
+                                    ticktext=top_20_counts['label_curto'],      
+                                    automargin=True
+                                ),
+                                
+                                yaxis=dict(
+                                    title='Quantidade'
+                                ),
+                                
+                                yaxis2=dict(
+                                    title='Porcentagem Acumulada (%)',
+                                    overlaying='y',
+                                    side='right',
+                                    range=[0, 115], 
+                                    showgrid=False
+                                ),
+                                
+                                legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'),
                                 plot_bgcolor='rgba(0,0,0,0)',
-                                paper_bgcolor='rgba(0,0,0,0)',)
+                                paper_bgcolor='rgba(0,0,0,0)',
+                                uniformtext=dict(minsize=10, mode='show') 
+                            )
 
-                            col_cbo2.plotly_chart(fig_cbo_func, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_cbo2.plotly_chart(fig_pareto_cbo, width='stretch', key=f"{sub}_pareto_{municipio}")
+                        
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
 
@@ -1001,46 +1202,70 @@ for i, municipio in enumerate(municipios):
                             cbo_counts = df_filtrado['CBO-SubGrupo'].value_counts().reset_index()
                             cbo_counts.columns = ['CBO-SubGrupo', 'count']
 
-                            top_20_counts = cbo_counts.head(20)
-                            top_20_counts['ranking'] = top_20_counts.index + 1
-                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+                            top_20_counts = cbo_counts.head(20).copy()
+                            total_amostra = top_20_counts['count'].sum() 
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            top_20_counts['label_curto'] = top_20_counts['CBO-SubGrupo'].apply(lambda x: x[:25] + '...' if len(x) > 25 else x)
 
-                            wrapper = textwrap.TextWrapper(width=25)
+                            fig_pareto_cbo = go.Figure()
 
-                            def formatar_texto_para_caixa(row):
-                                titulo_quebrado = wrapper.fill(text=row['CBO-SubGrupo']).replace('\n', '<br>')
-                                contagem = row['count']
-                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
-                            
-                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+                            fig_pareto_cbo.add_trace(go.Bar(
+                                x=top_20_counts['CBO-SubGrupo'],
+                                y=top_20_counts['count'],
+                                name='Quantidade',
+                                marker_color='rgb(255, 128, 0)', 
+                                opacity=0.7,
+                                text=top_20_counts['count'],
+                                textposition='outside',
+                                customdata=top_20_counts['CBO-SubGrupo'],
+                                hovertemplate='<b>%{customdata}</b><br>Quantidade: %{y}<extra></extra>'
+                            ))
 
+                            fig_pareto_cbo.add_trace(go.Scatter(
+                                x=top_20_counts['CBO-SubGrupo'],
+                                y=top_20_counts['cumulative_perc'],
+                                name='% Acumulado',
+                                mode='lines+markers+text',
+                                yaxis='y2',
+                                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                                text=[f'{val:.1f}%' for val in top_20_counts['cumulative_perc']],
+                                textposition='top center'
+                            ))
 
-                            #gráfico de calor
-                            fig_cbo_subg = px.treemap(top_20_counts, path=['CBO-SubGrupo'], values='count',
-                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
-                            
-                            fig_cbo_subg.update_traces(
-                                hovertemplate='<b>%{label}</b><br><br>' +
-                                            'Quantidade: %{value}<br>' +
-                                            'Posição: %{customdata[0]}' +
-                                            '<extra></extra>', 
-
-                                texttemplate='%{customdata[1]}', 
-                                textposition='top left',
-                                textfont_size=12,
-                                pathbar_visible=False,
-                                root_color = "white" 
-                            ) 
-
-
-                            fig_cbo_subg.update_layout(
+                            fig_pareto_cbo.update_layout(
+                                title=' ',
                                 margin=dict(t=50, l=25, r=25, b=25),
                                 title_font_size=28,
-                                #uniformtext=dict(minsize=9),
+                                
+                                xaxis=dict(
+                                    tickangle=-25,
+                                    tickfont=dict(size=12),
+                                    tickmode='array',
+                                    tickvals=top_20_counts['CBO-SubGrupo'],
+                                    ticktext=top_20_counts['label_curto'],      
+                                    automargin=True
+                                ),
+                                
+                                yaxis=dict(
+                                    title='Quantidade'
+                                ),
+                                
+                                yaxis2=dict(
+                                    title='Porcentagem Acumulada (%)',
+                                    overlaying='y',
+                                    side='right',
+                                    range=[0, 115], 
+                                    showgrid=False
+                                ),
+                                
+                                legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'),
                                 plot_bgcolor='rgba(0,0,0,0)',
-                                paper_bgcolor='rgba(0,0,0,0)',)
+                                paper_bgcolor='rgba(0,0,0,0)',
+                                uniformtext=dict(minsize=10, mode='show') 
+                            )
 
-                            col_cbo2.plotly_chart(fig_cbo_subg, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
+                            col_cbo2.plotly_chart(fig_pareto_cbo, width='stretch', key=f"{sub}_pareto_{municipio}")
+                        
                         else:
                             st.warning("Nenhum dado encontrado para a seleção atual.")
                     
@@ -1089,45 +1314,68 @@ for i, municipio in enumerate(municipios):
                             cbo_counts = df_filtrado['Natureza da Lesão'].value_counts().reset_index()
                             cbo_counts.columns = ['Natureza da Lesão', 'count']
 
-                            top_20_counts = cbo_counts.head(20)
-                            top_20_counts['ranking'] = top_20_counts.index + 1
-                            top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
-
-                            wrapper = textwrap.TextWrapper(width=25) 
-
-                            @st.cache_data
-                            def formatar_texto_para_caixa(row):
-                                titulo_quebrado = wrapper.fill(text=row['Natureza da Lesão']).replace('\n', '<br>')
-                                contagem = row['count']
-                                return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
-                            
-                            top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+                            top_20_counts = cbo_counts.head(20).copy()
+                            total_amostra = top_20_counts['count'].sum()
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            top_20_counts['label_curto'] = top_20_counts['Natureza da Lesão'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
 
 
-                            #gráfico de calor
-                            fig_lesao = px.treemap(top_20_counts, path=['Natureza da Lesão'], values='count',
-                                    title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
-                            
-                            fig_lesao.update_traces(
-                                hovertemplate='<b>%{label}</b><br><br>' +
-                                            'Quantidade: %{value}<br>' +
-                                            'Posição: %{customdata[0]}' +
-                                            '<extra></extra>', 
+                            fig_lesao = go.Figure()
 
-                                texttemplate='%{customdata[1]}', 
-                                textposition='top left',
-                                textfont_size=12,
-                                pathbar_visible=False,
-                                root_color = "white" 
-                            ) 
+                            fig_lesao.add_trace(go.Bar(
+                                x=top_20_counts['Natureza da Lesão'],
+                                y=top_20_counts['count'],
+                                name='Quantidade',
+                                marker_color='rgb(255, 128, 0)', 
+                                opacity=0.7,
+                                text=top_20_counts['count'],
+                                textposition='outside',
+                                customdata=top_20_counts['Natureza da Lesão'],
+                                hovertemplate='<b>%{customdata}</b><br>Quantidade: %{y}<extra></extra>'
+                            ))
 
+                            fig_lesao.add_trace(go.Scatter(
+                                x=top_20_counts['Natureza da Lesão'],
+                                y=top_20_counts['cumulative_perc'],
+                                name='% Acumulado',
+                                mode='lines+markers+text',
+                                yaxis='y2',
+                                line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                                text=[f'{val:.1f}%' for val in top_20_counts['cumulative_perc']],
+                                textposition='top center'
+                            ))
 
                             fig_lesao.update_layout(
+                                title=' ',
                                 margin=dict(t=50, l=25, r=25, b=25),
                                 title_font_size=28,
-                                #uniformtext=dict(minsize=9),
+                                
+                                xaxis=dict(
+                                    tickangle=-25,
+                                    tickfont=dict(size=12),
+                                    tickmode='array',
+                                    tickvals=top_20_counts['Natureza da Lesão'],
+                                    ticktext=top_20_counts['label_curto'],      
+                                    automargin=True
+                                ),
+                                
+                                yaxis=dict(
+                                    title='Quantidade'
+                                ),
+                                
+                                yaxis2=dict(
+                                    title='Porcentagem Acumulada (%)',
+                                    overlaying='y',
+                                    side='right',
+                                    range=[0, 115], 
+                                    showgrid=False
+                                ),
+                                
+                                legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'),
                                 plot_bgcolor='rgba(0,0,0,0)',
-                                paper_bgcolor='rgba(0,0,0,0)',)
+                                paper_bgcolor='rgba(0,0,0,0)',
+                                uniformtext=dict(minsize=10, mode='show') 
+                            )
 
                             col_lesao2.plotly_chart(fig_lesao, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
                             
@@ -1175,46 +1423,67 @@ for i, municipio in enumerate(municipios):
                                 cbo_counts = df_filtrado['Parte Corpo Atingida'].value_counts().reset_index()
                                 cbo_counts.columns = ['Parte Corpo Atingida', 'count']
 
-                                top_20_counts = cbo_counts.head(20)
-                                top_20_counts['ranking'] = top_20_counts.index + 1
-                                top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
+                                top_20_counts = cbo_counts.head(20).copy()
+                                total_amostra = top_20_counts['count'].sum()
+                                top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                                top_20_counts['label_curto'] = top_20_counts['Parte Corpo Atingida'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
 
-                                wrapper = textwrap.TextWrapper(width=25) 
+                                fig_corpo = go.Figure()
 
-                                @st.cache_data
-                                def formatar_texto_para_caixa(row):
-                                    titulo_quebrado = wrapper.fill(text=row['Parte Corpo Atingida']).replace('\n', '<br>')
-                                    contagem = row['count']
-                                    return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
-                                
-                                top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+                                fig_corpo.add_trace(go.Bar(
+                                    x=top_20_counts['Parte Corpo Atingida'],
+                                    y=top_20_counts['count'],
+                                    name='Quantidade',
+                                    marker_color='rgb(255, 128, 0)', 
+                                    opacity=0.7,
+                                    text=top_20_counts['count'],
+                                    textposition='outside',
+                                    customdata=top_20_counts['Parte Corpo Atingida'],
+                                    hovertemplate='<b>%{customdata}</b><br>Quantidade: %{y}<extra></extra>'
+                                ))
 
-
-                                #gráfico de calor
-                                fig_corpo = px.treemap(top_20_counts, path=['Parte Corpo Atingida'], values='count',
-                                        title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
-                                
-                                fig_corpo.update_traces(
-                                    hovertemplate='<b>%{label}</b><br><br>' +
-                                                'Quantidade: %{value}<br>' +
-                                                'Posição: %{customdata[0]}' +
-                                                '<extra></extra>', 
-
-                                    texttemplate='%{customdata[1]}', 
-                                    textposition='top left',
-                                    textfont_size=12,
-                                    pathbar_visible=False,
-                                    root_color = "white" 
-                                ) 
-
+                                fig_corpo.add_trace(go.Scatter(
+                                    x=top_20_counts['Parte Corpo Atingida'],
+                                    y=top_20_counts['cumulative_perc'],
+                                    name='% Acumulado',
+                                    mode='lines+markers+text',
+                                    yaxis='y2',
+                                    line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                                    text=[f'{val:.1f}%' for val in top_20_counts['cumulative_perc']],
+                                    textposition='top center'
+                                ))
 
                                 fig_corpo.update_layout(
+                                    title=' ',
                                     margin=dict(t=50, l=25, r=25, b=25),
                                     title_font_size=28,
-                                    #uniformtext=dict(minsize=9),
+                                    
+                                    xaxis=dict(
+                                        tickangle=-25,
+                                        tickfont=dict(size=12),
+                                        tickmode='array',
+                                        tickvals=top_20_counts['Parte Corpo Atingida'],
+                                        ticktext=top_20_counts['label_curto'],      
+                                        automargin=True
+                                    ),
+                                    
+                                    yaxis=dict(
+                                        title='Quantidade'
+                                    ),
+                                    
+                                    yaxis2=dict(
+                                        title='Porcentagem Acumulada (%)',
+                                        overlaying='y',
+                                        side='right',
+                                        range=[0, 115], 
+                                        showgrid=False
+                                    ),
+                                    
+                                    legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'),
                                     plot_bgcolor='rgba(0,0,0,0)',
-                                    paper_bgcolor='rgba(0,0,0,0)',)
-                                
+                                    paper_bgcolor='rgba(0,0,0,0)',
+                                    uniformtext=dict(minsize=10, mode='show') 
+                                )
 
                                 col_lesao2.plotly_chart(fig_corpo, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
 
@@ -1261,45 +1530,66 @@ for i, municipio in enumerate(municipios):
                                 cbo_counts.columns = ['Agente Causador Acidente', 'count']
 
                                 top_20_counts = cbo_counts.head(20)
-                                top_20_counts['ranking'] = top_20_counts.index + 1
-                                top_20_counts['posicao_str'] = top_20_counts['ranking'].astype(str) + 'º'
-
-                                wrapper = textwrap.TextWrapper(width=25) 
-
-                                @st.cache_data
-                                def formatar_texto_para_caixa(row):
-                                    titulo_quebrado = wrapper.fill(text=row['Agente Causador Acidente']).replace('\n', '<br>')
-                                    contagem = row['count']
-                                    # Usamos 0.9em para o título e 1.3em para a contagem
-                                    return f"<span style='font-size:0.9em'><b>{titulo_quebrado}</b></span><br><span style='font-size:1.3em'>{contagem}</span>"
+                                total_amostra = top_20_counts['count'].sum()
+                                top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                                top_20_counts['label_curto'] = top_20_counts['Agente Causador Acidente'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
                                 
-                                top_20_counts['texto_interno_formatado'] = top_20_counts.apply(formatar_texto_para_caixa, axis=1)
+                                fig_agente = go.Figure()
 
+                                fig_agente.add_trace(go.Bar(
+                                    x=top_20_counts['Agente Causador Acidente'],
+                                    y=top_20_counts['count'],
+                                    name='Quantidade',
+                                    marker_color='rgb(255, 128, 0)', 
+                                    opacity=0.7,
+                                    text=top_20_counts['count'],
+                                    textposition='outside',
+                                    customdata=top_20_counts['Agente Causador Acidente'],
+                                    hovertemplate='<b>%{customdata}</b><br>Quantidade: %{y}<extra></extra>'
+                                ))
 
-                                #gráfico de calor
-                                fig_agente = px.treemap(top_20_counts, path=['Agente Causador Acidente'], values='count',
-                                        title=' ', color='count', color_continuous_scale='Reds',custom_data=['posicao_str', 'texto_interno_formatado'])
-                                
-                                fig_agente.update_traces(
-                                    hovertemplate='<b>%{label}</b><br><br>' +
-                                                'Quantidade: %{value}<br>' +
-                                                'Posição: %{customdata[0]}' +
-                                                '<extra></extra>', 
-
-                                    texttemplate='%{customdata[1]}', 
-                                    textposition='top left',
-                                    textfont_size=12,
-                                    pathbar_visible=False,
-                                    root_color = "white" 
-                                ) 
-
+                                fig_agente.add_trace(go.Scatter(
+                                    x=top_20_counts['Agente Causador Acidente'],
+                                    y=top_20_counts['cumulative_perc'],
+                                    name='% Acumulado',
+                                    mode='lines+markers+text',
+                                    yaxis='y2',
+                                    line=dict(color='rgb(0, 0, 0)', width=2, shape='linear'),
+                                    text=[f'{val:.1f}%' for val in top_20_counts['cumulative_perc']],
+                                    textposition='top center'
+                                ))
 
                                 fig_agente.update_layout(
+                                    title=' ',
                                     margin=dict(t=50, l=25, r=25, b=25),
                                     title_font_size=28,
-                                    #uniformtext=dict(minsize=9),
+                                    
+                                    xaxis=dict(
+                                        tickangle=-25,
+                                        tickfont=dict(size=12),
+                                        tickmode='array',
+                                        tickvals=top_20_counts['Agente Causador Acidente'],
+                                        ticktext=top_20_counts['label_curto'],      
+                                        automargin=True
+                                    ),
+                                    
+                                    yaxis=dict(
+                                        title='Quantidade'
+                                    ),
+                                    
+                                    yaxis2=dict(
+                                        title='Porcentagem Acumulada (%)',
+                                        overlaying='y',
+                                        side='right',
+                                        range=[0, 115], 
+                                        showgrid=False
+                                    ),
+                                    
+                                    legend=dict(x=1, y=1.11, xanchor='right', yanchor='top', bgcolor='rgba(255,255,255,0.5)'),
                                     plot_bgcolor='rgba(0,0,0,0)',
-                                    paper_bgcolor='rgba(0,0,0,0)',)
+                                    paper_bgcolor='rgba(0,0,0,0)',
+                                    uniformtext=dict(minsize=10, mode='show') 
+                                )
                                 
 
                                 col_lesao2.plotly_chart(fig_agente, width='stretch', key=f"{sub}_{nome_grafico}_{municipio}")
