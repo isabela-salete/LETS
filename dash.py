@@ -125,8 +125,7 @@ load_css("style.css")
 # Carregar o segundo dataset
 df2 = pd.read_csv('dataset_limpo2.csv')
 df2.drop(['Unnamed: 0'], axis=1, inplace=True)
-df2['CNAE2.0 Empregador.1'].replace('Comércio varejista de mercadorias em geral, com predominância de produtos alimentícios - hipermercados e supermercados',
-                                   'Comércio varejista de mercadorias (produtos alimentícios)', inplace=True)
+
 
 df_info = pd.read_csv("info.csv")
 # Carregar dados para mapa
@@ -354,7 +353,7 @@ for i, municipio in enumerate(municipios):
                     elif nome_grafico == "CNAE":
                         st.header("Acidentes por Empregador")
 
-                    #Distribuição de Empregador (CBO)
+                    #Distribuição de CNAE
                         sub = st.subheader("Distribuição de CNAE")
 
                         #colunas para filtro e gráfico
@@ -400,9 +399,11 @@ for i, municipio in enumerate(municipios):
                             total_amostra = top_20_counts['count'].sum()
                             top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
                             top_20_counts['label_curto'] = top_20_counts['CNAE2.0 Empregador.1'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
+                            maior_valor = top_20_counts['count'].max()
+                            limite_eixo_y = maior_valor * 1.15 
 
                             fig_pareto_cnae = go.Figure()
-
+                              
                             fig_pareto_cnae.add_trace(go.Bar(
                                 x=top_20_counts['CNAE2.0 Empregador.1'],
                                 y=top_20_counts['count'],
@@ -441,7 +442,8 @@ for i, municipio in enumerate(municipios):
                                 ),
                                 
                                 yaxis=dict(
-                                    title='Quantidade'
+                                    title='Quantidade',
+                                    range=[0, limite_eixo_y]
                                 ),
                                 
                                 yaxis2=dict(
@@ -465,6 +467,11 @@ for i, municipio in enumerate(municipios):
 
                     #Distribuição de Seção (CNAE)
                         sub = st.subheader("Distribuição de Seção (CNAE)")
+
+                        df_municipio2['CNAE-GRUPO'] = df_municipio2['CNAE-GRUPO'].fillna('Não Informado').astype(str)
+                        df_municipio2['CNAE-DIVISÃO'] = df_municipio2['CNAE-DIVISÃO'].fillna('Não Informado').astype(str)
+                        df_municipio2['CNAE-SEÇÃO'] = df_municipio2['CNAE-SEÇÃO'].fillna('Não Informado').astype(str)
+
                         #colunas para filtro e gráfico
                         col_cnae1, col_cnae2 = st.columns([2.3,7])
 
@@ -498,6 +505,8 @@ for i, municipio in enumerate(municipios):
                             total_amostra = top_20_counts['count'].sum()
                             top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
                             top_20_counts['label_curto'] = top_20_counts['CNAE-SEÇÃO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
+                            maior_valor = top_20_counts['count'].max()
+                            limite_eixo_y = maior_valor * 1.15
 
                             fig_pareto_cnae = go.Figure()
 
@@ -539,7 +548,8 @@ for i, municipio in enumerate(municipios):
                                 ),
                                 
                                 yaxis=dict(
-                                    title='Quantidade'
+                                    title='Quantidade',
+                                    range=[0, limite_eixo_y]
                                 ),
                                 
                                 yaxis2=dict(
@@ -587,6 +597,8 @@ for i, municipio in enumerate(municipios):
                             total_amostra = top_20_counts['count'].sum()
                             top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
                             top_20_counts['label_curto'] = top_20_counts['CNAE-DIVISÃO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
+                            maior_valor = top_20_counts['count'].max()
+                            limite_eixo_y = maior_valor * 1.15
 
                             fig_pareto_cnae = go.Figure()
 
@@ -628,7 +640,8 @@ for i, municipio in enumerate(municipios):
                                 ),
                                 
                                 yaxis=dict(
-                                    title='Quantidade'
+                                    title='Quantidade',
+                                    range=[0, limite_eixo_y]
                                 ),
                                 
                                 yaxis2=dict(
@@ -664,6 +677,8 @@ for i, municipio in enumerate(municipios):
                         total_amostra = top_20_counts['count'].sum()
                         top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
                         top_20_counts['label_curto'] = top_20_counts['CNAE-GRUPO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
+                        maior_valor = top_20_counts['count'].max()
+                        limite_eixo_y = maior_valor * 1.15 
 
                         fig_pareto_cnae = go.Figure()
 
@@ -705,7 +720,8 @@ for i, municipio in enumerate(municipios):
                                 ),
                                 
                                 yaxis=dict(
-                                    title='Quantidade'
+                                    title='Quantidade',
+                                    range=[0, limite_eixo_y]
                                 ),
                                 
                                 yaxis2=dict(
@@ -730,31 +746,84 @@ for i, municipio in enumerate(municipios):
                     #Distribuição de Funções (CID)
                         sub = st.subheader("Distribuição de Ferimentos (CID)")
 
+                        df_municipio2['CID-GRUPO'] = df_municipio2['CID-GRUPO'].fillna('Não Informado').astype(str)
+                        df_municipio2['CID-CAPITULO'] = df_municipio2['CID-CAPITULO'].fillna('Não Informado').astype(str)   
+
                         #colunas para filtro e gráfico
                         col_cid1, col_cid2 = st.columns([2.3,7])
 
-                        #filtro sub grupo
-                        lista_cid_grupo = df_municipio2['CID-GRUPO'].unique().tolist()
-                        lista_cid_grupo.insert(0, 'Todos')
+                        #chaves fixas
+                        key_grupo_cid_func = f"cid_grupo_dist_de_ferimentos{municipio}"
+                        key_capitulo_cid_func = f"cid_capitulo_dist_de_ferimentos{municipio}"
+                        key_slider_cid_func = f"slider_ano_dist_de_ferimentos{municipio}"
 
-                        lista_cid_capitulo = df_municipio2['CID-CAPITULO'].unique().tolist()
-                        lista_cid_capitulo.insert(0, 'Todos')
+                        #verificação na memória do que está selecionado 
+                        sel_grupo = st.session_state.get(key_grupo_cid_func, 'Todos')
+                        sel_capitulo = st.session_state.get(key_capitulo_cid_func, 'Todos')
+
+                        #fitro por ano
+                        df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'], errors='coerce')
+                        df_municipio2['Ano_Filtro'] = df_municipio2['Data Acidente'].dt.year.astype(int)
+                        min_ano = int(df_municipio2['Ano_Filtro'].min())
+                        max_ano = int(df_municipio2['Ano_Filtro'].max())
+
+                        anos_selecionados = col_cid1.slider(
+                            "Selecione o Período (Ano):",
+                            min_value=min_ano,
+                            max_value=max_ano,
+                            value=(min_ano, max_ano),
+                            key=key_slider_cid_func
+                        )
+
+                        df_contexto = df_municipio2[
+                            (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                            (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                        ]
+
+                        #lógica cruzada
+                        #baseada em grupo
+                        if sel_capitulo != 'Todos':
+                            # Se tem capítulo selecionado, mostra apenas os grupos que contêm esse capítulo
+                            grupos_validos = df_contexto[df_contexto['CID-CAPITULO'] == sel_capitulo]['CID-GRUPO'].unique()
+                            lista_cid_grupo = ['Todos'] + sorted(grupos_validos.tolist())
+                        else:   
+                            # Se não, mostra todos
+                            lista_cid_grupo = ['Todos'] + sorted(df_contexto['CID-GRUPO'].unique().tolist())
+
+                        #baseada em capítulo
+                        if sel_grupo != 'Todos':
+                            #mostra apenas os capítulos desse grupo
+                            capitulos_validos = df_contexto[df_contexto['CID-GRUPO'] == sel_grupo]['CID-CAPITULO'].unique()
+                            lista_cid_capitulo = ['Todos'] + sorted(capitulos_validos.tolist())
+                        else:
+                            #se não, mostra todos
+                            lista_cid_capitulo = ['Todos'] + sorted(df_contexto['CID-CAPITULO'].unique().tolist())
+
+                        #correção de Erros de Seleção
+                        if sel_grupo not in lista_cid_grupo:
+                            st.session_state[key_grupo_cid_func] = 'Todos'
+                            sel_grupo = 'Todos' #atualiza variável local
+
+                        if sel_capitulo not in lista_cid_capitulo:
+                            st.session_state[key_capitulo_cid_func] = 'Todos'
+                            sel_capitulo = 'Todos' #atualiza variável local
                         
-                        df_filtrado = df_municipio2.copy()
 
                         cid_grupo_selecionado = col_cid1.selectbox('Selecione um Grupo (CID):',
-                                            lista_cid_grupo, key=f"cid_grupo_{sub}_{municipio}")
+                                            lista_cid_grupo, key=key_grupo_cid_func)
                         
                         cid_capitulo_selecionado = col_cid1.selectbox('Selecione um Capitulo (CID):',
-                                            lista_cid_capitulo, key=f"cid_capitulo_{sub}_{municipio}")
-
-                        if cid_grupo_selecionado != 'Todos':    
-                            df_filtrado = df_filtrado[df_filtrado['CID-GRUPO'] == cid_grupo_selecionado]
+                                            lista_cid_capitulo, key=key_capitulo_cid_func)
+                        
+                        df_filtrado = df_contexto.copy()
 
                         if cid_capitulo_selecionado != 'Todos':    
                             df_filtrado = df_filtrado[df_filtrado['CID-CAPITULO'] == cid_capitulo_selecionado]
 
-                                
+                        if cid_grupo_selecionado != 'Todos':    
+                            df_filtrado = df_filtrado[df_filtrado['CID-GRUPO'] == cid_grupo_selecionado]
+
+                        
                         if not df_filtrado.empty:
                             #dados para o gráfico
                             cid_counts = df_filtrado['CID-Ferimento'].value_counts().reset_index()
@@ -764,6 +833,8 @@ for i, municipio in enumerate(municipios):
                             total_amostra = top_20_counts['count'].sum() 
                             top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
                             top_20_counts['label_curto'] = top_20_counts['CID-Ferimento'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
+                            maior_valor = top_20_counts['count'].max()
+                            limite_eixo_y = maior_valor * 1.15 
 
                             fig_pareto_cid = go.Figure()
 
@@ -805,7 +876,8 @@ for i, municipio in enumerate(municipios):
                                 ),
                                 
                                 yaxis=dict(
-                                    title='Quantidade'
+                                    title='Quantidade',
+                                    range=[0, limite_eixo_y]
                                 ),
                                 
                                 yaxis2=dict(
@@ -833,17 +905,39 @@ for i, municipio in enumerate(municipios):
                         #colunas para filtro e gráfico
                         col_cid1, col_cid2 = st.columns([2.3,7])
 
+                        #chave fixa
+                        key_slider_cid_grupo = f"slider_cid_ano_dist_por_grupo{municipio}"
+
+                        #fitro por ano
+                        df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'], errors='coerce')
+                        df_municipio2['Ano_Filtro'] = df_municipio2['Data Acidente'].dt.year.astype(int)
+                        min_ano = int(df_municipio2['Ano_Filtro'].min())
+                        max_ano = int(df_municipio2['Ano_Filtro'].max())
+
+                        anos_selecionados = col_cid1.slider(
+                            "Selecione o Período (Ano):",
+                            min_value=min_ano,
+                            max_value=max_ano,
+                            value=(min_ano, max_ano),
+                            key=key_slider_cid_grupo
+                        )
+
+                        df_contexto = df_municipio2[
+                            (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                            (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                        ]
+
                         #filtro
                         lista_cid = df_municipio2['CID-CAPITULO'].unique().tolist()
                         lista_cid.insert(0, 'Todos')
 
                         cid_selecionado = col_cid1.selectbox('Selecione um Capítulo:',
-                                            lista_cid, key=f"{sub}_{municipio}")
+                                            lista_cid, key=f"slider_ano_Distribuição_por_Grupo_(CID){municipio}")
                         
                         if cid_selecionado == 'Todos':
-                            df_filtrado = df_municipio2
+                            df_filtrado = df_contexto
                         else:
-                            df_filtrado = df_municipio2[df_municipio2['CID-CAPITULO'] == cid_selecionado]
+                            df_filtrado = df_contexto[df_contexto['CID-CAPITULO'] == cid_selecionado]
 
                         if not df_filtrado.empty:
                             #dados para o gráfico
@@ -854,6 +948,8 @@ for i, municipio in enumerate(municipios):
                             total_amostra = top_20_counts['count'].sum() 
                             top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
                             top_20_counts['label_curto'] = top_20_counts['CID-GRUPO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
+                            maior_valor = top_20_counts['count'].max()
+                            limite_eixo_y = maior_valor * 1.15 
 
                             fig_pareto_cid = go.Figure()
 
@@ -895,7 +991,8 @@ for i, municipio in enumerate(municipios):
                                 ),
                                 
                                 yaxis=dict(
-                                    title='Quantidade'
+                                    title='Quantidade',
+                                    range=[0, limite_eixo_y]
                                 ),
                                 
                                 yaxis2=dict(
@@ -924,6 +1021,28 @@ for i, municipio in enumerate(municipios):
                         #colunas para filtro e gráfico
                         col_cid1, col_cid2 = st.columns([2.3,7])
 
+                        #chave fixa
+                        key_slider_cid_capitulo = f"slider_cid_ano_dist_por_capitu{municipio}"
+
+                        #fitro por ano
+                        df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'], errors='coerce')
+                        df_municipio2['Ano_Filtro'] = df_municipio2['Data Acidente'].dt.year.astype(int)
+                        min_ano = int(df_municipio2['Ano_Filtro'].min())
+                        max_ano = int(df_municipio2['Ano_Filtro'].max())
+
+                        anos_selecionados = col_cid1.slider(
+                            "Selecione o Período (Ano):",
+                            min_value=min_ano,
+                            max_value=max_ano,
+                            value=(min_ano, max_ano),
+                            key=key_slider_cid_capitulo
+                        )
+
+                        df_filtrado = df_municipio2[
+                            (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                            (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                        ]
+
                         #dados para o gráfico
                         cid_counts = df_filtrado['CID-CAPITULO'].value_counts().reset_index()
                         cid_counts.columns = ['CID-CAPITULO', 'count']
@@ -932,6 +1051,8 @@ for i, municipio in enumerate(municipios):
                         total_amostra = top_20_counts['count'].sum() 
                         top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
                         top_20_counts['label_curto'] = top_20_counts['CID-CAPITULO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
+                        maior_valor = top_20_counts['count'].max()
+                        limite_eixo_y = maior_valor * 1.15 
 
                         fig_pareto_cid = go.Figure()
 
@@ -973,7 +1094,8 @@ for i, municipio in enumerate(municipios):
                                 ),
                                 
                                 yaxis=dict(
-                                    title='Quantidade'
+                                    title='Quantidade',
+                                    range=[0, limite_eixo_y]
                                 ),
                                 
                                 yaxis2=dict(
@@ -1021,7 +1143,7 @@ for i, municipio in enumerate(municipios):
                             right=False)
 
                         contagem_acidentes_df = df_acidentes_limpo.groupby(
-                            ['Faixa Etária', 'Sexo']
+                            ['Faixa Etária', 'Sexo'], observed=True
                         ).size().reset_index(name='Quantidade de Acidentes')
 
                         contagem_acidentes_df['Quantidade_Display'] = contagem_acidentes_df['Quantidade de Acidentes']
@@ -1092,20 +1214,43 @@ for i, municipio in enumerate(municipios):
                     #Distribuição de Funções (CBO)
                         sub = st.subheader("Distribuição de Funções (CBO)")
 
+                        df_municipio2['CBO-SubGrupoPrincipal'] = df_municipio2['CBO-SubGrupoPrincipal'].fillna('Não Informado').astype(str)
+                        df_municipio2['CBO-SubGrupoPrincipal'] = df_municipio2['CBO-SubGrupoPrincipal'].fillna('Não Informado').astype(str)
+                        df_municipio2['CBO-Função'] = df_municipio2['CBO-Função'].fillna('Não Informado').astype(str)
+
                         #colunas para filtro e gráfico
                         col_cbo1, col_cbo2 = st.columns([2.3,7])
 
+                        #chave fixa
+                        key_slider_cbo_func = f"slider_cbo_ano_dist_de_func{municipio}"
+
+                        #fitro por ano
+                        min_ano = int(df_municipio2['Ano_Filtro'].min())
+                        max_ano = int(df_municipio2['Ano_Filtro'].max())
+
+                        anos_selecionados = col_cbo1.slider(
+                            "Selecione o Período (Ano):",
+                            min_value=min_ano,
+                            max_value=max_ano,
+                            value=(min_ano, max_ano),
+                            key=key_slider_cbo_func
+                        )
+
+                        df_contexto = df_municipio2[
+                            (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                            (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                        ]
+
                         #filtro sub grupo
-                        lista_cbo = df_municipio2['CBO-SubGrupoPrincipal'].unique().tolist()
-                        lista_cbo.insert(0, 'Todos')
+                        lista_cbo = ['Todos'] + sorted(df_contexto['CBO-SubGrupoPrincipal'].unique().tolist())
 
                         cbo_selecionado = col_cbo1.selectbox('Selecione um Subgrupo Principal:',
                                             lista_cbo, key=f"{sub}_{municipio}")
 
                         if cbo_selecionado == 'Todos':
-                            df_filtrado = df_municipio2
+                            df_filtrado = df_contexto
                         else:
-                            df_filtrado = df_municipio2[df_municipio2['CBO-SubGrupoPrincipal'] == cbo_selecionado]
+                            df_filtrado = df_contexto[df_contexto['CBO-SubGrupoPrincipal'] == cbo_selecionado]
                                 
                         if not df_filtrado.empty:
                             #dados para o gráfico
@@ -1116,6 +1261,8 @@ for i, municipio in enumerate(municipios):
                             total_amostra = top_20_counts['count'].sum() 
                             top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
                             top_20_counts['label_curto'] = top_20_counts['CBO-Função'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
+                            maior_valor = top_20_counts['count'].max()
+                            limite_eixo_y = maior_valor * 1.15 
 
                             fig_pareto_cbo = go.Figure()
 
@@ -1157,7 +1304,8 @@ for i, municipio in enumerate(municipios):
                                 ),
                                 
                                 yaxis=dict(
-                                    title='Quantidade'
+                                    title='Quantidade',
+                                    range=[0, limite_eixo_y]
                                 ),
                                 
                                 yaxis2=dict(
@@ -1185,17 +1333,36 @@ for i, municipio in enumerate(municipios):
                         #colunas para filtro e gráfico
                         col_cbo1, col_cbo2 = st.columns([2.3,7])
 
+                        #chave fixa
+                        key_slider_cbo_sub = f"slider_cbo_ano_dist_de_sub{municipio}"
+
+                        #fitro por ano
+                        min_ano = int(df_municipio2['Ano_Filtro'].min())
+                        max_ano = int(df_municipio2['Ano_Filtro'].max())
+
+                        anos_selecionados = col_cbo1.slider(
+                            "Selecione o Período (Ano):",
+                            min_value=min_ano,
+                            max_value=max_ano,
+                            value=(min_ano, max_ano),
+                            key=key_slider_cbo_sub
+                        )
+
+                        df_contexto = df_municipio2[
+                            (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                            (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                        ]
+
                         #filtro
-                        lista_cbo = df_municipio2['CBO-SubGrupoPrincipal'].unique().tolist()
-                        lista_cbo.insert(0, 'Todos')
+                        lista_cbo = ['Todos'] + sorted(df_contexto['CBO-SubGrupoPrincipal'].unique().tolist())
 
                         cbo_selecionado = col_cbo1.selectbox('Selecione um Subgrupo Principal:',
                                             lista_cbo, key=f"{sub}_{municipio}")
 
                         if cbo_selecionado == 'Todos':
-                            df_filtrado = df_municipio2
+                            df_filtrado = df_contexto
                         else:
-                            df_filtrado = df_municipio2[df_municipio2['CBO-SubGrupoPrincipal'] == cbo_selecionado]
+                            df_filtrado = df_contexto[df_contexto['CBO-SubGrupoPrincipal'] == cbo_selecionado]
                                 
                         if not df_filtrado.empty:
                             #dados para o gráfico
@@ -1206,6 +1373,8 @@ for i, municipio in enumerate(municipios):
                             total_amostra = top_20_counts['count'].sum() 
                             top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
                             top_20_counts['label_curto'] = top_20_counts['CBO-SubGrupo'].apply(lambda x: x[:25] + '...' if len(x) > 25 else x)
+                            maior_valor = top_20_counts['count'].max()
+                            limite_eixo_y = maior_valor * 1.15
 
                             fig_pareto_cbo = go.Figure()
 
@@ -1247,7 +1416,8 @@ for i, municipio in enumerate(municipios):
                                 ),
                                 
                                 yaxis=dict(
-                                    title='Quantidade'
+                                    title='Quantidade',
+                                    range=[0, limite_eixo_y]
                                 ),
                                 
                                 yaxis2=dict(
@@ -1278,26 +1448,77 @@ for i, municipio in enumerate(municipios):
                         #colunas para filtro e gráfico
                         col_lesao1, col_lesao2 = st.columns([2.3,7])
 
-                        #filtro
-                        lista_cbo = df_municipio2['CBO-SubGrupoPrincipal'].unique().tolist()
-                        lista_cbo.insert(0, 'Todos')
+                        #chaves fixas
+                        key_cid_lesao = f"cid_lesao{municipio}"
+                        key_cbo_lesao = f"cbo_lesao{municipio}"
+                        key_cnae_lesao = f"cnae_lesao{municipio}"
+                        key_slider_lesao = f"slider_lesao{municipio}"
 
-                        lista_cnae = df_municipio2['CNAE-DIVISÃO'].unique().tolist()
-                        lista_cnae.insert(0, 'Todos')
+                        #verificação na memória do que está selecionado 
+                        sel_cid_lesao = st.session_state.get(key_cid_lesao, 'Todos')
+                        sel_cbo_lesao = st.session_state.get(key_cbo_lesao, 'Todos')
+                        sel_cnae_lesao = st.session_state.get(key_cnae_lesao, 'Todos')
 
-                        lista_cid = df_municipio2['CID-CAPITULO'].unique().tolist()
-                        lista_cid.insert(0, 'Todos')
+                        #fitro por ano
+                        df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'], errors='coerce')
+                        df_municipio2['Ano_Filtro'] = df_municipio2['Data Acidente'].dt.year.astype(int)
+                        min_ano = int(df_municipio2['Ano_Filtro'].min())
+                        max_ano = int(df_municipio2['Ano_Filtro'].max())
+
+                        anos_selecionados = col_lesao1.slider(
+                            "Selecione o Período (Ano):",
+                            min_value=min_ano,
+                            max_value=max_ano,
+                            value=(min_ano, max_ano),
+                            key=key_slider_lesao
+                        )
+
+                        df_contexto = df_municipio2[
+                            (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                            (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                        ]
+
+                        #lógica cruzada
+                        #baseada em grupo
+                        df_cid_temp = df_contexto.copy()
+                        if sel_cbo_lesao != 'Todos': df_cid_temp = df_cid_temp[df_cid_temp['CBO-SubGrupoPrincipal'] == sel_cbo_lesao]
+                        if sel_cnae_lesao != 'Todos': df_cid_temp = df_cid_temp[df_cid_temp['CNAE-DIVISÃO'] == sel_cnae_lesao]
+                        opcoes_reais_cid = sorted(df_cid_temp['CID-CAPITULO'].unique().tolist())
+
+                        df_cbo_temp = df_contexto.copy()
+                        if sel_cid_lesao != 'Todos': df_cbo_temp = df_cbo_temp[df_cbo_temp['CID-CAPITULO'] == sel_cid_lesao]
+                        if sel_cnae_lesao != 'Todos': df_cbo_temp = df_cbo_temp[df_cbo_temp['CNAE-DIVISÃO'] == sel_cnae_lesao]
+                        opcoes_reais_cbo = sorted(df_cbo_temp['CBO-SubGrupoPrincipal'].unique().tolist())
+
+                        df_cnae_temp = df_contexto.copy()
+                        if sel_cid_lesao != 'Todos': df_cnae_temp = df_cnae_temp[df_cnae_temp['CID-CAPITULO'] == sel_cid_lesao]
+                        if sel_cbo_lesao != 'Todos': df_cnae_temp = df_cnae_temp[df_cnae_temp['CBO-SubGrupoPrincipal'] == sel_cbo_lesao]
+                        opcoes_reais_cnae = sorted(df_cnae_temp['CNAE-DIVISÃO'].unique().tolist())
+
+                        lista_cbo = ['Todos'] + opcoes_reais_cbo
+                        # Se tenho algo selecionado E esse algo não está na lista nova -> Adiciono ele de volta
+                        if sel_cbo_lesao != 'Todos' and sel_cbo_lesao not in lista_cbo:
+                            lista_cbo.append(sel_cbo_lesao)
+
+                        # Para CNAE
+                        lista_cnae = ['Todos'] + opcoes_reais_cnae
+                        if sel_cnae_lesao != 'Todos' and sel_cnae_lesao not in lista_cnae:
+                            lista_cnae.append(sel_cnae_lesao)
+
+                        lista_cid = ['Todos'] + opcoes_reais_cid
+                        if sel_cid_lesao != 'Todos' and sel_cid_lesao not in lista_cid:
+                            lista_cid.append(sel_cid_lesao)
 
                         cbo_selecionado = col_lesao1.selectbox('Selecione um Subgrupo Principal (CBO):',
-                                            lista_cbo, key=f"cbo_{sub}_{municipio}")
+                                            lista_cbo, key=key_cbo_lesao)
                         
                         cnae_selecionado = col_lesao1.selectbox('Selecione uma Divisão (CNAE):',
-                                            lista_cnae, key=f"cnae_{sub}_{municipio}")
+                                            lista_cnae, key=key_cnae_lesao)
                         
                         cid_selecionado = col_lesao1.selectbox('Selecione um Capítulo (CID):',
-                                            lista_cid, key=f"cid_{sub}_{municipio}")
+                                            lista_cid, key=key_cid_lesao)
                         
-                        df_filtrado = df_municipio2.copy()
+                        df_filtrado = df_contexto.copy()
 
                         if cbo_selecionado != 'Todos':    
                             df_filtrado = df_filtrado[df_filtrado['CBO-SubGrupoPrincipal'] == cbo_selecionado]
@@ -1318,7 +1539,8 @@ for i, municipio in enumerate(municipios):
                             total_amostra = top_20_counts['count'].sum()
                             top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
                             top_20_counts['label_curto'] = top_20_counts['Natureza da Lesão'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
-
+                            maior_valor = top_20_counts['count'].max()
+                            limite_eixo_y = maior_valor * 1.15
 
                             fig_lesao = go.Figure()
 
@@ -1360,7 +1582,8 @@ for i, municipio in enumerate(municipios):
                                 ),
                                 
                                 yaxis=dict(
-                                    title='Quantidade'
+                                    title='Quantidade',
+                                    range=[0, limite_eixo_y]
                                 ),
                                 
                                 yaxis2=dict(
@@ -1427,7 +1650,8 @@ for i, municipio in enumerate(municipios):
                                 total_amostra = top_20_counts['count'].sum()
                                 top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
                                 top_20_counts['label_curto'] = top_20_counts['Parte Corpo Atingida'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
-
+                                maior_valor = top_20_counts['count'].max()
+                                limite_eixo_y = maior_valor * 1.15 
                                 fig_corpo = go.Figure()
 
                                 fig_corpo.add_trace(go.Bar(
@@ -1468,7 +1692,8 @@ for i, municipio in enumerate(municipios):
                                     ),
                                     
                                     yaxis=dict(
-                                        title='Quantidade'
+                                        title='Quantidade',
+                                        range=[0, limite_eixo_y]
                                     ),
                                     
                                     yaxis2=dict(
@@ -1533,7 +1758,9 @@ for i, municipio in enumerate(municipios):
                                 total_amostra = top_20_counts['count'].sum()
                                 top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
                                 top_20_counts['label_curto'] = top_20_counts['Agente Causador Acidente'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
-                                
+                                maior_valor = top_20_counts['count'].max()
+                                limite_eixo_y = maior_valor * 1.15 
+
                                 fig_agente = go.Figure()
 
                                 fig_agente.add_trace(go.Bar(
@@ -1574,7 +1801,8 @@ for i, municipio in enumerate(municipios):
                                     ),
                                     
                                     yaxis=dict(
-                                        title='Quantidade'
+                                        title='Quantidade',
+                                        range=[0, limite_eixo_y]
                                     ),
                                     
                                     yaxis2=dict(
