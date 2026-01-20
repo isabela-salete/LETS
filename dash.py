@@ -200,15 +200,38 @@ for i, municipio in enumerate(municipios):
             st.subheader('Quantidade de Acidentes por Município')
             col1, col2 = st.columns([2, 7])
 
-            col1.write("A distribuição do número de acidentes na Região do Médio Vale Paraíba mostra como os incidentes se concentram nas cidades de Volta Redonda, Barra Mansa e Resende.")
+            #fitro por ano
+            df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'], errors='coerce')
+            df_municipio2['Ano_Filtro'] = df_municipio2['Data Acidente'].dt.year.astype(int)
+            min_ano = int(df_municipio2['Ano_Filtro'].min())
+            max_ano = int(df_municipio2['Ano_Filtro'].max())
 
-            municipio_counts = df2['Município Empregador'].value_counts().reset_index()
+            #texto
+            col1.write("Número absoluto de acidentes de trabalho - benefícios previdenciários do tipo Concessão de Benefícios Previdenciários Acidentários (B91) na Região Médio Paraíba do Estado do Rio de Janeiro no acumulado entre os anos de 2018 a 2024.")
+
+            anos_selecionados = col1.slider(
+                "Selecione o Período (Ano):",
+                min_value=min_ano,
+                max_value=max_ano,
+                value=(min_ano, max_ano),
+                key='pareto_principal'
+            )
+
+            df_contexto = df_municipio2[
+                (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+            ]
+
+            municipio_counts = df_contexto['Município Empregador'].value_counts().reset_index()
             municipio_counts.columns = ['Município Empregador', 'count']
 
             total_acidentes = municipio_counts['count'].sum()
             municipio_counts['percentage'] = (municipio_counts['count'] / total_acidentes) * 100
             municipio_counts['cumulative_perc'] = municipio_counts['percentage'].cumsum()
 
+
+
+            #figura
             fig_pareto = go.Figure()
 
             fig_pareto.add_trace(go.Bar(
@@ -323,7 +346,7 @@ for i, municipio in enumerate(municipios):
                 if not df_municipio2.empty:
                     if nome_grafico == "Acidentes por Tempo":
                         st.header("Acidentes por Tempo")
-                        #st.subheader('Distribuição de Acidentes no Tempo')
+                        st.write('Número absoluto de acidentes de trabalho - benefícios previdenciários do tipo Concessão de Benefícios Previdenciários Acidentários (B91) na Região Médio Paraíba do Estado do Rio de Janeiro, entre os anos 2018 e 2024.')
                         ##dados
                         df_municipio2['data'] = pd.to_datetime(df_municipio2['Data Acidente'])
                         df_municipio2['mes'] = df_municipio2['data'].dt.month
@@ -359,6 +382,32 @@ for i, municipio in enumerate(municipios):
                         #colunas para filtro e gráfico
                         col_cnae1, col_cnae2 = st.columns([2.3,7])
 
+                        #texto
+                        col_cnae1.write('Distribuição dos afastamentos do tipo acidentário B91 na Região Médio Paraíba do Estado do Rio de Janeiro entre os anos 2018 e 2024, conforme a Classificação Nacional de Atividades Econômicas (CNAE).')
+                        
+                        #chave fixa
+                        key_slider_cnae_func = f"slider_cnae_ano_dist_por_func{municipio}"
+
+                        #fitro por ano
+                        df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'], errors='coerce')
+                        df_municipio2['Ano_Filtro'] = df_municipio2['Data Acidente'].dt.year.astype(int)
+                        min_ano = int(df_municipio2['Ano_Filtro'].min())
+                        max_ano = int(df_municipio2['Ano_Filtro'].max())
+                        
+                        anos_selecionados = col_cnae1.slider(
+                            "Selecione o Período (Ano):",
+                            min_value=min_ano,
+                            max_value=max_ano,
+                            value=(min_ano, max_ano),
+                            key=key_slider_cnae_func
+                        )
+
+                        df_contexto = df_municipio2[
+                            (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                            (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                        ]
+
+
                         #filtro sub grupo
                         lista_cnae_secao = df_municipio2['CNAE-SEÇÃO'].unique().tolist()
                         lista_cnae_secao.insert(0, 'Todos')
@@ -378,7 +427,7 @@ for i, municipio in enumerate(municipios):
                         cnae_grupo_selecionado = col_cnae1.selectbox('Selecione um Grupo (CNAE):',
                                             lista_cnae_grupo, key=f"cnae_grupo_{sub}_{municipio}")
                         
-                        df_filtrado = df_municipio2.copy()
+                        df_filtrado = df_contexto.copy()
 
                         if cnae_secao_selecionado != 'Todos':    
                             df_filtrado = df_filtrado[df_filtrado['CNAE-SEÇÃO'] == cnae_secao_selecionado]
@@ -475,6 +524,31 @@ for i, municipio in enumerate(municipios):
                         #colunas para filtro e gráfico
                         col_cnae1, col_cnae2 = st.columns([2.3,7])
 
+                        #texto
+                        col_cnae1.write('Distribuição dos afastamentos do tipo acidentário B91 na Região Médio Paraíba do Estado do Rio de Janeiro entre os anos 2018 e 2024, conforme a Seção, Divisão e Grupo da Classificação Nacional de Atividades Econômicas (CNAE).')
+
+                        #chave fixa
+                        key_slider_cnae_sec= f"slider_cnae_ano_dist_por_secao{municipio}"
+
+                        #fitro por ano
+                        df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'], errors='coerce')
+                        df_municipio2['Ano_Filtro'] = df_municipio2['Data Acidente'].dt.year.astype(int)
+                        min_ano = int(df_municipio2['Ano_Filtro'].min())
+                        max_ano = int(df_municipio2['Ano_Filtro'].max())
+                        
+                        anos_selecionados = col_cnae1.slider(
+                            "Selecione o Período (Ano):",
+                            min_value=min_ano,
+                            max_value=max_ano,
+                            value=(min_ano, max_ano),
+                            key=key_slider_cnae_sec
+                        )
+
+                        df_contexto = df_municipio2[
+                            (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                            (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                        ]
+
                         #filtro sub grupo
                         lista_cnae_divisao = df_municipio2['CNAE-DIVISÃO'].unique().tolist()
                         lista_cnae_divisao.insert(0, 'Todos')
@@ -488,7 +562,7 @@ for i, municipio in enumerate(municipios):
                         cnae_grupo_selecionado = col_cnae1.selectbox('Selecione um Grupo (CNAE):',
                                             lista_cnae_grupo, key=f"cnae_grupo_{sub}_{municipio}")
                         
-                        df_filtrado = df_municipio2.copy()
+                        df_filtrado = df_contexto.copy()
 
                         if cnae_divisao_selecionado != 'Todos':    
                             df_filtrado = df_filtrado[df_filtrado['CNAE-DIVISÃO'] == cnae_divisao_selecionado]
@@ -577,13 +651,38 @@ for i, municipio in enumerate(municipios):
                         #colunas para filtro e gráfico
                         col_cnae1, col_cnae2 = st.columns([2.3,7])
 
-                        lista_cnae_grupo = df_municipio2['CNAE-GRUPO'].unique().tolist()
+                        #texto
+                        col_cnae1.write('Distribuição dos afastamentos do tipo acidentário B91 na Região Médio Paraíba do Estado do Rio de Janeiro entre os anos 2018 e 2024, conforme a Divisão e Grupo da Classificação Nacional de Atividades Econômicas (CNAE).')
+
+                        #chave fixa
+                        key_slider_cnae_div= f"slider_cnae_ano_dist_por_divisao{municipio}"
+
+                        #fitro por ano
+                        df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'], errors='coerce')
+                        df_municipio2['Ano_Filtro'] = df_municipio2['Data Acidente'].dt.year.astype(int)
+                        min_ano = int(df_municipio2['Ano_Filtro'].min())
+                        max_ano = int(df_municipio2['Ano_Filtro'].max())
+                        
+                        anos_selecionados = col_cnae1.slider(
+                            "Selecione o Período (Ano):",
+                            min_value=min_ano,
+                            max_value=max_ano,
+                            value=(min_ano, max_ano),
+                            key=key_slider_cnae_div
+                        )
+
+                        df_contexto = df_municipio2[
+                            (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                            (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                        ]
+
+                        lista_cnae_grupo = df_contexto['CNAE-GRUPO'].unique().tolist()
                         lista_cnae_grupo.insert(0, 'Todos')
                         
                         cnae_grupo_selecionado = col_cnae1.selectbox('Selecione um Grupo (CNAE):',
                                             lista_cnae_grupo, key=f"cnae_grupo_{sub}_{municipio}")
                         
-                        df_filtrado = df_municipio2.copy()
+                        df_filtrado = df_contexto.copy()
 
                         if cnae_grupo_selecionado != 'Todos':
                              df_filtrado = df_filtrado[df_filtrado['CNAE-GRUPO'] == cnae_grupo_selecionado]
@@ -669,6 +768,33 @@ for i, municipio in enumerate(municipios):
                     #colunas para filtro e gráfico
                         col_cnae1, col_cnae2 = st.columns([2.3,7])
 
+                        #texto
+                        col_cnae1.write('Distribuição dos afastamentos do tipo acidentário B91 na Região Médio Paraíba do Estado do Rio de Janeiro entre os anos 2018 e 2024, conforme o Grupo da Classificação Nacional de Atividades Econômicas (CNAE).')
+
+                        #chave fixa
+                        key_slider_cnae_grupo= f"slider_cnae_ano_dist_por_grupo{municipio}"
+
+                        #fitro por ano
+                        df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'], errors='coerce')
+                        df_municipio2['Ano_Filtro'] = df_municipio2['Data Acidente'].dt.year.astype(int)
+                        min_ano = int(df_municipio2['Ano_Filtro'].min())
+                        max_ano = int(df_municipio2['Ano_Filtro'].max())
+                        
+                        anos_selecionados = col_cnae1.slider(
+                            "Selecione o Período (Ano):",
+                            min_value=min_ano,
+                            max_value=max_ano,
+                            value=(min_ano, max_ano),
+                            key=key_slider_cnae_grupo
+                        )
+
+                        df_contexto = df_municipio2[
+                            (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                            (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                        ]
+
+                        df_filtrado = df_contexto.copy()
+
                         #dados para o gráfico
                         cnae_counts = df_filtrado['CNAE-GRUPO'].value_counts().reset_index()
                         cnae_counts.columns = ['CNAE-GRUPO', 'count']
@@ -752,6 +878,9 @@ for i, municipio in enumerate(municipios):
                         #colunas para filtro e gráfico
                         col_cid1, col_cid2 = st.columns([2.3,7])
 
+                        #texto
+                        col_cid1.write('Distribuição dos ferimentos conforme os Capítulos e Grupos da Classificação Internacional de Doenças (CID) mais frequentes associados a afastamentos do tipo acidentário B91 na Região Médio Paraíba do Estado do Rio de Janeiro entre os anos 2018 e 2024.')
+
                         #chaves fixas
                         key_grupo_cid_func = f"cid_grupo_dist_de_ferimentos{municipio}"
                         key_capitulo_cid_func = f"cid_capitulo_dist_de_ferimentos{municipio}"
@@ -779,6 +908,9 @@ for i, municipio in enumerate(municipios):
                             (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
                             (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
                         ]
+
+                        #total
+                        total_geral_periodo = df_contexto.shape[0]
 
                         #lógica cruzada
                         #baseada em grupo
@@ -829,9 +961,11 @@ for i, municipio in enumerate(municipios):
                             cid_counts = df_filtrado['CID-Ferimento'].value_counts().reset_index()
                             cid_counts.columns = ['CID-Ferimento', 'count']
 
+                            #total_amostra_global = cid_counts['count'].sum()
+                            total_amostra_global = total_geral_periodo
                             top_20_counts = cid_counts.head(20).copy()
-                            total_amostra = top_20_counts['count'].sum() 
-                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            #total_amostra = top_20_counts['count'].sum() 
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra_global
                             top_20_counts['label_curto'] = top_20_counts['CID-Ferimento'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
                             maior_valor = top_20_counts['count'].max()
                             limite_eixo_y = maior_valor * 1.15 
@@ -904,6 +1038,9 @@ for i, municipio in enumerate(municipios):
 
                         #colunas para filtro e gráfico
                         col_cid1, col_cid2 = st.columns([2.3,7])
+
+                        #texto
+                        col_cid1.write('Distribuição por grupos da Classificação Internacional de Doenças (CID) mais frequentes associados a afastamentos do tipo acidentário B91 na Região Médio Paraíba do Estado do Rio de Janeiro entre os anos 2018 e 2024.')
 
                         #chave fixa
                         key_slider_cid_grupo = f"slider_cid_ano_dist_por_grupo{municipio}"
@@ -1021,6 +1158,9 @@ for i, municipio in enumerate(municipios):
                         #colunas para filtro e gráfico
                         col_cid1, col_cid2 = st.columns([2.3,7])
 
+                        #texto
+                        col_cid1.write('Distribuição por capítulo da Classificação Internacional de Doenças (CID) mais frequentes associados a afastamentos do tipo acidentário B91 na Região Médio Paraíba do Estado do Rio de Janeiro entre os anos 2018 e 2024.')
+
                         #chave fixa
                         key_slider_cid_capitulo = f"slider_cid_ano_dist_por_capitu{municipio}"
 
@@ -1116,7 +1256,7 @@ for i, municipio in enumerate(municipios):
 
                     elif nome_grafico == "Acidentes por Idade":
                         st.header("Acidentes por Idade")
-                        #st.subheader('Distribuição dos Acidentes por Idade')
+                        st.write('Número absoluto de acidentes de trabalho - benefícios previdenciários do tipo Concessão de Benefícios Previdenciários Acidentários (B91) na Região Médio Paraíba do Estado do Rio de Janeiro, no acumulado entre os anos 2018 a 2024, distribuído por faixa etária e sexo.')
 
                         df_municipio2['Data Nascimento'] = pd.to_datetime(df_municipio2['Data Nascimento'])
                         df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'])
@@ -1125,10 +1265,29 @@ for i, municipio in enumerate(municipios):
                         df_municipio2['Idade'] = df_municipio2['Idade'] / 365.25
                         df_municipio2['Idade'] = df_municipio2['Idade'].fillna(0)
                         df_municipio2['Idade'] = df_municipio2['Idade'].astype(int)
+                        df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'], errors='coerce')
+                        df_municipio2['Ano_Filtro'] = df_municipio2['Data Acidente'].dt.year.astype(int)
 
-                        df_acidentes_limpo = df_municipio2[
-                            (df_municipio2['Idade'] != 0) &
-                            (df_municipio2['Sexo'] != 'Não Informado')].copy()
+                        #fitro por ano
+                        min_ano = int(df_municipio2['Ano_Filtro'].min())
+                        max_ano = int(df_municipio2['Ano_Filtro'].max())
+
+                        anos_selecionados = st.slider(
+                            "Selecione o Período (Ano):",
+                            min_value=min_ano,
+                            max_value=max_ano,
+                            value=(min_ano, max_ano),
+                            key=f"{nome_grafico}_{municipio}_slider"
+                        )
+
+                        df_contexto = df_municipio2[
+                            (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                            (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                        ]
+
+                        df_acidentes_limpo = df_contexto[
+                            (df_contexto['Idade'] != 0) &
+                            (df_contexto['Sexo'] != 'Não Informado')].copy()
 
                         bins = [0, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, np.inf]
                         labels = [
@@ -1220,6 +1379,9 @@ for i, municipio in enumerate(municipios):
 
                         #colunas para filtro e gráfico
                         col_cbo1, col_cbo2 = st.columns([2.3,7])
+
+                        #texto
+                        col_cbo1.write('Número de afastamentos do tipo acidentário B91 na Região Médio Paraíba do Estado do Rio de Janeiro entre os anos 2018 a 2024, conforme o Subgrupo Principal da Classificação Brasileira de Ocupações (CBO).')
 
                         #chave fixa
                         key_slider_cbo_func = f"slider_cbo_ano_dist_de_func{municipio}"
@@ -1332,6 +1494,9 @@ for i, municipio in enumerate(municipios):
 
                         #colunas para filtro e gráfico
                         col_cbo1, col_cbo2 = st.columns([2.3,7])
+
+                        #texto
+                        col_cbo1.write('Número de afastamentos do tipo acidentário B91 na Região Médio Paraíba do Estado do Rio de Janeiro entre os anos 2018 a 2024, conforme o Subgrupo Principal da Classificação Brasileira de Ocupações (CBO).')
 
                         #chave fixa
                         key_slider_cbo_sub = f"slider_cbo_ano_dist_de_sub{municipio}"
@@ -1610,26 +1775,75 @@ for i, municipio in enumerate(municipios):
                             #colunas para filtro e gráfico
                             col_lesao1, col_lesao2 = st.columns([2.3,7])
 
-                            #filtro
-                            lista_cbo = df_municipio2['CBO-SubGrupoPrincipal'].unique().tolist()
-                            lista_cbo.insert(0, 'Todos')
+                            #chaves fixas
+                            key_cid_corpo = f"cid_corpo{municipio}"
+                            key_cbo_corpo = f"cbo_corpo{municipio}"
+                            key_cnae_corpo = f"cnae_corpo{municipio}"
+                            key_slider_corpo = f"slider_corpo{municipio}"
 
-                            lista_cnae = df_municipio2['CNAE-DIVISÃO'].unique().tolist()
-                            lista_cnae.insert(0, 'Todos')
+                            #verificação na memória do que está selecionado 
+                            sel_cid_corpo = st.session_state.get(key_cid_corpo, 'Todos')
+                            sel_cbo_corpo = st.session_state.get(key_cbo_corpo, 'Todos')
+                            sel_cnae_corpo = st.session_state.get(key_cnae_corpo, 'Todos')
 
-                            lista_cid = df_municipio2['CID-CAPITULO'].unique().tolist()
-                            lista_cid.insert(0, 'Todos')
+                            #fitro por ano
+                            df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'], errors='coerce')
+                            df_municipio2['Ano_Filtro'] = df_municipio2['Data Acidente'].dt.year.astype(int)
+                            min_ano = int(df_municipio2['Ano_Filtro'].min())
+                            max_ano = int(df_municipio2['Ano_Filtro'].max())
+
+                            anos_selecionados = col_lesao1.slider(
+                                "Selecione o Período (Ano):",
+                                min_value=min_ano,
+                                max_value=max_ano,
+                                value=(min_ano, max_ano),
+                                key=key_slider_corpo
+                            )
+
+                            df_contexto = df_municipio2[
+                                (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                                (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                            ]
+
+                            #lógica cruzada
+                            #baseada em grupo
+                            df_cid_temp = df_contexto.copy()
+                            if sel_cbo_corpo != 'Todos': df_cid_temp = df_cid_temp[df_cid_temp['CBO-SubGrupoPrincipal'] == sel_cbo_corpo]
+                            if sel_cnae_corpo != 'Todos': df_cid_temp = df_cid_temp[df_cid_temp['CNAE-DIVISÃO'] == sel_cnae_corpo]
+                            opcoes_reais_cid = sorted(df_cid_temp['CID-CAPITULO'].unique().tolist())
+
+                            df_cbo_temp = df_contexto.copy()
+                            if sel_cid_corpo != 'Todos': df_cbo_temp = df_cbo_temp[df_cbo_temp['CID-CAPITULO'] == sel_cid_corpo]
+                            if sel_cnae_corpo != 'Todos': df_cbo_temp = df_cbo_temp[df_cbo_temp['CNAE-DIVISÃO'] == sel_cnae_corpo]
+                            opcoes_reais_cbo = sorted(df_cbo_temp['CBO-SubGrupoPrincipal'].unique().tolist())
+
+                            df_cnae_temp = df_contexto.copy()
+                            if sel_cid_corpo != 'Todos': df_cnae_temp = df_cnae_temp[df_cnae_temp['CID-CAPITULO'] == sel_cid_corpo]
+                            if sel_cbo_corpo != 'Todos': df_cnae_temp = df_cnae_temp[df_cnae_temp['CBO-SubGrupoPrincipal'] == sel_cbo_corpo]
+                            opcoes_reais_cnae = sorted(df_cnae_temp['CNAE-DIVISÃO'].unique().tolist())
+
+                            lista_cbo = ['Todos'] + opcoes_reais_cbo
+                            if sel_cbo_corpo != 'Todos' and sel_cbo_corpo not in lista_cbo:
+                                lista_cbo.append(sel_cbo_corpo)
+
+                            lista_cnae = ['Todos'] + opcoes_reais_cnae
+                            if sel_cnae_corpo != 'Todos' and sel_cnae_corpo not in lista_cnae:
+                                lista_cnae.append(sel_cnae_corpo)
+
+                            lista_cid = ['Todos'] + opcoes_reais_cid
+                            if sel_cid_corpo != 'Todos' and sel_cid_corpo not in lista_cid:
+                                lista_cid.append(sel_cid_corpo)
 
                             cbo_selecionado = col_lesao1.selectbox('Selecione um Subgrupo Principal (CBO):',
-                                                lista_cbo, key=f"cbo_{sub}_{municipio}")
+                                                lista_cbo, key=key_cbo_corpo)
                             
                             cnae_selecionado = col_lesao1.selectbox('Selecione uma Divisão (CNAE):',
-                                                lista_cnae, key=f"cnae_{sub}_{municipio}")
+                                                lista_cnae, key=key_cnae_corpo)
                             
                             cid_selecionado = col_lesao1.selectbox('Selecione um Capítulo (CID):',
-                                                lista_cid, key=f"cid_{sub}_{municipio}")
+                                                lista_cid, key=key_cid_corpo)
                             
-                            df_filtrado = df_municipio2.copy()
+                            df_filtrado = df_contexto.copy()                    
 
                             if cbo_selecionado != 'Todos':    
                                 df_filtrado = df_filtrado[df_filtrado['CBO-SubGrupoPrincipal'] == cbo_selecionado]
@@ -1718,26 +1932,75 @@ for i, municipio in enumerate(municipios):
                             #colunas para filtro e gráfico
                             col_lesao1, col_lesao2 = st.columns([2.3,7])
 
-                            #filtro
-                            lista_cbo = df_municipio2['CBO-SubGrupoPrincipal'].unique().tolist()
-                            lista_cbo.insert(0, 'Todos')
+                            #chaves fixas
+                            key_cid_agente = f"cid_agente{municipio}"
+                            key_cbo_agente = f"cbo_agente{municipio}"
+                            key_cnae_agente = f"cnae_agente{municipio}"
+                            key_slider_agente = f"slider_agente{municipio}"
 
-                            lista_cnae = df_municipio2['CNAE-DIVISÃO'].unique().tolist()
-                            lista_cnae.insert(0, 'Todos')
+                            #verificação na memória do que está selecionado 
+                            sel_cid_agente = st.session_state.get(key_cid_agente, 'Todos')
+                            sel_cbo_agente = st.session_state.get(key_cbo_agente, 'Todos')
+                            sel_cnae_agente = st.session_state.get(key_cnae_agente, 'Todos')
 
-                            lista_cid = df_municipio2['CID-CAPITULO'].unique().tolist()
-                            lista_cid.insert(0, 'Todos')
+                            #fitro por ano
+                            df_municipio2['Data Acidente'] = pd.to_datetime(df_municipio2['Data Acidente'], errors='coerce')
+                            df_municipio2['Ano_Filtro'] = df_municipio2['Data Acidente'].dt.year.astype(int)
+                            min_ano = int(df_municipio2['Ano_Filtro'].min())
+                            max_ano = int(df_municipio2['Ano_Filtro'].max())
+
+                            anos_selecionados = col_lesao1.slider(
+                                "Selecione o Período (Ano):",
+                                min_value=min_ano,
+                                max_value=max_ano,
+                                value=(min_ano, max_ano),
+                                key=key_slider_agente
+                            )
+
+                            df_contexto = df_municipio2[
+                                (df_municipio2['Ano_Filtro'] >= anos_selecionados[0]) & 
+                                (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
+                            ]
+
+                            #lógica cruzada
+                            #baseada em grupo
+                            df_cid_temp = df_contexto.copy()
+                            if sel_cbo_agente != 'Todos': df_cid_temp = df_cid_temp[df_cid_temp['CBO-SubGrupoPrincipal'] == sel_cbo_agente]
+                            if sel_cnae_agente != 'Todos': df_cid_temp = df_cid_temp[df_cid_temp['CNAE-DIVISÃO'] == sel_cnae_agente]
+                            opcoes_reais_cid = sorted(df_cid_temp['CID-CAPITULO'].unique().tolist())
+
+                            df_cbo_temp = df_contexto.copy()
+                            if sel_cid_agente != 'Todos': df_cbo_temp = df_cbo_temp[df_cbo_temp['CID-CAPITULO'] == sel_cid_agente]
+                            if sel_cnae_agente != 'Todos': df_cbo_temp = df_cbo_temp[df_cbo_temp['CNAE-DIVISÃO'] == sel_cnae_agente]
+                            opcoes_reais_cbo = sorted(df_cbo_temp['CBO-SubGrupoPrincipal'].unique().tolist())
+
+                            df_cnae_temp = df_contexto.copy()
+                            if sel_cid_agente != 'Todos': df_cnae_temp = df_cnae_temp[df_cnae_temp['CID-CAPITULO'] == sel_cid_agente]
+                            if sel_cbo_agente != 'Todos': df_cnae_temp = df_cnae_temp[df_cnae_temp['CBO-SubGrupoPrincipal'] == sel_cbo_agente]
+                            opcoes_reais_cnae = sorted(df_cnae_temp['CNAE-DIVISÃO'].unique().tolist())
+
+                            lista_cbo = ['Todos'] + opcoes_reais_cbo
+                            if sel_cbo_agente != 'Todos' and sel_cbo_agente not in lista_cbo:
+                                lista_cbo.append(sel_cbo_agente)
+
+                            lista_cnae = ['Todos'] + opcoes_reais_cnae
+                            if sel_cnae_agente != 'Todos' and sel_cnae_agente not in lista_cnae:
+                                lista_cnae.append(sel_cnae_agente)
+
+                            lista_cid = ['Todos'] + opcoes_reais_cid
+                            if sel_cid_agente != 'Todos' and sel_cid_agente not in lista_cid:
+                                lista_cid.append(sel_cid_agente)
 
                             cbo_selecionado = col_lesao1.selectbox('Selecione um Subgrupo Principal (CBO):',
-                                                lista_cbo, key=f"cbo_{sub}_{municipio}")
+                                                lista_cbo, key=key_cbo_agente)
                             
                             cnae_selecionado = col_lesao1.selectbox('Selecione uma Divisão (CNAE):',
-                                                lista_cnae, key=f"cnae_{sub}_{municipio}")
+                                                lista_cnae, key=key_cnae_agente)
                             
                             cid_selecionado = col_lesao1.selectbox('Selecione um Capítulo (CID):',
-                                                lista_cid, key=f"cid_{sub}_{municipio}")
+                                                lista_cid, key=key_cid_agente)
                             
-                            df_filtrado = df_municipio2.copy()
+                            df_filtrado = df_contexto.copy()
 
                             if cbo_selecionado != 'Todos':    
                                 df_filtrado = df_filtrado[df_filtrado['CBO-SubGrupoPrincipal'] == cbo_selecionado]
