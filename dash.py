@@ -407,6 +407,8 @@ for i, municipio in enumerate(municipios):
                             (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
                         ]
 
+                        #total
+                        total_geral_periodo = df_contexto.shape[0]
 
                         #filtro sub grupo
                         lista_cnae_secao = df_municipio2['CNAE-SEÇÃO'].unique().tolist()
@@ -445,8 +447,8 @@ for i, municipio in enumerate(municipios):
                             top_20_counts = cnae_counts.head(20).copy() 
 
 
-                            total_amostra = top_20_counts['count'].sum()
-                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            total_amostra_global = total_geral_periodo
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra_global
                             top_20_counts['label_curto'] = top_20_counts['CNAE2.0 Empregador.1'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
                             maior_valor = top_20_counts['count'].max()
                             limite_eixo_y = maior_valor * 1.15 
@@ -549,6 +551,9 @@ for i, municipio in enumerate(municipios):
                             (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
                         ]
 
+                        #total
+                        total_geral_periodo = df_contexto.shape[0]
+
                         #filtro sub grupo
                         lista_cnae_divisao = df_municipio2['CNAE-DIVISÃO'].unique().tolist()
                         lista_cnae_divisao.insert(0, 'Todos')
@@ -576,8 +581,8 @@ for i, municipio in enumerate(municipios):
                             cnae_counts.columns = ['CNAE-SEÇÃO', 'count']
                             
                             top_20_counts = cnae_counts.head(20).copy() 
-                            total_amostra = top_20_counts['count'].sum()
-                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            total_amostra_global = total_geral_periodo
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra_global
                             top_20_counts['label_curto'] = top_20_counts['CNAE-SEÇÃO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
                             maior_valor = top_20_counts['count'].max()
                             limite_eixo_y = maior_valor * 1.15
@@ -684,6 +689,9 @@ for i, municipio in enumerate(municipios):
                         
                         df_filtrado = df_contexto.copy()
 
+                        #total
+                        total_geral_periodo = df_contexto.shape[0]
+
                         if cnae_grupo_selecionado != 'Todos':
                              df_filtrado = df_filtrado[df_filtrado['CNAE-GRUPO'] == cnae_grupo_selecionado]
                                 
@@ -693,8 +701,8 @@ for i, municipio in enumerate(municipios):
                             cnae_counts.columns = ['CNAE-DIVISÃO', 'count']
                             
                             top_20_counts = cnae_counts.head(20).copy() 
-                            total_amostra = top_20_counts['count'].sum()
-                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            total_amostra_global = total_geral_periodo
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra_global
                             top_20_counts['label_curto'] = top_20_counts['CNAE-DIVISÃO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
                             maior_valor = top_20_counts['count'].max()
                             limite_eixo_y = maior_valor * 1.15
@@ -793,6 +801,9 @@ for i, municipio in enumerate(municipios):
                             (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
                         ]
 
+                        #total
+                        total_geral_periodo = df_contexto.shape[0]
+
                         df_filtrado = df_contexto.copy()
 
                         #dados para o gráfico
@@ -800,8 +811,8 @@ for i, municipio in enumerate(municipios):
                         cnae_counts.columns = ['CNAE-GRUPO', 'count']
 
                         top_20_counts = cnae_counts.head(20).copy() 
-                        total_amostra = top_20_counts['count'].sum()
-                        top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                        total_amostra_global = total_geral_periodo
+                        top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra_global
                         top_20_counts['label_curto'] = top_20_counts['CNAE-GRUPO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
                         maior_valor = top_20_counts['count'].max()
                         limite_eixo_y = maior_valor * 1.15 
@@ -1064,8 +1075,11 @@ for i, municipio in enumerate(municipios):
                             (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
                         ]
 
+                        #total
+                        total_geral_periodo = df_contexto.shape[0]
+
                         #filtro
-                        lista_cid = df_municipio2['CID-CAPITULO'].unique().tolist()
+                        lista_cid = sorted(df_municipio2['CID-CAPITULO'].unique().tolist())
                         lista_cid.insert(0, 'Todos')
 
                         cid_selecionado = col_cid1.selectbox('Selecione um Capítulo:',
@@ -1081,9 +1095,9 @@ for i, municipio in enumerate(municipios):
                             cid_counts = df_filtrado['CID-GRUPO'].value_counts().reset_index()
                             cid_counts.columns = ['CID-GRUPO', 'count']
 
+                            total_amostra_global = total_geral_periodo
                             top_20_counts = cid_counts.head(20).copy()
-                            total_amostra = top_20_counts['count'].sum() 
-                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra_global
                             top_20_counts['label_curto'] = top_20_counts['CID-GRUPO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
                             maior_valor = top_20_counts['count'].max()
                             limite_eixo_y = maior_valor * 1.15 
@@ -1183,13 +1197,16 @@ for i, municipio in enumerate(municipios):
                             (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
                         ]
 
+                        #total
+                        total_geral_periodo = df_filtrado.shape[0]
+
                         #dados para o gráfico
                         cid_counts = df_filtrado['CID-CAPITULO'].value_counts().reset_index()
                         cid_counts.columns = ['CID-CAPITULO', 'count']
 
+                        total_amostra_global = total_geral_periodo
                         top_20_counts = cid_counts.head(20).copy()
-                        total_amostra = top_20_counts['count'].sum() 
-                        top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                        top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra_global
                         top_20_counts['label_curto'] = top_20_counts['CID-CAPITULO'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
                         maior_valor = top_20_counts['count'].max()
                         limite_eixo_y = maior_valor * 1.15 
@@ -1403,6 +1420,9 @@ for i, municipio in enumerate(municipios):
                             (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
                         ]
 
+                        #total
+                        total_geral_periodo = df_contexto.shape[0]
+
                         #filtro sub grupo
                         lista_cbo = ['Todos'] + sorted(df_contexto['CBO-SubGrupoPrincipal'].unique().tolist())
 
@@ -1420,8 +1440,8 @@ for i, municipio in enumerate(municipios):
                             cbo_counts.columns = ['CBO-Função', 'count']
 
                             top_20_counts = cbo_counts.head(20).copy()
-                            total_amostra = top_20_counts['count'].sum() 
-                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            total_amostra_global = total_geral_periodo
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra_global
                             top_20_counts['label_curto'] = top_20_counts['CBO-Função'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
                             maior_valor = top_20_counts['count'].max()
                             limite_eixo_y = maior_valor * 1.15 
@@ -1518,6 +1538,9 @@ for i, municipio in enumerate(municipios):
                             (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
                         ]
 
+                        #total
+                        total_geral_periodo = df_contexto.shape[0]
+
                         #filtro
                         lista_cbo = ['Todos'] + sorted(df_contexto['CBO-SubGrupoPrincipal'].unique().tolist())
 
@@ -1535,8 +1558,8 @@ for i, municipio in enumerate(municipios):
                             cbo_counts.columns = ['CBO-SubGrupo', 'count']
 
                             top_20_counts = cbo_counts.head(20).copy()
-                            total_amostra = top_20_counts['count'].sum() 
-                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            total_amostra_global = total_geral_periodo
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra_global
                             top_20_counts['label_curto'] = top_20_counts['CBO-SubGrupo'].apply(lambda x: x[:25] + '...' if len(x) > 25 else x)
                             maior_valor = top_20_counts['count'].max()
                             limite_eixo_y = maior_valor * 1.15
@@ -1643,6 +1666,9 @@ for i, municipio in enumerate(municipios):
                             (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
                         ]
 
+                        #total
+                        total_geral_periodo = df_contexto.shape[0]
+
                         #lógica cruzada
                         #baseada em grupo
                         df_cid_temp = df_contexto.copy()
@@ -1701,8 +1727,8 @@ for i, municipio in enumerate(municipios):
                             cbo_counts.columns = ['Natureza da Lesão', 'count']
 
                             top_20_counts = cbo_counts.head(20).copy()
-                            total_amostra = top_20_counts['count'].sum()
-                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                            total_amostra_global = total_geral_periodo
+                            top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra_global
                             top_20_counts['label_curto'] = top_20_counts['Natureza da Lesão'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
                             maior_valor = top_20_counts['count'].max()
                             limite_eixo_y = maior_valor * 1.15
@@ -1805,6 +1831,9 @@ for i, municipio in enumerate(municipios):
                                 (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
                             ]
 
+                            #total
+                            total_geral_periodo = df_contexto.shape[0]
+
                             #lógica cruzada
                             #baseada em grupo
                             df_cid_temp = df_contexto.copy()
@@ -1861,8 +1890,8 @@ for i, municipio in enumerate(municipios):
                                 cbo_counts.columns = ['Parte Corpo Atingida', 'count']
 
                                 top_20_counts = cbo_counts.head(20).copy()
-                                total_amostra = top_20_counts['count'].sum()
-                                top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                                total_amostra_global = total_geral_periodo
+                                top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra_global
                                 top_20_counts['label_curto'] = top_20_counts['Parte Corpo Atingida'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
                                 maior_valor = top_20_counts['count'].max()
                                 limite_eixo_y = maior_valor * 1.15 
@@ -1962,6 +1991,9 @@ for i, municipio in enumerate(municipios):
                                 (df_municipio2['Ano_Filtro'] <= anos_selecionados[1])
                             ]
 
+                            #total
+                            total_geral_periodo = df_contexto.shape[0]
+
                             #lógica cruzada
                             #baseada em grupo
                             df_cid_temp = df_contexto.copy()
@@ -2018,8 +2050,8 @@ for i, municipio in enumerate(municipios):
                                 cbo_counts.columns = ['Agente Causador Acidente', 'count']
 
                                 top_20_counts = cbo_counts.head(20)
-                                total_amostra = top_20_counts['count'].sum()
-                                top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra
+                                total_amostra_global = total_geral_periodo
+                                top_20_counts['cumulative_perc'] = 100 * top_20_counts['count'].cumsum() / total_amostra_global
                                 top_20_counts['label_curto'] = top_20_counts['Agente Causador Acidente'].apply(lambda x: x[:20] + '...' if len(x) > 20 else x)
                                 maior_valor = top_20_counts['count'].max()
                                 limite_eixo_y = maior_valor * 1.15 
