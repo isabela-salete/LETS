@@ -133,7 +133,7 @@ df_info = pd.read_csv("info.csv")
 dfci = json.load(open('geojs-33-mun.json', 'r'))
 
 df_semacento = df2["Município Empregador"].value_counts().reset_index()
-#df_semacento['Município Empregador'].replace('Piraí', 'Pirai', inplace=True)
+df_semacento['Município Empregador'].replace('Piraí', 'Pirai', inplace=True)
 df_semacento['Município Empregador'].replace('Barra do Piraí', 'Barra do Pirai', inplace=True)
 df_semacento['Município Empregador'].replace('Valença', 'Valenca', inplace=True)
 
