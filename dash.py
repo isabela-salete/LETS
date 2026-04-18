@@ -195,7 +195,7 @@ for i, municipio in enumerate(municipios):
             mapa.update_layout(title="Coloração do Mapa da Região do Médio Paraíba Conforme o Nº de Acidentes",
                                 height = 550)
             st.plotly_chart(mapa)
-            
+            st.write('*Os dados presentes no Observatório de Engenharia do Trabalho e Sustentabilidade são provenientes da base de dados abertos do INSS e do IBGE.*')
             #acidentes pareto
             st.subheader('Quantidade de Acidentes por Município')
             col1, col2 = st.columns([2, 7])
@@ -327,7 +327,7 @@ for i, municipio in enumerate(municipios):
             fig.update_layout(width=430, height=500, title='Mapa da Região')
             col8.plotly_chart(fig, width='stretch', key=f"mapa_{municipio}")
             col7.write(descricoes_municipios.get(municipio, "Descrição não disponível."))
-            st.write('Fonte: IBGE')
+            st.write('*Os dados presentes no Observatório de Engenharia do Trabalho e Sustentabilidade são provenientes da base de dados abertos do INSS e do IBGE.*')
 
         else:
             pass
